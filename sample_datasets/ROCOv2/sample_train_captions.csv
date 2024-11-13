@@ -1,0 +1,601 @@
+ID,Caption
+ROCOv2_2023_train_017334,The measurement method of the vertebral height (VH) and the Cobb angle (CA)
+ROCOv2_2023_train_030869,CECT showing the target sign suggestive of intussusception around the feeding tube
+ROCOv2_2023_train_049287,Axial T1-weighted magnetic resonance imaging shows the lesion is isointense to muscle.
+ROCOv2_2023_train_045339,"Esophagography of a patient who had esophageal atresia, congenital esophageal stenosis and achalasia simultaneously (black arrowhead: anastomosis site of esophageal atresia, black arrow: congenital esophageal stenosis, white arrowhead: site of achalasia)."
+ROCOv2_2023_train_009501,MRI (coronal view) of the pelvis showing large pelvic mass (red arrow)
+ROCOv2_2023_train_026197,Sagittal T2-Fatsat MR image of the right foot. The arrow show the calcaneus secondarius with T2 hyperintensity corresponding to synchondrosis edema (arrowheads)
+ROCOv2_2023_train_003475,Echocardiogram showing mobile aortic valve vegetation
+ROCOv2_2023_train_011037,MRI of the thoracic spine: sagittal T2 sequence partially demonstrating a hyperintense. T. 6–T9 intramedullary lesion along with an isolated hyperintense T5 lesion.
+ROCOv2_2023_train_001743,Figure 1: Tube esophagram showing a contrast within the tracheobronchial tree suggestive of TEF.
+ROCOv2_2023_train_025657,Technetium-99 m bone scan: clearly visible “hot spot” in the distal humerus.
+ROCOv2_2023_train_058288,The chest tube was removed 2 days after the thoracostomy. The chest radiograph shows normal findings.
+ROCOv2_2023_train_025173,Positron emission tomographic/computed tomographic scan shows increased fluorodeoxyglucose activity within the right ventricular mass.
+ROCOv2_2023_train_048701,Coronal reformatted multislice abdominal computed tomography displaying a terminal ileum segment in the right-lower quadrant with marked thickening when compared to the adjacent ileal segments and showing mild enhancement after oral and intravenous contrast agent administration.
+ROCOv2_2023_train_030556,"Chest HRCT showed honey combing, scissural distortion and ground glass opacities in the bases and the periphery of the lungs."
+ROCOv2_2023_train_013818,Arrow showing emboli in left pulmonary vasculature.
+ROCOv2_2023_train_011836,"CT scan showing a solid inhomogeneous mass, with inner calcifications"
+ROCOv2_2023_train_024609,Small bowel follow-through study demonstrating contrast flowing from the second stage of the duodenum through a fistula towards the right kidney.
+ROCOv2_2023_train_035462,Carotid angiography before and after catheter-based thrombectomy in acute anterior circulation stroke. (A) Thrombotic occlusion of the middle cerebral artery on admission. (B) Widely patent (near-normal) middle cerebral artery after catheter-based thrombectomy.
+ROCOv2_2023_train_044970,Left heart cardiac catheterization revealing non-obstructive right coronary artery except complete occlusion with filling defect probably secondary to distal thrombus noted in the posterior left ventricular branch of right coronary artery (white asterisk)
+ROCOv2_2023_train_032234,Computed tomography scan with multiple calculus in left kidney.
+ROCOv2_2023_train_038280,"Maximum intensity projection image for F-18 FDG PET/CT showing intense accumulation of F-18 FDG in multiple lymph nodes, lung, liver, and spleen. F-18 FDG PET/CT = 18F-fluorodeoxyglucose positron emission tomography/computed tomography, SUVmax = maximum standardized uptake."
+ROCOv2_2023_train_044425,T1-weighted MRI image of the thoracic spine. T. 1-weighted MRI image of the thoracic spine showing (1) an increasing retropulsion and epidural extraosseous metastasis causing moderate canal stenosis and cord compression. Increase in size of osseous metastatic lesion of the T2 vertebral body and left pedicle extending into the left neural foramina causing moderate left neural foraminal stenosis and (2) an increasing moderate to severe pathologic compression fracture deformity of T5 with approximately 75% height loss.
+ROCOv2_2023_train_049638,"After 60 days, no signs of apical radiolucency or dentin resorption"
+ROCOv2_2023_train_036737,Cross-sectional magnetic resonance imaging of the thorax. Four-chamber projection. Giant intracardiac thrombus (arrow) whose base is attached to left atrial wall in suture lines between the recipient’s (R) left atrium and the donor’s (D) left atrium.
+ROCOv2_2023_train_010442,Prostate sonography showed lobulated prostate mass with intra-vesical protruding.
+ROCOv2_2023_train_006243,"Placement of dual IVC filters (stars). IVC, inferior vena cava."
+ROCOv2_2023_train_001972,Chest X-ray finding. Chest radiograph showing left-sided pleural effusion (arrow).
+ROCOv2_2023_train_032474,Computed tomography of the first patient. A large colon perforation with pneumatosis intestinalis proximal to a previous anastomosis with extensive fecal spillage and extensive intra- and retro-pneumoperitoneum is seen.
+ROCOv2_2023_train_043035,Axial (abdominal computed tomography) views of our patient showing multiple lesions in the liver.
+ROCOv2_2023_train_045909,Chest radiograph of a large right-sided pneumothorax with leftward mediastinal shift requiring the placement of thoracostomy tubes
+ROCOv2_2023_train_045375,Chest computed tomography showing bilateral pulmonary nodules.
+ROCOv2_2023_train_033637,Echocardiogram of a subject with pericardial effusion
+ROCOv2_2023_train_050630,Posteroanterior (PA) chest X-ray demonstrating the presence of a right-sided pneumothorax (PN)
+ROCOv2_2023_train_017668,Angiogram of the patient coronaries showing no culprit lesion or significant stenosis.
+ROCOv2_2023_train_025106,A computed tomography scan shows not only a huge dilated duodenum but also a 'whirling' of the mesenteric vessel trunk (arrow).
+ROCOv2_2023_train_039556,Ultrasound showing subcapsular hematoma causing direct compression of renal parenchyma (arrow).
+ROCOv2_2023_train_014810,"A contrast-enhanced computed tomography image demonstrating an irregularly shaped, 25.0-mm right atrial mass extending along the right atrial free wall (white arrow); minor left-sided pleural effusion; slight pleural thickening of the right side; and diffuse pericardial effusion."
+ROCOv2_2023_train_032192,"Fluoroscopy with contrast demonstrating patent bilateral renal arteries and distal infrarenal aorto-occlusive disease with major filling defect (Red arrow). Image courtesy of Kristian O. Loveridge, D.O."
+ROCOv2_2023_train_033755,X-ray after 6 weeks.
+ROCOv2_2023_train_032580,"Dose distribution and volumes of IG-IMRT plan with the concomitant irradiation of lymph nodes of the small pelvis, whole bladder and a simultaneous concomitant boost to the site of the bladder tumour."
+ROCOv2_2023_train_046383,Radiotherapy target volumes. Blue line: macroscopic disease (GTV); green line: GTV with motion (iGTV); light green: microscopic extension (CTV); red line: the final target volume (PTV).
+ROCOv2_2023_train_042238,"Axial contrast-enhanced CT brain image in a 68-year-old man with known prostate carcinoma osseous metastases (not shown), demonstrating a hypoattenuating mass with a large enhancing peripheral nodule (arrow), predominantly involving the left cerebellar hemisphere, with mass effect on the fourth ventricle and resulting obstructive hydrocephalus. Biopsy with immunohistochemistry indicated metastatic prostatic adenocarcinoma."
+ROCOv2_2023_train_013248,CT scan of the neck at 2 months after surgery. The tracheal injury has healed well with no proliferation of granulation tissue.
+ROCOv2_2023_train_015263,Computed tomography angiography (Axial view)Shows the communication between the aorta (AO) and the inferior vena cava (IVC) during the arterial phase. we also note the presence of the foreign material in the AO.
+ROCOv2_2023_train_025186,Superior lateral genicular lead placement with fluoroscopic guidance.Fluoroscopy was used to place the lead in the region of the superior lateral genicular nerve. The red arrow is pointing toward the final position of the introducing needle. The needle was repositioned until optimal paresthesia coverage was obtained
+ROCOv2_2023_train_037207,Computed tomography scan images demonstrating abscess formation around gallstones in the intermuscular layer.
+ROCOv2_2023_train_059962,Target volume definition on CT.
+ROCOv2_2023_train_027856,T2 weighted MRI of the brain showing horse shoe lateral ventricle with fused frontal lobe anteriorly
+ROCOv2_2023_train_035835,Gallbladder tuberculosis in 39-year-old woman.Transverse contrast-enhanced CT scan shows large gallbladder mass with marked heterogeneous enhancement and multiple areas of necrosis. Markedly enlarged lymph node with slight heterogeneous enhancement is seen in portocaval space.
+ROCOv2_2023_train_023101,Low density shadow of nodule of the lesion in the portal phase.
+ROCOv2_2023_train_039414,CT scan of left lower extremity showing a 25 mm × 40 mm × 140 mm fluid collection (↔) and peripheral enhancement of the gluteus medius and vastus lateralis muscles.
+ROCOv2_2023_train_033142,Chronic total occlusion of right coronary artery (red arrow)
+ROCOv2_2023_train_005748,"T2-weighted magnetic resonance imaging of the mass. Axial T2-weighted MR image shows a high signal intensity mass in the left maxillary sinus, which is surrounded by a low-signal intensity rim (arrows)"
+ROCOv2_2023_train_038551,Common bile duct stone with sludge seen on linear endoscopic ultrasound from the duodenal bulb in a 36-year-old male presenting with 3 episodes of idiopathic acute pancreatitis in last 7 mo.
+ROCOv2_2023_train_045881,Simple cyst as anechoic lesion with a sharply defined back wall and enhancement of through sound transmission.
+ROCOv2_2023_train_039041,"A coronal view of a SPECT/CT is shown 5 months after balloon tibioplasty. The blue to red colors show tracer activity in an increasing order and the normal to high tracer activity is particularly located around the cement and the osteosynthesis. In contrast, no color and no tracer activity can be found in the bone marrow of the tibial shaft"
+ROCOv2_2023_train_052641,CT findings on day 1. CT revealed a right pelvic fracture (arrow) and a haematoma (arrowhead) in the pelvic extraperitoneal space
+ROCOv2_2023_train_035222,T1-weighted head MRI showing lateral ventricles and the third ventricle enlargement
+ROCOv2_2023_train_011554,"Noncontrast head computed tomography (CT) showing diffuse cerebral edema, with hyperattenuated cisterns and cerebral sulci."
+ROCOv2_2023_train_051782,Axial T2 WI looks almost normal. Note signal void superior sagittal sinus against evidence of thrombosis
+ROCOv2_2023_train_060077,Chest computed tomography showing a right lung nodule (arrow).
+ROCOv2_2023_train_007487,CT scan of the abdomen and pelvis showing left renal calculi with foci or air in the renal parenchyma.
+ROCOv2_2023_train_023252,Helical computer tomographic angiography revealing the bleeding from the sigmoid colon (arrows).
+ROCOv2_2023_train_030057,"Posteroanterior chest X-ray, acquired during follow-up, showing numerous, dense, bilateral metastatic nodules, of varying sizes."
+ROCOv2_2023_train_021199,Normal chest radiograph.
+ROCOv2_2023_train_027751,CT abdomen.Peri pancreatic lymph nodes (arrow) on initial CT scan performed during pre-transplant workup. 
+ROCOv2_2023_train_029541,Transthoracic echocardiogram: apical ventricular septal defect with shunt noted.
+ROCOv2_2023_train_013333,Hepatic arteriogram demonstrating medial displacement of hepatic arterioles due to mass effect of hematoma and lack of any arterial bleeding site.
+ROCOv2_2023_train_011803,Late postoperative chest computed tomography revealed a patent left coronary artery after homograft root replacement.
+ROCOv2_2023_train_042905,Digital subtraction angiography of the portal vein during transjugular intrahepatic portosystemic shunt placement showing successful placement of stent for procedure.
+ROCOv2_2023_train_049246,"Abdominal computed tomography scan. Hyperdense discs at arrow tips, located in the cecum."
+ROCOv2_2023_train_034850,Sagittal USG of the fetal chest shows an echogenic aorta (arrowhead). The pulmonary artery is well seen (small arrow)
+ROCOv2_2023_train_056459,Posteroanterior of a sweeping thoracolumbar curve with pelvic obliquity typical of neuromuscular scoliosis.
+ROCOv2_2023_train_046906,Parasternal long axis view revealing a diffused leaflet thickening of the mitral valve.
+ROCOv2_2023_train_038227,OPG―6-month postoperative size of the lesion reduced considerably and 37 shows normal and progressive root formation
+ROCOv2_2023_train_029727,"Abdomen CT showing a 7.5 cm mass occupying the right lobe of the liver, thrombosis of the right portal vein, and hemoperitoneum (HU = 67)."
+ROCOv2_2023_train_029387,Ablation catheter placement during Left Atrial Roofline
+ROCOv2_2023_train_016890,Periapical radiograph show a root canal treatment and periapical lesion.
+ROCOv2_2023_train_058917,"Lateral view of preoperative radiograph, illustrating measured angles. CPA, calcaneal pitch angle; LMA, lateral Meary's angle; TDA, talar declination angle."
+ROCOv2_2023_train_033994,X--ray left leg shows 42 B1.2 leg fractures
+ROCOv2_2023_train_047354,Computed tomography scan showing abnormal visceral pleural thickening. This is an air-contrast chest computed tomography scan showing abnormal visceral pleural thickening (arrows) in the setting of lung entrapment from a resolving hemothorax.
+ROCOv2_2023_train_032239,CT image of a stomach tumor process.
+ROCOv2_2023_train_036729,Chest radiograph on day 1
+ROCOv2_2023_train_006531,"A trasverse plane ultrasound image of the subscapularis muscle. Before the trigger point injection, the lateral border of the scapula needs to be identified. C chest wall, L lateral border of the scapula. Tmj, Teres major; Tmi, Teres minor; SSC, subscapularis."
+ROCOv2_2023_train_042520,PET CT scan of chest showing increased uptake in nodules.
+ROCOv2_2023_train_059269,Chest X-ray with arrow pointing to a large right-sided pleural effusion
+ROCOv2_2023_train_050717,Radiograph showing failure of implant and therefore failure of the proximal femur nailing.
+ROCOv2_2023_train_046826,Gray-scale ultrasound image reveals a hypoechoic solid mass within the left testis.
+ROCOv2_2023_train_016260,Plain chest X-ray shows no pleural effusion or metastasis. Upward displacement of the diaphragm affecting air entry into the lower lobes of lungs (explains patient's tachypnea).
+ROCOv2_2023_train_034931,Sagittal short tau inversion recovery MRI of the dorsal spine posttreatment.The MRI demonstrates normal morphology and resolution of the signal intensity noted earlier.MRI: magnetic resonance imaging
+ROCOv2_2023_train_000672,Initial CTAP showing LLL mass-like consolidation measuring 4.1 x 3 cm. CTAP: computed tomography of the abdomen and pelvis; LLL: left lower lung; cm: centimeter
+ROCOv2_2023_train_045850,B-mode ultrasound measuring maximum scar thickness. Scar and subcutaneous tissue are visible in the image as a superficially limited hypoechoic layer and from the deep hyperechoic bands.
+ROCOv2_2023_train_001490,Barium swallow examination showing evidence of multiple webs in the upper esophagus (arrows).
+ROCOv2_2023_train_047686,CT lung scan showing crazy paving pattern
+ROCOv2_2023_train_027401,Contrast-enhanced CT of the chest of a 51-year-old male with invasive thymoma and pleural metastases is shown above. Thymoma appears as a lobulated mediastinal mass (asterisks) encircling the superior vena cava. The thickening seen around the lateral and medical aspect of the right hemithorax (arrows) represents pleural metastases.
+ROCOv2_2023_train_058988,CT chest demonstrates right lung base nodule.
+ROCOv2_2023_train_031574,"The graph shows the measurement of the sagittal spinopelvic alignments. PI pelvic incidence, LL lumbar lordosis (L1–S1), PLL proximal lumbar lordosis (L1–L4 superior endplate), DLL distal lumbar lordosis (L4 superior endplate to S1), TLK thoracolumbar kyphosis (T10–L2), TK thoracic kyphosis (T5–T12)."
+ROCOv2_2023_train_032980,Septic emboli. A 29-year-old male and IV drug abuser was admitted with sepsis and dyspnea. There was a peripheral cavitary lesion in the right lung (black arrow) and a wedge-shaped lesion in the left lung (yellow arrow).
+ROCOv2_2023_train_031593,Axial section of the patient's CT scan showing nodules in the lower left lung (red arrows)CT: computed tomography
+ROCOv2_2023_train_040322,- Long-term post-treatment (T3) panoramic radiograph.
+ROCOv2_2023_train_052839,Plain film of chest. Chest radiography showed right fifth to eighth rib fractures and was suspicious for free air under our patient’s bilateral hemi-diaphragm (red arrows).
+ROCOv2_2023_train_005440,CT of the facial mass (from the same patient in figure 1) in axial sections after PDC injection in the soft-tissue window showing a presptal hypodense orbital image with peripheral contrast check (arrow): left prespetal abscess (Chandler’s Stage I) complicating frontal homolateral sinusitis
+ROCOv2_2023_train_045791,"MRI scan at presentation. Coronal T2 FLAIR image shows a right cerebellopontine angle hyperintense extra-axial dural-based lesion (red arrow).MRI, magnetic resonance imaging; FLAIR, fluid attenuated inversion recovery"
+ROCOv2_2023_train_028562,"Case no 2, radiograph showing union at 29 months."
+ROCOv2_2023_train_042174,Fracture of right proximal femur occurred without trauma.
+ROCOv2_2023_train_009026,A 28 × 60 Ankura aortic extender was deployed to bridge the proximal remaining aortic neck with the migrated Talent body.
+ROCOv2_2023_train_034082,Preoperative computed tomography scan of patient 11. Carcinoid infiltrating right lung and Vena cava superior
+ROCOv2_2023_train_058599,Computerized tomography chest showing pleural effusion in the right lung and pulmonary nodules in the left lung.
+ROCOv2_2023_train_036805,Previously made lumbar spinal magnetic resonance imaging shows the right gluteal mass.
+ROCOv2_2023_train_040186,postoperative panoramic radiographs after tooth extraction and bone augmentation.
+ROCOv2_2023_train_039703,Retrocerebellar cystic ectasia in axial T2 weighted section.
+ROCOv2_2023_train_059055,Transvaginal US scan showing the presence [*] within the cervical canal of nonhomogeneous vascularized residual ablation material. The solid and dotted lines represent the two portion of the cervical length
+ROCOv2_2023_train_029622,CTPA image of left pulmonary artery showing saddle embolus (black arrows).
+ROCOv2_2023_train_002830,"Case number: 3. Ultrasound examination of urinary bladder, performed on 28 September 2011, revealed a 1.2 cm diameter calculus lying to the right side of the balloon of Foley catheter in the bladder. This patient developed autonomic dysreflexia during lithotripsy, which was performed under sedation."
+ROCOv2_2023_train_003015,"Example of segmentation of a computed tomography image with boundary lines between external air and subcutaneous fat (1), between subcutaneous fat and abdominal wall/paraspinal muscles (2), and between abdominal wall/paraspinal muscles and visceral fat (3). The box around the paraspinal muscles allows the algorithm to separately calculate the paraspinal muscle area (if this information is desired)"
+ROCOv2_2023_train_011972,"52-Year-old female with multi-nodular goiter and 6 mm PTC in upper pole of right lobe of gland (long arrow). The PTC nodule is hypoechoic with irregular margins and microcalcification. An adjacent similar sized hypoechoic benign nodule with well-defined margins (short arrow) is seen in the posterior aspect of upper pole of right lobe of thyroid gland. It is important to meticulously document the location of the PTC (in this instance as right, upper, anterior) to prevent mistaking an adjacent benign nodule for the PTC at follow-up"
+ROCOv2_2023_train_020241,Digital subtraction angiography of the right posterior tibial artery at ankle’s level with a filling defect of approximately 8 × 3 mm
+ROCOv2_2023_train_021319,"Non-enhanced axial CT scan showing a lobulated hypoattenuating mass in the right nasal cavity and nasal septum, containing ring and arc calcifications (arrows). The bony margins of the medial orbital wall were thin and expanded, without definite evidence of bony destruction."
+ROCOv2_2023_train_046092,CT showing migrated PEC tube (axial plane).
+ROCOv2_2023_train_054295,Chest X-ray showing improved COVID-19 infection and no pulmonary edema with cardiomegaly on 12th day of admission
+ROCOv2_2023_train_012720,Marginal bone level measurement. A reference line is drawn at the implant-abutment junction from where the mesial and distal marginal bone levels are measured.
+ROCOv2_2023_train_051485,Ventrodorsal radiograph of barium sulfate enema; note that the contrast media and Foley catheter trapped (arrows) in the diverticulum. Rectal diverticulum is outlined by barium sulfate contrast media in the left side
+ROCOv2_2023_train_034032,Post-venoplasty and -stenting of stenosis with clear lung fields and pleural spaces. Significant resolution of the subcutaneous oedema of breast and arm.
+ROCOv2_2023_train_006905,Pancreatic fluid collection at the tail of the pancreas with gas bubbles seen with in it suggestive of infected pancreatic fluid collection.
+ROCOv2_2023_train_011428,"Radiograph image (X-ray) of the lumbosacral region. The image was taken in the ventrodorsal projection using the Atomscope radiograph machine (model 100pr type B, Auckland, New Zealand), with a collimator-to-film distance of 70 cm, exposure of 80 ms, and penetration power of 80 kV."
+ROCOv2_2023_train_036339,Thoracic X-ray on admission.
+ROCOv2_2023_train_058518,CT urogram showing a segmental infract in the left kidney (white arrow).
+ROCOv2_2023_train_040342,AP view of skull showing minor degree of falx cerebri calcification
+ROCOv2_2023_train_047436,Radiograph of a pectoral flipper of a 58 year old male dolphin.Note the osteoarthritic changes and calcification of the cartilages demonstrating the degenerative changes observed in geriatric dolphins.
+ROCOv2_2023_train_048345,Chest x-ray showing eventration of diaphragm and bowel gases in the right thoracic region.
+ROCOv2_2023_train_051461,CT chest with contrast imaging of right hilar mass.
+ROCOv2_2023_train_046698,"Measurement of filling ratio and alpha angle [27]. Anteroposterior radiograph of a left shoulder. The alpha angle (α) was measured between the shaft axis (blue line) and the stem axis (red line). Filling ration at the level of the metaphysis (FRmet) is a line perpendicular to the shaft axis, intersecting at the distal–medial border of the humeral platform. Filling ratio at the level of the diaphysis (FRdia) is a line perpendicular to the shaft axis, intersecting at the distal third of the prosthesis. The filling ratio is the quotient of the orange and green lines at the metaphysis (FRmet) and at the diaphysis (FRdia). Distances were calibrated based on the size of the glenosphere."
+ROCOv2_2023_train_017385,Knee effusion (arrows) in suprapatellar short axis view.
+ROCOv2_2023_train_039177,bilateral multilocular cystic masses in a patient with Ovarian hyperstimulation syndrome in a spontaneous pregnancy with invasive mole
+ROCOv2_2023_train_052334,"Axial cut of an intravenous contrast-enhanced computed tomography scan of the chest, demonstrating a tortuous hypertrophied bronchial artery (3 arrows) supplying a large subcarinal metastasis not visualized in this image. The vessel approximates the posterior membrane of the proximal right mainstem bronchus (solid arrow) at the location of the bleeding lesion identified at bronchoscopy."
+ROCOv2_2023_train_048267,Lateral X-ray of patient's right wrist demonstrating moderate volar soft tissue swelling
+ROCOv2_2023_train_020590,X-ray after the contusion of the left hand 7 years ago with visible subcutaneous air collections emphysema of the left arm.
+ROCOv2_2023_train_047293,CT chest showing a consolidation involving the left lingular segment (blue arrow) along with peri-bronchial consolidation in the anterior segment of the right upper lobe (red arrow). CT - computed tomography
+ROCOv2_2023_train_015184,Computed angiography showing a large-sized renal vein aneurysm (white arrow) arising from the left renal vein (black arrow).
+ROCOv2_2023_train_017257,Follow-up anteroposterior radiographs with solid fusion with implant in situ.
+ROCOv2_2023_train_032844,Axial CT Scan of Left Lower ExtremityArrowhead demonstrates discrete intramuscular fluid collection with the largest focus centered in the vastus lateralis.
+ROCOv2_2023_train_025197,"The left ventricle in case 1. Arrow marks showing hyperechogenic scarred papillary muscles. LA: Left Ventricle, LV: Left Ventricle, RA: Right Atrium, RV: Right Ventricle"
+ROCOv2_2023_train_023236,Anteroposterior fluoroscopic view shows intradiscal contrast injection and contrast flow in epidural space and along the right L4 nerve root.
+ROCOv2_2023_train_019778,Transesophageal echocardiogram revealing vegetation on the mitral valve leaflets.
+ROCOv2_2023_train_012825,Case 2 post-operative dislocation of left hip hemiarthroplasty
+ROCOv2_2023_train_052401,Three-month postoperative image showed shrinkage of cystic cavity and a space maintainer
+ROCOv2_2023_train_023741,"Chest roentgenogram upon admission. Frontal chest roentgenogram revealed extensive bilateral diffuse pulmonary infiltrations, left greater than right."
+ROCOv2_2023_train_006409,MR arthrogram in the T1-weighted image shows a labral tear at the anterosuperior portion.
+ROCOv2_2023_train_016848,Femoral venous angiogram demonstrating azygos continuation in an infant with visceral heterotaxy and recurrent SVT.
+ROCOv2_2023_train_027452,Amplatzer Cardiac Plug® LAA-occluder prior to release showing optimal lobe (white arrows) and disc (black arrows) position.
+ROCOv2_2023_train_026535,Angiography: left kidney. Tumor mass in the middle segment with mostly extrarenal location.
+ROCOv2_2023_train_036040,Non-contrast computed tomography of the abdomen. Irregular-shaped cavities containing abundant gas in the right lobe of the liver.
+ROCOv2_2023_train_007183,Frontal view panel showing liver metastasis and thickening of deuodenum and jejunum.
+ROCOv2_2023_train_022801,"Axial section of abdominal CT scan. There is a significant quantity of free air and fluid within the abdomen, which can be seen adjacent to the liver, indicative of bowel perforation. Free air can also be seen in the portal venous system of the liver."
+ROCOv2_2023_train_030428,Plain radiograph of a pelvis a.p. after type 1c resection including partial resection of the fifth lumbar vertebrae and reconstruction with a polyaxial screw-rod-system augmented by a bone cement sheath
+ROCOv2_2023_train_058045,Fluoroscopic view of a guide wire.
+ROCOv2_2023_train_001384,Coronal view computed tomography angiogram (CTA) image shows thrombus in right common carotid artery extending into carotid bifurcation
+ROCOv2_2023_train_033109,"Positron emission tomography scan. Numerous hot uptakes are seen at left supraclavicular area, retroperitoneum, pelvis, and pleura, thus suggesting metastases."
+ROCOv2_2023_train_033802,Supine abdominal anteroposterior radiograph shows a single crown (white arrow) with a post (black arrow) in the gastric antrum.
+ROCOv2_2023_train_022950,"Computed tomography of the central portions of both lungs in the patient, showing diffuse ground glass opacity and interlobular septal thickening."
+ROCOv2_2023_train_047724,Axial CT scan demonstrating the diameter of the diaphragmatic hernia.
+ROCOv2_2023_train_056970,Coronal CT urography image showing no evidence of filling defect in the left upper ureter.
+ROCOv2_2023_train_033555,"Egg shell sign (arrow), defined as a distance greater than 6mm from the aortic calcification to the lateral soft tissue margin of the aorta, with a widened mediastinum indicating aortic dissection."
+ROCOv2_2023_train_011795,MRI brain axial T2 FLAIR sequence showing hyperintensities in bilateral basal ganglia.MRI: Magnetic resonance imaging; FLAIR: Fluid attenuated inversion recovery.
+ROCOv2_2023_train_003697,Chest radiograph demonstrating free intra-abdominal air below the diaphragm. (Black arrows demonstrate the air below the diaphragm).
+ROCOv2_2023_train_024660,AP plain X-ray of the thoracic spine. A heterogeneous bony mass is seen in the lower thoracic spine.
+ROCOv2_2023_train_019446,"CT cystography, axial plane (retrograde contrast medium instillation). Contrast medium accumulated within the bladder without leakage"
+ROCOv2_2023_train_017568,Panoramic radiograph shows the impacted tooth in the right mandibular condylar head.
+ROCOv2_2023_train_013791,"Bone scan showing symmetric, diffuse cortical uptake around the diaphysis in both tibias and femurs. The uptake of the right ribs is attributed to tumor invasion."
+ROCOv2_2023_train_009934,X-ray eight weeks after surgery shows reduced proximal femur with a pin
+ROCOv2_2023_train_039513,ERCP image showing contrast leak at the pancreatic duct injury site.
+ROCOv2_2023_train_049642,"(A) Post stent graft deployment. Good vessel wall reconstruction noticed with no extravasation of contrast at the iatrogenic injury site. (B) Good flow into the intracranial VA with filling of the basilar artery and its branches.VA, vertebral artery"
+ROCOv2_2023_train_030251,Plain radiograph showing osteolytic changes at the medial side of the left iliac bone.
+ROCOv2_2023_train_044397,"Nineteen months after the caesarean section. Saline infusion sonohysterography shows that despite the presence of a 4 mm defect “isthmocele,” myometrium continuity was maintained."
+ROCOv2_2023_train_044774,A chest X-ray obtained on postnatal day 11. Diffuse pulmonary interstitial emphysema with growing pseudocystic changes in the right lung field can be seen on this X-ray.
+ROCOv2_2023_train_030388,Ultrasound of thyroid. Heterogeneous thyroid echogenicity with increased parenchymal vascularity.
+ROCOv2_2023_train_019303,MRI image of patient 2 before operation.
+ROCOv2_2023_train_026101,"female, 52 years, axial T2-weighted MRI shows lymphadenopathy (arrow), and portosystemic collaterals are shown as areas without signal intensity."
+ROCOv2_2023_train_016125,"Epidural positioning. A soft guidewire is passed into the epidural space under fluoroscopy. If no resistance is met, this confirms appropriate epidural space positioning."
+ROCOv2_2023_train_055002,Chest computed tomography (CT) scan revealing an ill-defined mass in the upper lobe of the right lung with ipsilateral mediastinal lymph node swelling.
+ROCOv2_2023_train_023737,Coronal 3-D fast spoiled gradient echo (FSPGR) magnetic resonance (MR) image. No significant findings are present.
+ROCOv2_2023_train_013543,Lateral X-ray of the knee shows a linear bony fragment at the upper pole of the patella.
+ROCOv2_2023_train_038523,CT scan with unspecific inflammatory changes.
+ROCOv2_2023_train_013608,CT scan—large left-sided tension hemothorax with the mediastinal shift.
+ROCOv2_2023_train_008099,Coronal MRI of the lesion.
+ROCOv2_2023_train_017930,"CECT of the abdomen done three months after that in Figure 4 showing a focal nodular area of enhancement (arrow) within the mesenteric mass, which is suggestive of disease progression. The patient died four months later."
+ROCOv2_2023_train_023368,"A 65-year-old woman with a pulmonary nodule in the left upper lobe diagnosed by CT-guided thoracic biopsy. Lesion depth was measured from the point of pleural puncture to the nearest edge of the lung lesion along the needle path (distance a to b), which was 3.6 cm. The pathologic result was primary adenocarcinoma."
+ROCOv2_2023_train_015617,Procedure as CEVL components in a case of grade IV reflux in an infant girl. Voiding cystourethrogram (VCUG) showing Grade IV reflux in an 18 month old girl with recurrent febrile urine infection which breaks through prophylactic antiseptic administration. There is a family history or reflux. The family chose to repair reflux by endoscopic injection therapy. The CEVL method was used as is shown.
+ROCOv2_2023_train_040199,CT abdomen/pelvis axial view: the arrow indicating herniated bladder diverticulum
+ROCOv2_2023_train_035254,Postoperative plain lateral ankle radiograph showing solid union at the subtalar joint arthrodesis site using one 7.3mm lag screw.
+ROCOv2_2023_train_008046,Right atrial thrombosis (*) is depicted in transesophageal echocardiography (upper esophageal view).
+ROCOv2_2023_train_014579,"CT scan showing marked reduction of the ascites, omental and peritoneal lesions."
+ROCOv2_2023_train_003876,Magnetic resonance imaging shows an abnormality of the right petrous bone and hypoglossal nerve.
+ROCOv2_2023_train_018940,Cigarette lighter on abdominal X-ray.
+ROCOv2_2023_train_053097,Transmission electron microscope (TEM) image of a single graphene nanoplatelet (GNP). Scale marker is 200 nm.
+ROCOv2_2023_train_050889,Contrast-enhanced CT of the abdomen on hospital day 7 showing resolution of the ileocecal mass.
+ROCOv2_2023_train_028316,Patient 1. CT on second postop day. Lack of perfusion (arrow) of a distal segment of the pancreatic body.
+ROCOv2_2023_train_057728,‘Sigmoid’ wire shape on angiography suggests subintimal wire passage.
+ROCOv2_2023_train_059683,Determination of the K-line and Cobb angle. The K-line is a virtual line that connects the midpoints of the anteroposterior diameter of the spinal canal at C2 and C7 on lateral cervical radiographs. The C2–7 angle was measured from the inferior C2 endplate and the superior C 7 endplate.
+ROCOv2_2023_train_046690,"The whole extrahepatic bile duct seen under transabdominal ultrasound after normal saline retention enema. The whole compensatory dilated extrahepatic bile duct (indicated by BD and the arrows) is visible behind the transverse colon (indicated by C). Indicated by A and the arrows is the upper bound of the overlapping between the extrahepatic bile duct and transverse colon, and indicated by B and the arrows is the lower bound of the overlapping. This patient was checked after cholecystectomy, and no calculus or cancer was found, which is not included in the cases studied in this article. It is just taken as an example to describe the effect of visualizing the extrahepatic bile duct after the enema."
+ROCOv2_2023_train_023820,CT angiogram of the chest showing saddle embolus in pulmonary arteries (marked with blue arrow). CT = computed tomography.
+ROCOv2_2023_train_041601,Measurement of aortic annulus diameters on TTE
+ROCOv2_2023_train_012959,Computed tomography scan with contrast showing findings of hepatic portal venous gas represented by tubular areas of decreased attenuation.
+ROCOv2_2023_train_007480,Axial T1 with Gadolinium MRI showing left temporal lesion.
+ROCOv2_2023_train_043295,Magnetic Resonance Imaging of brain (T2 sequence) showing multiple cysts with scolex contained therein
+ROCOv2_2023_train_022613,Sagittal reconstructed CT of the neck showing ossified intradural tumor posteriorly in the spinal canal from C2 to upper C5 level. Extensive intradural spread is a very rare finding in cervical osteosarcoma
+ROCOv2_2023_train_025281,Sagittal T2-weighted magnetic resonance image showing high signal intensity at L3-L4 intervertebral disc space (arrow).
+ROCOv2_2023_train_008751, T1 MRI with early phase contrast. Fifteen weeks post-RE.
+ROCOv2_2023_train_004221,CT scan of the lung showing cryptogenic complex organizing pneumonia (arrow).
+ROCOv2_2023_train_051181,Bronchial artery angiography showing the common trunk of bronchial arteries. Bilateral fine vessels and abnormal blush coinciding with the location of metastatic nodule
+ROCOv2_2023_train_025622,Axial bone-window computed tomography scan performed one day after first operation. The mass of bone chips and fibrin glue can be well identified.
+ROCOv2_2023_train_013106,X-ray picture of the left shoulder showing an anteroinferior dislocation
+ROCOv2_2023_train_006447,CT of the abdomen with contrast. The study reveals diffuse metastatic disease found throughout the liver and a heterogeneous mass with areas of necrosis at the distal body and tail of the pancreas. These findings are consistent with a metastatic pancreatic carcinoma.
+ROCOv2_2023_train_012612,Abdominal computed tomography revealed thick-walled multilocular cystic lesions at the bilateral ovaries (white arrowheads)
+ROCOv2_2023_train_040391,"Lung ultrasound image illustrating lung consolidation, highlighted by lung (L) hepatisation (""appearing liver like"")."
+ROCOv2_2023_train_058067,Coronal CT of bilateral posterior lateral oblique fusion
+ROCOv2_2023_train_003692,Right ventricular angiography 2008: Description: normal anatomic pulmonary artery.
+ROCOv2_2023_train_021841,VCUG post void film showing complete emptying of bladder
+ROCOv2_2023_train_024157,Posttreatment magnetic resonance imaging of our patient with endometriosis. MRI after eight years of treatment. The right ovary shows a mass with a maximum diameter of 114 mm (arrow). The solid part of the mass exhibits a low-intensity signal.
+ROCOv2_2023_train_037679,Sagittal view of abdominal MRI. Tumor (arrow) extends from the superior pole of the right kidney to the right atrium.
+ROCOv2_2023_train_051916,Normal pleural line (red arrow) and A-line artefacts (white arrows).
+ROCOv2_2023_train_015140,Following endovascular coil embolisation. The angiogram shows no filling of the pseudoaneurysm.
+ROCOv2_2023_train_028763,Postembolisation celiac angiography showing successful coiling of both aneurysms.
+ROCOv2_2023_train_025127,"Computer Tomography scan. A computer tomography scan showed a large submucosal mass in the neck, 8-9 cm in greatest diameter, extending to the muscular sites."
+ROCOv2_2023_train_032080,"2D transvaginal longitudinal ultrasound image in a symptomatic patient, depicting the uterus with sonographic signs typical of adenomyosis: asymmetrical myometrial thickening (blue arrows), linear striations (blue plus sign), myometrial cysts (yellow arrows), hyperechoic islands (yellow plus sign), and an S-shaped endometrium (green arrow)."
+ROCOv2_2023_train_032278,Digitally reconstructed radiographs demonstrating: mediastinal involved field RT (IFRT).
+ROCOv2_2023_train_045616,CT scan – axial view – the periappendiceal abscess was approximately 9.0 x 4.8 cm in size
+ROCOv2_2023_train_033120,Preoperative periapical X-ray.
+ROCOv2_2023_train_047879,Large right cardiac mass (arrow) on CT angiography.
+ROCOv2_2023_train_043485,Shortened metacarpals (except the 2nd) of the left hand.
+ROCOv2_2023_train_012492,Preoperation KUB.
+ROCOv2_2023_train_004005,Computerized abdominal tomography shows a multilobed heterogeneous mass lesion.
+ROCOv2_2023_train_013065,"The lesion process extending to the right posterior hemi-arch of the ninth (TH9), responsible for an important spinal cord compression at this level."
+ROCOv2_2023_train_025402,Abdominal radiograph demonstrates gastrostomy tube and jejunostomy tube in the left upper quadrant of the abdomen. Multiple small round lucencies are seen in the wall of loops of small bowel in the midabdomen (arrows).
+ROCOv2_2023_train_011980,Preoperative panoramic radiograph.
+ROCOv2_2023_train_053880,Preoperative orthopantomography.
+ROCOv2_2023_train_057344,Same patient as Figure 3.Four lymph nodes (arrow heads) were detected with kVp image.
+ROCOv2_2023_train_008277,Case  2. Coronal HRCT reformatted image shows a right pneumothorax and the presence of fibrotic pulmonary infiltrates in both apical regions (arrowheads).
+ROCOv2_2023_train_004867,Embolization done at the site of blush
+ROCOv2_2023_train_046208,Brain computed tomography scan after thoracentesis showing pneumocephalus.
+ROCOv2_2023_train_030361,A T2-weighted MRI with reactive edema surrounding an os trigonum
+ROCOv2_2023_train_054182,Comparison of the Hounsfield unit values between a region of oxygen gas production in the target tumor in the ipsilateral breast and the normal mammary gland tissue in the contralateral breast.
+ROCOv2_2023_train_016856,A chest X-ray on admission showed an enlarged superior mediastinum (white arrow) and right diaphragmatic elevation (black arrow).
+ROCOv2_2023_train_056783,MRCP slice showing an air-fluid filled cyst (arrowed) posterior to the head of the pancreas.
+ROCOv2_2023_train_043484,Echocardiograph demonstrating a thrombus-like echo in the left atrium (white arrow)
+ROCOv2_2023_train_018057,Axial computed tomography image at same level as Figure1performed 4 years after embolization shows metallic coils and obliteration of pulmonary arteriovenous malformation (arrow).
+ROCOv2_2023_train_022890,Endoscopic retrograde cholangiopancreatography shows that stenosis of the hilar bile duct was delineated in immunoglobulin G4-related sclerosing cholangitis patients.
+ROCOv2_2023_train_013228,Long axis injection technique. The entry point is between the inferior margin of the sacroiliac joint and the lateral margin of the S3 or S4 dorsal foramen. The needle trajectory (white line) advances to the mid-portion of the S1 body.
+ROCOv2_2023_train_041783,Fourty years old female patient with the alveolar densities and ground glass opacities (alveolar hemorrhage) were seen in computerized tomography (CT) scanning of the chest
+ROCOv2_2023_train_050670,Axial contrast‐enhanced CT images demonstrated thickening of the bowel wall with submucosal edema and all layers of the bowel delineated. (Yellow arrows).
+ROCOv2_2023_train_043971,Computed tomography of the abdomen reveals irregular thickening of the gastric wall (arrow).
+ROCOv2_2023_train_030531,Computed tomography (CT) scan showing right portal vein thrombosis.
+ROCOv2_2023_train_024600,Non-contrast-enhanced CT of the abdomen and pelvis. This study was acquired the day prior to acute presentation when the patient was admitted for infarction. The right kidney is normal without evidence of hydronephrosis or nephrolithiasis. The left kidney is normal without evidence of hydronephrosis or nephrolithiasis. No ureterolithiasis is identified.
+ROCOv2_2023_train_052278,Case 2- improvement of metaphyseal irregularity and widening on wrist X-ray
+ROCOv2_2023_train_022117,"Primary multidrug-resistant tuberculosis with 58-year-old woman.Lung window setting of thin section CT shows centrilobular nodules and tree-in-bud lesions in right lower lobe, lingula and left lower lobe. Lobar or segmental consolidation and ground glass opacity are seen in lingula."
+ROCOv2_2023_train_043141,First renal artery angiography showing the multiple thromboembolic materials in the left renal artery branches.
+ROCOv2_2023_train_055934,MRI spine showing hyperintensity in the thoracic cord till T12 level (1)
+ROCOv2_2023_train_000307,CT scan with sagittal view of inferior vena cava thrombus
+ROCOv2_2023_train_047528,Conventional aortography
+ROCOv2_2023_train_013051,OPG shows a mixed radiopaque–radiolucent lesion (arrows) involving the body and ramus of the mandible
+ROCOv2_2023_train_001776,Magnetic resonance image of the brain.
+ROCOv2_2023_train_017097,CT scan evidencing a foreign body in distal ileum with intraperitoneal free air.
+ROCOv2_2023_train_057189,Chest X-ray in the beginning (the third day) of disease Influenza A/H1N1
+ROCOv2_2023_train_042991,Stage 2: Orthodontic Treatment Final Panoramic Radiograph.
+ROCOv2_2023_train_033419,"Echocardiographic images reveal a normal left ventricular ejection fraction (63%), over-riding of the aorta and a wide ventricular septal defect (VSD) with bidirectional shunting. The right ventricular systolic pressure is observed to be 120 mm Hg with right ventricular hypertrophy. Severe pulmonary stenosis is observed with a peak gradient of 97 mm Hg. VSD=ventricular septal defect."
+ROCOv2_2023_train_050176,PA chest radiograph of the case 1: a large pleural effusion was seen in the right hemithorax.
+ROCOv2_2023_train_008799,Coronal computed tomography imaging. A 39 mm × 54 mm × 32 mm saccular aneurysm can be seen arising from the aortic isthmus.
+ROCOv2_2023_train_028469,"Inguinal sonography. Ultrasonography of the right inguinal area shows a cystic lesion without internal echoes. During the ultrasonography, no bowel or omental fat herniation was noted."
+ROCOv2_2023_train_031224,CT scan shows the intrauterine device in the right upper front part of the abdomen.
+ROCOv2_2023_train_008793,A missing nodule shown on chest CT (red arrow) two weeks after metastasectomy. (A surgical scar can be observed on the right lobe of the lung. CT = computed tomography)
+ROCOv2_2023_train_051262,The vertical thickness of the plantar fascia was measured at a standard reference point (white arrow) where the fascia crosses the anterior most aspect of the inferior border of the calcaneus
+ROCOv2_2023_train_049136,"Ultrasound vector flow imaging of laminar flow in the CB. In the upper part, a single image, corresponding to the systolic peak, was extracted from the 900 images of the cine loop acquired in 1.5 seconds. The system measures the speed and direction of all blood cells flowing through every point of the selected region of interest. The flow is represented by several color arrows. The color and size of the arrows allow visual quantification of flow velocity in the 2D space. The arrows are randomly distributed and flow according to their velocities. At a static image (a single frame), different concentrations of the arrows in the lumen could be seen. In the lower part, the flow velocity‐versus‐time curves were measured in 3 locations of the CB: internal carotid artery (ICA) curve (A) displayed in light blue, external carotid artery (ECA) curve (B) in red, and common carotid artery (CCA) curve (C) in yellow: the time interval (T1–T2) corresponding to the cardiac cycle duration (arrowheads) can be selected manually on the acquired row data video clip, thus allowing a correct subsequent WSS measurement. In the updated version, the HR and HR′ (as shown in the image) allow the selection of the corresponding cardiac cycle duration automatically or manually."
+ROCOv2_2023_train_024876,The followed-up chest radiograph showed complete clearing of pulmonary infiltration.
+ROCOv2_2023_train_024629,A gradual regression was observed in the CA aneurysm on echocardiography after 1 month
+ROCOv2_2023_train_056215,Meniscal extrusion is defined as the greatest distance (line No 3) from the most peripheral aspect of the meniscus (line No 2) to the border of the tibial plateau (line No 1).
+ROCOv2_2023_train_013347,Coronal contrast-enhanced CT image demonstrates the hypo-attenuating mass in the head of the pancreas (arrow).
+ROCOv2_2023_train_047401,CECT abdomen showing a 3.2 × 2.6 × 6 cm dense mass lesion in the left para aortic region near the interpolar region of left kidney enhancing moderately with contrast
+ROCOv2_2023_train_042339,Axial contrast-enhanced computed tomography image of the thorax demonstrates a 14cm enhancing breast mass (arrow). Branch vessels of the left internal mammary artery (arrowhead) passing anteriorly into the mass were noted.
+ROCOv2_2023_train_043714,Abdominal CT. Degree Ⅳ liver laceration. Black arrowhead – middle hepatic vein.
+ROCOv2_2023_train_057648,Soft tissue radiograph of the neck with deviation to the left and narrowing of upper airway.
+ROCOv2_2023_train_008761,Hospital day 63: MRI of the head showing trace cerebral (falx and tentorium) and posterior fossa subdural collections (empyema) (arrows). C: cephalhematoma.
+ROCOv2_2023_train_000555,"Sagittal view of the C-shaped mandibular second premolar representative of the furcation area most found in this study, located in the middle third of the root"
+ROCOv2_2023_train_059808,Abdominal computed tomography showing multiple hypodense liver masses
+ROCOv2_2023_train_018849,"Two-dimensional echocardiography showed extensive pericardial effusion. LV: left ventricle, LA: left atrium, RV: right ventricle, RA: right atrium, PE: pericardial effusion."
+ROCOv2_2023_train_039857,"FLAIR, sagittal plane. Hyperintense band in the ventral part of CC in a 58-year-old woman with uncontrolled hypertension."
+ROCOv2_2023_train_052492,"Abdominal computed tomography scan. It showed massive heterogeneous lesions in both adrenals, measuring about 5 cm in each greatest diameter."
+ROCOv2_2023_train_046617,Image showing ballooning of lesion in distal circumflex coronary artery.
+ROCOv2_2023_train_059988,"A region of interest (ROI, yellow marked area) is placed below the capsular artifact, which is visualized in orange color. The measured attenuation coefficient is 0.58 dB/cm/MHz, indicating the absence of steatosis."
+ROCOv2_2023_train_030948,Chest x-ray showing the tip of the PICC positioned in the subclavian vein.
+ROCOv2_2023_train_038594,Echocardiogram in follow up demonstrating bi atrial enlargement
+ROCOv2_2023_train_030755,Three-month postoperative X-ray. The fibular bone graft was well inserted into both slots of the tibia and was internally fixated with plates and screws.
+ROCOv2_2023_train_047355,"CT scan showing inverted vessels, front view"
+ROCOv2_2023_train_001065,Basilar artery length (part one)
+ROCOv2_2023_train_047185,Coronary angiogram showing apical ballooning.
+ROCOv2_2023_train_048677,Ideal tract length (ITL) with the presence of ribs in the access angle measured on axial CT images
+ROCOv2_2023_train_021609,A hypoechoic area measuring 18 × 31 × 24 mm with partially calcified areas and a hyperechoic margin was observed in the C/D region of the left breast. The lesion had a Tsukuba elasticity score of 2 and internal blood flow and strongly suggested malignancy. A yellow arrowhead in the radiograph indicates the lesion.
+ROCOv2_2023_train_045676,A CT scan of the chest reveals the cavitary lesion with the air-fluid level in it and the distal oligemia and hyperlucency of the lung.
+ROCOv2_2023_train_008357,Axial CT slice at the level of C2-C3 soft tissue window setting setting. Extensive calcifications of the bilateral lingual and facial arteries are noted (arrows) as well as calcific plaques at bilateral carotid tree area (arrow heads).
+ROCOv2_2023_train_003139,"Axial non-contrast CT scan in supine position. A spiculated bladders stone, or ‘Jackstone’, is seen posteriorly in the bladder."
+ROCOv2_2023_train_018808,Fig. 1 Pre-operative computed tomography angiogram.
+ROCOv2_2023_train_039696,Frontal radiograph of the left femur demonstrates a large lytic lesion of the distal diaphysis with wide zone of transition and aggressive-appearing periosteal reaction at the medial margin.
+ROCOv2_2023_train_058004,"Omasum during contraction. Ultrasonogram of the omasum and liver of a 3.5-year-old Saanen goat before contraction of the omasum. 1 Abdominal wall, 2 Liver, 3 Omasum, 4 Portal vein, Ds Dorsal, Vt Ventral."
+ROCOv2_2023_train_014511,Dacryoadenitis: coronal post gadolinium T1WI shows abnormal enhancement of the enlarged lacrimal gland (arrow)T1WI - T1-weighted image
+ROCOv2_2023_train_030950,Transthoracic echocardiogram showing left atrial mass obstructing left ventricular outlet tract and originating from left superior pulmonary vein.
+ROCOv2_2023_train_044863,X-ray chest showed boot shaped heart “coeur en sabot” (apex lifted up with concavity in the region of pulmonary artery and oligemic lung)
+ROCOv2_2023_train_009027,Abdominal computed tomography: a well-defined heterogeneously enhancing wall mass at the upper gastric body.
+ROCOv2_2023_train_019749,The measured chemical exchange saturation transfer (CEST) contrast value overlaid on an anatomic image.The tumor region showed higher CEST signal (as measured in integrated MTRasym over 1–5 ppm; indicated by red and yellow areas) than the surrounding tissues.
+ROCOv2_2023_train_006341,"Paucity of bowel gas in the upper abdomen, with suggestion of a large mass (distended stomach) displacing bowel loops inferiorly)."
+ROCOv2_2023_train_013168,"CT brain without contrast: arrow showing a mixed-density mass measuring 2.7 x 2.6 cm, which is seen in the medial aspect of the left middle cranial fossa adjacent to the left temporal lobe suggesting an intracranial neoplasm"
+ROCOv2_2023_train_021461,Surgical view of an opened bladder demonstrating a left-sided ureterocele.
+ROCOv2_2023_train_023104,"An example of a step and shoot forward-planned IMRT breast treatment plan. Notice the very homogenous coverage of the breast by the 5000 cGy isodose line in red, just skimming at the edge of the pectoralis muscle, yet limiting volume of lung irradiated."
+ROCOv2_2023_train_003359,Positron emission tomography scan demonstrating esophageal mass located next to the heart
+ROCOv2_2023_train_020824,A case of RA-ILD in which the complication of nontuberculous mycobacterial pulmonary disease (Mycobacterium kansasii infection) developed. Chest computed tomography showed consolidation along with honeycombing.
+ROCOv2_2023_train_041019,Sagittal MRI of the left popliteal fossa showing two involved nodes anterior to the neurovascular bundle.
+ROCOv2_2023_train_041663,Magnetic resonance imaging of the lumbosacral spine revealing multilevel (L3-S1) degenerative lumbar spinal stenosis
+ROCOv2_2023_train_046158,Chest computed tomography: bilateral interstitial thickening and bronchiectasis in the right hemithorax.
+ROCOv2_2023_train_056187,"A 51-year-old man with a hepatic hemangioma in the right lobe. Transverse US shows increased liver echogenicity, suggestive of diffuse fatty infiltration, and an atypical echo-poor hemangioma. There is no discernable echogenic border."
+ROCOv2_2023_train_057204,Chest X-ray showed mild cardiomegaly
+ROCOv2_2023_train_048133,Abdominal CT (November 2018).CT of the abdomen showing a 13.5 cm right lower quadrant (RLQ) paracolic gutter fluid collection.
+ROCOv2_2023_train_001873,Follow-up radiograph of the abdomen shows tiny metallic densities in the region of the ureter and the pelvicalyceal system (arrows). Densities are also seen over the lower lumbar spine and the pelvis (arrowheads)
+ROCOv2_2023_train_004697,Axial contrast-enhanced computed tomography scan of thorax showing the right anterior mediastinal mass.
+ROCOv2_2023_train_019662,Magnetic resonance imaging showing multiple nodules in the liver
+ROCOv2_2023_train_045378,"Thoracic radiograph with esophageal contrast study in left lateral recumbency eight months after diagnosis. The esophagus is dilated and filled with barium contrast and there is a slight distension or diverticulum is located cranial to the heart. There is a striped pattern in the caudal esophagus, and the stomach is filled with contrast agent."
+ROCOv2_2023_train_002376,"Chest X-ray showing an endotracheal tube, an orogastric tube, a left-sided subclavian central venous catheter, a left-sided chest tube, and multiple superficial leads. There is additional shadow (arrow heads) that could not be accounted for."
+ROCOv2_2023_train_042823,Figure 3: Chest X-ray. Three-year follow-up
+ROCOv2_2023_train_005957,Chest US prior to thoracentesis demonstrating anechoic pleural fluid (B). A = collapsed lung parenchyma; C = liver.
+ROCOv2_2023_train_004101,Plain lateral neck radiograph showing a large air filled sac arising from posterior pharyngeal wall.
+ROCOv2_2023_train_005804,"Hazy opacification of the whole of the left hemithorax, suggestive of pleural effusion following thoracic surgery"
+ROCOv2_2023_train_030753,LAO view shows normal RCA. A long LAD is seen arising from the proximal RCA. Septals and diagonals are arising from the long LAD
+ROCOv2_2023_train_028158,"Pulvinar sign of variant Creutzfeldt-Jakob disease.Axial fluid-attenuated inversion recovery image demonstrates symmetrical hyperintensity of the posterior thalamic nuclei. Image courtesy of David Summers, Western General Hospital, Edinburgh, UK."
+ROCOv2_2023_train_016461,MPTA measurement using ImageJ software.
+ROCOv2_2023_train_017507,"Skull X-ray showing obtuse angled mandible, open anterior and posterior fontanelle and non pneumatised sinuses."
+ROCOv2_2023_train_058550,Chest X-ray: megaoesophagus behind trachea.
+ROCOv2_2023_train_007191,Axial CT scan after embolization and bilateral nephrectomy.
+ROCOv2_2023_train_032428,Markers showing TLD location in the pelvic cavity
+ROCOv2_2023_train_002133,Myelo-computed tomography showed irregular images in the dural sac wall from S1 level to the most caudal region of the dural sac.
+ROCOv2_2023_train_054148,"T2-weighted magnetic resonance image of a 31-year-old female patient with ulcerative colitis shows a large white matter lesion on the left side (arrow).L, left."
+ROCOv2_2023_train_051382,Precontrast imaging.
+ROCOv2_2023_train_041396,"Chest radiograph from a 45-year old patient who sustained a left posterior sternoclavicular joint dislocation after a fall on his left shoulder in a skiing accident. Note that the subtle signs of the incongruent anatomy of the left sternoclavicular joint, which is frequently missed on plain radiographs."
+ROCOv2_2023_train_005657,Absence of flow in proximal left subclavian artery with dual dye injection from catheters in aorta and left radial artery.
+ROCOv2_2023_train_005870,A 27-year old female with menopause for 37+3 weeks.Mediastinal window showed bilateral pleural effusion.
+ROCOv2_2023_train_023353,"A 16-year-old female patient, with unilateral deafness from birth. HRCT axial image shows high-grade stenotic bony cochlear nerve canal (dashed arrow) and the stenotic internal auditory canal (arrow). Cochlea (C) and vestibulum (V) appear normal"
+ROCOv2_2023_train_018532,T1 MRI image of a patient with cerebral infarction eight hours after the onset.
+ROCOv2_2023_train_012367,Anterior segment ultrasound showing anteriorly rotated ciliary processes
+ROCOv2_2023_train_049662,Distal cologram showing blind ending rectum with faecoloma
+ROCOv2_2023_train_044200,"39-year-old male patient who presented with an acute left M1 occlusion with a background history of a prior left MCA infarct. Axial fat-saturated T1W MRI: crescentic hyper intense signal at the posterior aspect of the origin of the left ICA consistent with haemorrhage within the known carotid web. ICA, internal carotid artery; MCA, middle cerebral artery; T1W, T 1 weighted."
+ROCOv2_2023_train_007949,"Lateral radiograph of the thoracolumbar spine of patient 4 shows platyspondyly, anterior beaking, and posterior scalloping of the vertebral bodies, as well as thoracolumbar kyphotic deformity."
+ROCOv2_2023_train_004121,Representative axial T2-weighted image of the spine at the level of T9 at five years of age shows a slit-like syrinx (gray arrow)
+ROCOv2_2023_train_008085,"Two-dimensional bicaval transoesophageal echocardiographic view with colour Doppler showing inferior vena cava flow being directed to the left atrium, and superior vena cava flow normally directed to right atrium. IVC, inferior vena cava; LA, left atrium; RA, right atrium; SVC, superior vena cava."
+ROCOv2_2023_train_010230,"Neck-enhanced CT revealed thickening of the right posterior pharyngeal wall, and an image of soft tissue density was present on the posterior pharyngeal wall with a size of approximately 1.0 × 1.5 cm. CT = computed tomography."
+ROCOv2_2023_train_025709,Small arrow showing the presence of air in an intrahepatic bile duct. Large arrow showing gastric dilatation.
+ROCOv2_2023_train_004336,Details of the gap between the printed bolus and the head phantom surface.
+ROCOv2_2023_train_025370,"Contrast-enhanced chest computed tomography revealed a solid lung tumor in the left lower lobe, and it invaded the inferior pulmonary vein to the left atrium."
+ROCOv2_2023_train_025881,Lateral cephalogram showing the soft-tissue profile.
+ROCOv2_2023_train_049898,"Example of muscle group cross‐sectional area measurements. Major thoracic muscle groups are manually traced to determine cross‐sectional area. Muscle groups outlined in this image: pectoralis major (pink), pectoralis minor (green), latissimus dorsi (yellow), serratus anterior (orange), paraspinal (blue), trapezius (red)."
+ROCOv2_2023_train_051086,Pelvic X-ray showing osteolytic lesions (arrows).
+ROCOv2_2023_train_057381,Mid-esophageal 4 chamber view with proper deployment of the Amplatzer closure device (white arrow).
+ROCOv2_2023_train_027991,"Chest X-ray showing normal lungs, with no consolidation or pleural effusion and normal cardiac silhouette."
+ROCOv2_2023_train_002068,Computed tomography (CT) on admission showing subarachnoid hemorrhage.
+ROCOv2_2023_train_015666,"MRI of a soft-tissue sarcoma of the thigh, reaching up to the pelvic bones."
+ROCOv2_2023_train_039769,Preoperatively there is fluid intensity in the tympanic cavity and mastoid air cells. Note the irregularity in the bone covering the sigmoid sinus.
+ROCOv2_2023_train_014975,CT scan showing diffuse homogenous enlargement of pancreatic parenchyma (large arrow) with regional nodal disease (small arrow)
+ROCOv2_2023_train_031039,Pre-operative contrast-enhanced retrograde cystography. The incarcerated urinary bladder into the scrotum is shown.
+ROCOv2_2023_train_015683,"Example of the manual delineation of the left (orange) and right (light blue) atrium with cardiac magnetic resonance imaging (cMRI). The LA includes the left atrial appendage, but excludes the pulmonary vein, while the RA includes the right atrial appendage, while excludes the superior and inferior vena cava. Ao, aorta; LA, left atrium; RA, right atrium"
+ROCOv2_2023_train_058792,Transthoracic echocardiogram apical four chamber view showing left ventricular apical ballooning during systole.
+ROCOv2_2023_train_015739,"Sourcil (Tönnis) angle. The right hip (green angle) represents normal Sourcil angle, whereas the left hip (red angle) represents increased Sourcil angle. Lateral translation of the femoral head is clearly visible in keeping with hip dysplasia"
+ROCOv2_2023_train_014322,The recurrence of thyrohyoid TGDC in 12-year-old girl in MR imaging.
+ROCOv2_2023_train_012875,"Small bowel perforation caused by capsule endoscope. Contrast-enhanced CT scan of the abdomen taken on admission showing loculated free air, fat stranding and a capsule endoscope near the terminal ileum  (white arrow)."
+ROCOv2_2023_train_010510,Chest radiograph showing blurred foreign body within the cardiac silhouette (arrow).
+ROCOv2_2023_train_017781,Ultrasound image showing gross hemoperitoneum with the empty uterine cavity
+ROCOv2_2023_train_002471,Transthoracic echocardiography showing the hydatid cyst in the interventricular septum.
+ROCOv2_2023_train_010639,Preoperative anteroposterior radiograph of the left hip shows the infected THA and the adjacent heterotopic ossification.
+ROCOv2_2023_train_033873,"Transverse US image showing the masseteric area, including the deep inferior tendon (DIT) within the muscle. The depths from the skin surface to the mandible (yellow dashed line) and from the mandible to the DIT (blue dashed line) at reference lines b, c and d were measured on the transverse US image. SMAS, superficial musculo-aponeurotic system."
+ROCOv2_2023_train_001971,Brain MRI without contrast revealed symmetric hyperintense T2 FLAIR signaling in the periventricular white matter and the splenium of the corpus callosum.
+ROCOv2_2023_train_038951,Chest roentgenogram revealing an elevated left hemidiaphragm and a shift of the lower mediastinum to right.
+ROCOv2_2023_train_045668,Diameter of the normal side.
+ROCOv2_2023_train_041683,Fluoroscopy image of EVAR procedure.
+ROCOv2_2023_train_001435,"Check X-rays 6 months after the surgery (Mr. Shane Guerin’s clinic, 3rd April 2015). Right hip hemiarthroplasty and left Exeter total hip arthroplasty in situ."
+ROCOv2_2023_train_029452,Large left pleural effusion with aeration of only the lung apex. Shift of the mediastinum seen to the right.
+ROCOv2_2023_train_037055,"Radiography – anteroposterior view of the feet two years after the symptoms onset. In addition to the narrowing and osteolysis of the fifth middle and distal phalanges, particularly at left, incidental degenerative diseases are observed in the metatarsal phalangeal joint of the right hallux."
+ROCOv2_2023_train_016527,Curved reformatted image of the contrast-enhanced computed tomography shows the full-length ectopic dilated ureter and the left side with proximal implantation on the left upper renal pole and distal implantation on the proximal third of the vagina.
+ROCOv2_2023_train_019421,PA chest radiography view showing a well-defined lesion (arrow) in the right lower zone of the lung with air fluid level.
+ROCOv2_2023_train_009424,"Image of X-ray fluoroscopy of the placement of the covered SEMS at the duodenal cancer. The arrows indicate the SEMS, placed in the third portion of the duodenum."
+ROCOv2_2023_train_018614,An axial contrast enhanced CT image depicting bilateral floor of mouth ranula.
+ROCOv2_2023_train_023748,"Repeat computed tomography scan of the chest after rifampin, isoniazid, pyrazinamide, and ethambutol therapy showing significant improvement in the size of the mass."
+ROCOv2_2023_train_053692,Plain radiograph of the left shoulder taken 4 months later. The radiograph demonstrates a large lytic lesion (arrow) over the medial aspect of the clavicle.
+ROCOv2_2023_train_012795,Critical shoulder angle measurement on the AP view. AP: anteroposterior
+ROCOv2_2023_train_025872,"Panoramic radiographic image, which presents permanent dentition with complete teeth number."
+ROCOv2_2023_train_003033,Final angiographic result demonstrating patency of the left coronary system.
+ROCOv2_2023_train_045757,"Axial reconstruction of a CT scan of a female patient with follicular bronchiolitis. Note the thin-walled cysts of various diameters throughout the lung parenchyma, especially along the peribronchovascular bundle."
+ROCOv2_2023_train_054733,The patient's abdominal X‐ray
+ROCOv2_2023_train_029033,CT thorax showing lower part of the aberrant venous drainage to inferior vena cava (shown as arrow)
+ROCOv2_2023_train_049499,CT scan image of the pulmonary parenchyma showing multiple bilaterally diffused opacities giving the picture of ‘bud in tree’.
+ROCOv2_2023_train_022579,Sagittal sonographic image of the gastric antrum. A = antrum; P = pancreas; L = liver; SMA = superior mesenteric artery; Ao = aorta
+ROCOv2_2023_train_023607,Barium esophagram showing the presence of Cervical-Esophageal Web.
+ROCOv2_2023_train_005878,Sacroiliac joints x-ray showing narrowing and irregularity of the left sacroiliac joint.
+ROCOv2_2023_train_044429,Angiography following selective catheterization of the medial segment branch of the right middle lobe pulmonary artery showing the pseudoaneurysm (arrow).
+ROCOv2_2023_train_019396,Transesophageal echocardiographic image of a large thrombus (arrow) on a WATCHMAN device several months after anticoagulation was discontinued.
+ROCOv2_2023_train_009525,"MRI Lumbosacral SpineMRI lumbosacral spine showing normal intervertebral disc spaces, vertebral bodies, and spinal cord."
+ROCOv2_2023_train_050606,"Case 2 chest X-ray on March 26, 2020"
+ROCOv2_2023_train_015296, Chest radiography (CXR) on hospital day five showed diffuse heterogeneous airspace opacifications.
+ROCOv2_2023_train_013249,"Ultrasonogram in a 7-month-old fattening buffalo calf imaged from the right 10th intercostal space (ICS). Right abdominal wall (a). Image shows liver (b) with hepatocholelithiasis, which revealed hyperechogenic masses or deposits scattered (c) within the hepatic tissue along with increased hepatic parenchymal echogenicity when compared with normal parenchymal echogenicity of the liver. R, right; Cr, cranial; Cd, caudal."
+ROCOv2_2023_train_009240,Abdominal ultrasonography detected a hydatid cyst (arrow) with a size of 17 × 12 × 20 cm (diameter) in the liver of the patient
+ROCOv2_2023_train_050960,The aneurysmatic changes are more obvious on the four-chamber view.
+ROCOv2_2023_train_049411,"Case 1, noninvasive reduction of the fractured tibia."
+ROCOv2_2023_train_058676,"Anteroposterior X-rays of the pelvis with both hips showing large, well-defined, expansile lytic lesion in the metaphysis of the proximal femur with a breach in the lateral cortex"
+ROCOv2_2023_train_049586,"Computed tomography of the chest showing scattered interstitial opacities suggestive of pneumonitis, some labeled with arrows."
+ROCOv2_2023_train_047385,Chest x-ray posteroanterior view showing patchy infiltrates in the right middle lobe
+ROCOv2_2023_train_030763,Cranial CT before radiotherapy.
+ROCOv2_2023_train_001543,Axial lung window CT image shows a large thin walled cyst (asterisk) with a single septation (arrow) in the left lower lobe that is proved to be a type I PPB.
+ROCOv2_2023_train_057615,Barium contrast enema: configuration of the unsuccessfully reduced intussusception in the right upper quadrant.
+ROCOv2_2023_train_002046,CTA showing the pulmonary emboli in the right upper lobe apical segmental and subsegmental branch of the right pulmonary artery (arrows)
+ROCOv2_2023_train_019901,NHL. Axial contrast-enhanced CT image demonstrates multiple low-attenuation nodules in the spleen.
+ROCOv2_2023_train_040759,Slow progression of the contrast medium in the distal tract of the left anterior descending coronary artery (arrow).
+ROCOv2_2023_train_002806,"MR image of the pelvis before treatment shows direct invasion of the cervical tumor into the right parametrium, bilateral hydronephrosis, and multiple uterine myomas. The solid arrows indicate the parametrium invasion, the uterine myomas, the tumor, and the uterine cavity. The dotted arrow indicates adenomyosis."
+ROCOv2_2023_train_035831,Rx standars lombosacré face: fracture tassement de L5
+ROCOv2_2023_train_037779,Left ventricle (LV) angiography showing right pulmonary artery (RPA) arising from aorta (AO). Arrows pointing to pruning of distal vasculature on right lung.
+ROCOv2_2023_train_002704,Cardiac catheterization which demonstrated blockage of the left anterior descending artery.
+ROCOv2_2023_train_050023,Lung consolidation. Community acquired pneumonia in an adult.
+ROCOv2_2023_train_028803,X-ray of the right hand: osteolysis of the first metacarpal and trapezoid bone (arrows).
+ROCOv2_2023_train_008788,Technique of length-measurement of the spinal fusion on lateral radiographs of the spine. The length of each screw and rod were added to obtain the total length of spinal fusion.
+ROCOv2_2023_train_035456,Ultrasound mass showed signs of early cholecystitis.
+ROCOv2_2023_train_022175,Large duodenal tumor with brisk contrast enhancement.
+ROCOv2_2023_train_012937,"Peripheral ground-glass pattern affecting both lower lobes, suggestive of viral pneumonia."
+ROCOv2_2023_train_004265,CT scan of the cervical spine revealing complete anterior sublaxation (C5 over C6 cervical vertebrae).
+ROCOv2_2023_train_041957,Coronal image of the chest demonstrates a small bore chest tube partially surrounded by air in the left pleural space (arrow). No remaining fluid is seen. Adjacent lung consolidation has decreased.
+ROCOv2_2023_train_051994,"Midesophageal 4 chamber view immediately after the cardiopulmonary resuscitation showing disseminated air bubbles in the left-side heart, including the aorta, left ventricle and atrium. Ao: aorta, LA: left ventricle; and LV: left ventricle."
+ROCOv2_2023_train_049536,"Measurement of percentage of bone graft for the acetabulum, calculated as the ratio of B to A."
+ROCOv2_2023_train_018694,"MRI T2W coronal view showing a large lytic lesion involving the right iliac bone with a large soft tissue component, with heterogeneous signal intensity with lobulated margins and hypointense capsule."
+ROCOv2_2023_train_046576,CT of the thorax demonstrating bilateral emphysematous bullous changes with pneumothorax
+ROCOv2_2023_train_048339,Pre-operative abdominal scan showing the sigmoid process.
+ROCOv2_2023_train_059596,Para-nasal sinus view.
+ROCOv2_2023_train_058262,Axial view of CT scan showing orbital sub-tissue swelling and sub-periosteal abscess on the upper lateral orbital wall (black arrow).
+ROCOv2_2023_train_024733,end-diastolic 4 chamber view of the left ventricle.
+ROCOv2_2023_train_028178,JAR associated with a lower third molar on reconstructed panoramic of CBCT images
+ROCOv2_2023_train_033585,Post-operative panoramic radiograph.
+ROCOv2_2023_train_026461,Post open reduction and internal fixation.
+ROCOv2_2023_train_027696,CT scan of the head demonstrates a large infarct in the area of the right middle cerebral artery. There is a suggestion of hemorrhage within the infarcted area (arrow).
+ROCOv2_2023_train_041998,"Biopsy proven UIP. MDT diagnosis: rheumatoid arthritis related UIP. Total disease extent at this level: 90 %. Ground glass opacification: 60 %, extent of reticulation 25 %, extent of honeycombing 15 %. Traction bronchiectasis scores in both patterns: 3. Consensed FF score: 3.5"
+ROCOv2_2023_train_027189,AP Pelvis X-ray showing displaced fractures of both acetabuli with intrapelvic protrusion of both femoral heads.
+ROCOv2_2023_train_003945,MRI coronal non-fat sat T1.No significant fatty atrophy of posterior thigh muscles.
+ROCOv2_2023_train_030407,Lung chronic inflammation. Patient #8. Lung chronic inflammation in the right upper lobe. (a) CT recognized the lung nodule as malignant (FP CT) and (b) PET/CT did not reveal increased FDG in relation to the size of the nodule (TP PET/CT).
+ROCOv2_2023_train_014605,AP-radiograph of a 16-year-old patient in the follow up after screw fixation of a scaphoid fracture showing bandlike subchondral osteoporosis in all carpal bones.
+ROCOv2_2023_train_001896,CT scan preoperative
+ROCOv2_2023_train_020668,"This shows the transverse probe placement. LD, latissimus dorsi; TM, teres major; Tm, teres minor; SSC, subscapularis; SA, serratous anterior; SC, lateral border of scapula; TV, thoracodorsal vessels."
+ROCOv2_2023_train_050707,"Pelvic X-ray upon arrival, in anteroposterior incidence. Description: Male subject on gurney. Right hip with minimal narrowing of the joint space. Left hip showing a left comminuted femur fracture in the upper ⅓ segment, with displaced bone fragments and minimum angulation."
+ROCOv2_2023_train_015919,Initial post traumatic anteroposterior X-ray of the femur. Hip dysplasia with severe arthritis is recognized. An oblique mid shaft fracture is revealed
+ROCOv2_2023_train_040824,"Joint between sixth and seventh cervicals vertebrae of Sauroposeidon.X-ray scout image of the C6/C7 intervertebral joint in Sauroposeidon OMNH 53062, in right lateral view. The silhouette of the condyle is traced in blue and the cotyle in red. The scale on the right is marked off in centimeters, although the numbers next to each mark are in millimeters."
+ROCOv2_2023_train_006891,Suprasternal echo window showed pseudoaneurysm of proximal descending aorta and aortic luminal narrowing in post- traumatic patient.
+ROCOv2_2023_train_032634,Computed tomography scan on admission showing right acute subdural hematoma and midline shift.
+ROCOv2_2023_train_054572,The barium oesophagogram showing a near to total stenosis caused by alimentary bolus.
+ROCOv2_2023_train_046049,"Transthoracic echocardiography in the apical 4-chamber view with contrast study, showing opacification of the left cardiac chambers (arrow heads) after agitated saline injection via the left brachial vein."
+ROCOv2_2023_train_044126,Plain x-ray of the right hand with arthritis mutilans.
+ROCOv2_2023_train_056633,CT follow up examination. It shows the patient free of the disease.
+ROCOv2_2023_train_014822,Ultrasound image of a 12-week fetus. The broken yellow line is the crown rump length (CRL) measurement.
+ROCOv2_2023_train_008341,CT neck showing prevertebral collection
+ROCOv2_2023_train_038726,The measurement of vertebral height ratio. The vertebral height (VH) is the distance between the midpoints of upper and lower endplates of the index vertebra on the lateral views. The VH ratio of the index vertebra was then calculated as the VH of the index vertebra (A) divided by the average of the VHs 1 level above (B1) and below the index vertebra (B2).
+ROCOv2_2023_train_042678,Abdominal CT images of patient 1 at diagnosis.
+ROCOv2_2023_train_043425,Abdominal computed tomography shows an enlarged liver and kidneys with multiple cysts in case 2.
+ROCOv2_2023_train_033011,Patient 2. Preoperative sonographic control with massive enlarged lymphatics.
+ROCOv2_2023_train_009262,"Image blurring/mis-triggering in cine a SSFP sequence: Respiratory motions, mis-triggering of the R-wave or irregular heartbeats induce a blurred aspect of the image (red arrows)."
+ROCOv2_2023_train_046004,Parasternal long-axis transthoracic view showing pericardial effusion (star) and thickened posterior mitral valve leaflet (arrow).
+ROCOv2_2023_train_002021,Abdominal computed tomography revealing a 15 mm metastatic lesion in the S2/3 segment of the liver (arrow)
+ROCOv2_2023_train_024836,"21-year-old man with paraspinal extraskeletal Ewing sarcoma family of tumors.Sagittal T2-weighted, fat-saturated magnetic resonance imaging scan shows hyperintense, dumbbell-shaped, extradural tumor left of S1-3. Tumor was connected to extraspinal component through neural foramen (arrowheads)."
+ROCOv2_2023_train_046011, Unenhanced cross section CT scan of the abdomen showing an ileocolonic fistula with aneurysmal dilation of the small bowel (green arrow).
+ROCOv2_2023_train_045172,"Ultrasound image of the esophagus cranial to the esophageal stricture. Esophageal diameter is 9,5 mm. Left in the image is dorsal. C: carotid artery. E: esophagus. T: trachea (probe frequency 10 MHz, depth 2,5 cm)."
+ROCOv2_2023_train_043174,Chest x-ray of the patient indicating COVID-19 pneumonia
+ROCOv2_2023_train_005478,The length of styloid process was measured in the upper limits at the right side (25 mm) while it was elongated at the left side (34 mm).
+ROCOv2_2023_train_028118,EUS demonstrated a mass in the CBD with adjacent lymphadenopathy and dilated CBD. LN = Lymph node.
+ROCOv2_2023_train_000559, CT scan angiogram image showing the soft tissue lesion (the white arrow) with the feeding blood vessels from the central mesenteric blood vessels (the yellow arrow).
+ROCOv2_2023_train_029895,CT chest showing extensive ground-glass opacities in both lung fields with progression of the traction bronchiectasis particularly in the right lung
+ROCOv2_2023_train_009695,Abdominal CT scan showing solid mass in pancreatic isthmus (purple ring).
+ROCOv2_2023_train_052211,The IVP showed the good renal function and improved drainage at 11.5 months after surgery. IVP = intravenous pyelography.
+ROCOv2_2023_train_054956,"Contrast‐enhanced CT‐scan showing multiple hypervascularized hepatic nodules, consistent with the diagnosis of LA."
+ROCOv2_2023_train_023180,Right renal mass and adrenal/nodal metastasis.
+ROCOv2_2023_train_014518,Fluoroscopic image revealing successful placement of biliary and duodenal metal stents in a patient with type I bilioduodenal stenosis.
+ROCOv2_2023_train_001548,Spinal angiography showing diffuse blush at the site of lesion.
+ROCOv2_2023_train_026235,"Thoracic CT ScanThis transverse chest computerized tomography (CT) scan shows rightward mediastinal shift, coronary calcifications and stents, the elevation of the left hemidiaphragm, herniation of gastric contents into the thoracic cavity (arrow denotes the abnormal presence of abdominal contents, indicated by air-fluid levels, in the left thoracic cavity) with compressive atelectasis of the left lower lung, and lack of mediastinal adenopathy."
+ROCOv2_2023_train_027724,"A 37-year-old woman with pulmonary TB with positive sputum MTB/RIF.Sputum acid-fast bacilli was negative, but sputum Xpert MTB/RIF was positive. Chest CT shows consolidation with multiple centrilobular nodules in the right upper lobe. Rapid TB medication was initiated and sputum culture also showed positive later."
+ROCOv2_2023_train_033160,CXR showing severe cardiomegaly with diffuse interstitial and airspace opacities with effusions suggesting congestive heart failure. The patient's left ventricular assist device can be appreciated.
+ROCOv2_2023_train_054580,"Patient MRI performed on March 17, 2021"
+ROCOv2_2023_train_031324,False lumen disappeared under DSA right after graft-stent was inserted into place.
+ROCOv2_2023_train_021765,"Standing neutral lateral lumbar radiograph obtained 17 months following the patient's L3–S1 laminectomy. The patient is now dealing with a Grade 1 anterolisthesis of L4 on L5, with a mild degree of retrolisthesis at each of the cranial levels depicted."
+ROCOv2_2023_train_046443,MRI right knee (Sagittal T2 Fat Suppression sequence): Large Knee Effusion with no abnormal bone marrow signal or fluid collection to suggest abscess.
+ROCOv2_2023_train_053295,Computed tomography of the head showing A: total opacification of the ethmoid sinus; B: swollen mucosa of the maxillary sinus; C: pre-orbital swelling.
+ROCOv2_2023_train_038511,Magnetic resonance imaging (MRI) of the patient's arm. T2-weighted sagittal MRI demonstrating diffuse homogenous signal intensity in the triceps and brachialis muscles.
+ROCOv2_2023_train_029511,"echocardiography apical 4 chamber view showing large pericardial effusion and collapse of the right atrium (RA), RV: right ventricle, LV: left ventricle and PF: pericardial fluid"
+ROCOv2_2023_train_059091,Transthoracic echo-parasternal short-axis view showing presence of continuous flow entering the pulmonary trunk.
+ROCOv2_2023_train_023150,Follow-up radiologic ultrasound showing presence of mild intrahepatic biliary ductal dilatation as well as a large cystic mass with internal echoes and debris confirmed as a choledochal cyst. The gallbladder with multiple gallbladder stones or polyps is also pictured above.
+ROCOv2_2023_train_049952,Transthoracic echocardiography (short-axis view) showing massive pericardial effusion (arrowheads).
+ROCOv2_2023_train_021857,X-ray depicting the endocardial pacemaker inserted through the right subclavian vein.
+ROCOv2_2023_train_023037,"Computed tomography imaging of the coronal reconstruction indicating the right renal mass (long arrow), the right adrenal metastatic mass (arrowhead) and the left adrenal metastatic mass (short arrow)."
+ROCOv2_2023_train_003972,"Renal Ultrasound, Lasix Renogram and Retrograde Pyelogram Patient is a 14-month-old infant born with prenatally detected hydronephrosis. Postnatal evaluation demonstrated mild left hydronephrosis. Serial US demonstrated progressive left hydronephrosis (b). Lasix Renogram demonstrated a significant increase in the T1/2 drainage of the left renal pelvis (102 min) (c). A left retrograde pyelogram demonstrates obstruction of the left UPJ (d). (a) US demonstrating normal right kidney"
+ROCOv2_2023_train_051357,Computed tomographic scan shows a smooth mass of partial calcification at the mental region.
+ROCOv2_2023_train_009224,"Follow-up abdomen computed tomography (CT) without evidence of mechanical obstruction, inflammatory or ischemic lesions."
+ROCOv2_2023_train_013024,Sagittal plane CT neck demonstrating a small tracheal defect with subcutaneous air trapping to the level of the dermis.
+ROCOv2_2023_train_052651,Anterior-posterior view radiograph of the right knee demonstrating high-riding patella (red arrow)
+ROCOv2_2023_train_047011,Fluoroscopic image confirming the superficial position of distal end of guidewire in femoral vein just before surgical retrieval
+ROCOv2_2023_train_024317,Figure 3: CT scan showing narrowing of descending colon.
+ROCOv2_2023_train_020404,"Axial CT image showing a retrosternal, anterior mediastinal fluid filled mass compressing the right ventricle and atrium. The mass has a well defined margin, non contrast enhancing and pushes RV to the left"
+ROCOv2_2023_train_040176,Angiogram showing embolization of the AVM (short arrow) and coiling of the aneurysm (long arrow).
+ROCOv2_2023_train_042340,Pre-particle embolization images of the left internal mammary artery demonstrate proximal occlusion of the vessel and its mammary branches.
+ROCOv2_2023_train_004299,"Chest radiograph from patient, showing 13 sets of ribs and “S” shaped scoliosis with 11-degree thoracic dextroconvex and 8-degree lumbar levoconvex scoliosis. "
+ROCOv2_2023_train_057193,Measure of the lenght of Hill-Sachs lesion on CT sagittal view 55x46mm (150 x 150 DPI).
+ROCOv2_2023_train_036846,"An anteroposterior plain radiograph, obtained 4 years after the rerevision surgery, showing acetabular reconstruction performed with a Kerboull-type acetabular reinforcement device and bulk structural allograft."
+ROCOv2_2023_train_010258,Jugulodigastric lymph nodes with fluorescence.
+ROCOv2_2023_train_035441,"Left hand radiograph showing characteristic abnormal fifth distal phalanx (arrow) in 46,XX del(4)(q32). The defect was bilateral."
+ROCOv2_2023_train_001064,Basilar artery deviation from line connecting basilar artery origin and its bifurcation
+ROCOv2_2023_train_053639,Abdomen CT scan showed fluid collection around the access-port (arrow)
+ROCOv2_2023_train_006681,MRI axial view of the port site hernia.
+ROCOv2_2023_train_039014,DSA angiography with oesophageal balloon deflated showing massive oesophageal haemorrhage from the ARSA.
+ROCOv2_2023_train_052704,Endocardial vegetation stack on the right coronary cusp.
+ROCOv2_2023_train_028541,Computed tomography abdomen of the mass in axial plane demonstrating enhancing soft-tissue mass with irregular margins (arrow).
+ROCOv2_2023_train_039539,Needle at internal branch of the superior laryngeal nerve
+ROCOv2_2023_train_059941,CT Scan of the thorax showing no abnormality in the lung parenchyma and no mediastinal lymphadenopathy.
+ROCOv2_2023_train_001379,Renal ultrasonography that detects a solid central mass in the left kidney (‘Fundeni’ Archives)
+ROCOv2_2023_train_039705,"CT that was used to diagnose lymphoma. Visible is a periaortic infiltrating mass (arrow) and mildly reactive lymph nodes. Note that lymph nodes are non-confluent, the aorta is not displaced anteriorly, the bones are intact, and there is no psoas muscle dislocation."
+ROCOv2_2023_train_039772,"Abdominopelvic computed tomography scan after 2 cycles of chemotherapy showing an interval-improved ulceroinfiltrative gastric lesion and marked regression of multiple enlarged conglomerated metastatic lymph nodes in the perigastric, gastrophepatic, splenic hilum, retropancreatic, porta hepatis, portocaval, and aortocaval portions."
+ROCOv2_2023_train_019979,Post-Gadolinium T1W TSE axial image. The intravenous injection of Gadolinium is helpful in the assessment of a vascular invasion and may also help distinguish between posttreatment fibrosis and recurrence of the neoplasm.
+ROCOv2_2023_train_030253,Initial Panoramic view; severe periodontitis and severe bone resorption on the mandibular molar area.
+ROCOv2_2023_train_021384,"Plain radiograph of the abdomen showing the metallic foreign body in the right lower quadrant, the presence of a 'double bubble sign', and a few dilated loops of small bowel in the left upper quadrant."
+ROCOv2_2023_train_027190,Acceptable hip congruity achieved following traction and formation of a callus with adequate healing of both acetabuli.
+ROCOv2_2023_train_053195,"Head CT, noncontrast: multiple nodular masses of varying sizes in both parotid glands."
+ROCOv2_2023_train_013927,CT of the brain demonstrating a large supra- and intrasellar arachnoid cyst with mass effect on adjacent structures.
+ROCOv2_2023_train_005733,T1 sequence with the receiver/stimulator in a position of 120° and 9 cm. The IAC and the labyrinth are good visible.
+ROCOv2_2023_train_040796,Sagittal reformatted non-contrast CT scan of the pelvis showing a big vaginolith (vertical arrow) surrounding the foreign body (arrowheads). Vesical calculus (horizontal arrow) is also seen in the lumen of the urinary bladder.
+ROCOv2_2023_train_041495,The anterior pelvic plane (APP) was the plane formed by both anterior superior iliac spines and the pubic symphysis. APPA was defined as the angle between the line connecting the midpoint of both anterior superior iliac spines to the pubic symphysis and the vertical line of the lateral radiograph of the pelvis in the standing position. Pelvic incidence (PI) is the angle formed by the line connecting the midpoint of the bilateral femoral head center point to the center point of the sacral endplate and the line perpendicular to the sacral endplate. Pelvic tilt (PT) is the angle between the line connecting the midpoint of the bilateral femoral head center point to the center point of the sacral endplate and the vertical line; the sacral slope (SS) is the angle between the superior plate of S1 and the horizontal line.
+ROCOv2_2023_train_059051,Contrast-enhanced abdominal computed tomography showing heterogeneous enhancement of liver density.
+ROCOv2_2023_train_024527,Cross section at L2 level to show the subdural hematoma compressing the spinal cord
+ROCOv2_2023_train_046386,MRI Thoracolumbar spine showing CSF containing sac with neural tissue herniating through a defect in posterior elements of D11 to L1 vertebrae suggestive of thoracolumbar meningomyelocele with syrinx formation in proximal thoracic cord
+ROCOv2_2023_train_059747,Tomographic scan four weeks after surgery.
+ROCOv2_2023_train_056878,Tumefied appendice with local infiltra.
+ROCOv2_2023_train_044954,CT of head showing diffuse SAH.
+ROCOv2_2023_train_048644,Bisect offset.
+ROCOv2_2023_train_060073,A 47-year-old woman with a pelvic mass. Sagittal T2W MRI image shows an enlarged heterogeneous uterus containing multiple nodules (arrows). Hysterectomy and histology showed that this was diffuse leiomyomatosis. There was no evidence of extra-uterine spread
+ROCOv2_2023_train_006289,"Para-aortic lymph node mass. Axial CT scan showing a para-aortic lymph node mass that invaded the L1 vertebral body. CT, computed tomography."
+ROCOv2_2023_train_032191,"CT abdomen and pelvis with contrast demonstrating a large filling defect inferior to the renal arteries which extends to the level of the proximal superficial femoral artery bilaterally (Green Arrow). Image courtesy of Kristian O. Loveridge, D.O."
+ROCOv2_2023_train_005600,"Measurement method of pelvic obliquity, defined as the angle between a perpendicular line to the sacroiliac line and the line joining the centre of T1 and the middle of the sacroiliac line."
+ROCOv2_2023_train_002316,Complete tear of the LCL with posterior subluxation of the radial head in sagittal view in MRI
+ROCOv2_2023_train_030982,Measurement of the diaphragm height .Measurement was done during the diaphragm caudal position. The middle line is the line fitted to the diaphragm contour by least squares method.
+ROCOv2_2023_train_014441,Abdominal CT shows a large tumor at pelvic cavity
+ROCOv2_2023_train_025154,Follow-up chest X-ray revealed significant improvement in the aeration of the left lung.
+ROCOv2_2023_train_044789,"Abdominopelvic ultrasound study showing a well-defined uterine mass measuring 10,5 cm × 10,6 cm."
+ROCOv2_2023_train_009738,B-mode chest ultrasound demonstrates subcutaneous emphysema (arrows).
+ROCOv2_2023_train_025296,Anteroposterior radiograph of the left femur six weeks postoperatively.
+ROCOv2_2023_train_056274,"Coronal fat-sat FIESTA T2WI of a gravid uterus, with an inverted pear shape, the placenta on the left side of the uterus body showing a maternal surface (solid arrow) and a fetal surface (dashed arrow)."
+ROCOv2_2023_train_007822,Sagittal section shows T2 prolongation starting in the brain stem at the level of the middle cerebellar peduncle and extending into the medulla and cervical spinal cord to the C7 level. There are illdefined margins and no enhancement after gadolinium contrast administration.
+ROCOv2_2023_train_037451,Computed tomography scan of Case 1 obtained in 2011. Computed tomography scan obtained in 2011 indicating good expansion of the left lung and a fibrous lesion in the area on which surgery was performed.
+ROCOv2_2023_train_001658,"Patient nº15. 26 years evolution mandibular FD. No significant clinical growth, stable and asymptomatic till date."
+ROCOv2_2023_train_038414,"Abdominal unenhanced CT scan: high attenuation area, suggesting an intraluminal hemorrhage."
+ROCOv2_2023_train_002979,Chest computed tomography showing a tumor located around bronchus of the left upper lobe
+ROCOv2_2023_train_015924,Magnetic resonance imaging of the thoracic chord (0–72 weeks).Clinical improvement was observed despite the marked atrophy of the thoracic cord.
+ROCOv2_2023_train_015769,Malignant mesothelioma of the pleura; diffuse irregular and nodular pleural thickening with involvement of mediastinal pleura and fissure (pulmonary view)
+ROCOv2_2023_train_016185,"This apical four-chamber view demonstrates how the dilated right atrium (RA) and right ventricle (RV) are compressing the left atrium (LA) and left ventricle (LV), as all systemic and pulmonary venous blood returns to the right heart. The interatrial septum (IAS) characteristically bows towards the LA and blood will flow across the patent foramen ovale (PFO), from RA to LA, down its pressure gradient."
+ROCOv2_2023_train_000879,"Transthoracic echocardiography image showing a mass in the intraventricular septum. RA right atrium, RV right ventricle, LV left ventricle, M mass"
+ROCOv2_2023_train_053368,X-ray imaging of right shoulder at second presentation.
+ROCOv2_2023_train_015563,"Preoperative head CT revealed pyriform aperture stenosis. The measurement was taken at the axial level of the inferior meatus, as recommended by radiological guidelines"
+ROCOv2_2023_train_038768,MRI image established the tumor measuring 45 × 45 mm.
+ROCOv2_2023_train_013127,Immediate postoperative X-rays. Both joints are reduced and pinned with Kirschner wires.
+ROCOv2_2023_train_024518,MRI image of the brain in an axial view showing the “precontrast FLAIR image”. Note the abnormal lesions (circled) in the per ventricular area suggesting white matter pathology.
+ROCOv2_2023_train_055174,CT scan without contrast enhancement showing a left anterior low-attenuation (−80 HU) pericardial mass with high attenuation strands surrounded by an irregular capsule (arrow) and a small pleural effusion (arrowhead).
+ROCOv2_2023_train_023355,"A 70-year-old female patient, with an electrode placed in the scala vestibuli. CBCT paracoronal image shows an electrode array located in the scala vestibuli (upper segment) of the cochlear duct (black arrow). BT – basal turn. MT – middle turn. AT – apical turn"
+ROCOv2_2023_train_058757,"Transverse grayscale high-frequency ultrasound imaging: Ultrasound revealed a 5.5 cm × 5.0 cm heterogeneous, complex cystic and solid intraabdominal mass, which appears as a head (arrow) and body (arrowhead) in shape"
+ROCOv2_2023_train_048176,Computed tomography scan of the abdomen showing 33.2 mm mass in the pancreatic body. Multiple bilateral renal masses can also be appreciated.
+ROCOv2_2023_train_012592,Preoperative contrast enhanced computed tomography scan.
+ROCOv2_2023_train_029406,Magnetic resonance imaging coronal view of the cystic mass (retroperitoneal cystic lymphangioma).
+ROCOv2_2023_train_045679,Postcontrast axial T1 weighted MR image demonstrates avid heterogeneous enhancement in the solid component (dashed white arrow) with rim enhancement of the cystic component.
+ROCOv2_2023_train_001744,Plain film of abdomen shows diffuse linear intramural air (arrows) along cecum to proximal descending colon.
+ROCOv2_2023_train_038168,Chest X-ray obtained at trauma center showing persistent hemothorax despite chest tube placement at outside hospital.
+ROCOv2_2023_train_013955,CT image of patient with hepatosplenomegaly.
+ROCOv2_2023_train_057140,CT chest showing giant single pulmonary hydatid cyst.
+ROCOv2_2023_train_013505,Echocardiogram showing normal ventricular septum
+ROCOv2_2023_train_015297,Anteroposterior radiograph of the cervical spine. Enlargement of the left C3-4 foramen was observed (arrows).
+ROCOv2_2023_train_056635,Computed tomography (CT) findings. A CT scan indicated focal thickening and mass formation in the greater curvature of the gastric body (arrow) as well as multiple enlarged lymph nodes along the greater curvature of the stomach.
+ROCOv2_2023_train_026309,Ultrasonography FindingsUltrasonography findings reflect a heterogeneous lobular complex partially cystic lesion measuring approximately 2.8 x 2.4 x 1.6 cm with a soft-tissue component demonstrating internal vascularity in the subcutaneous soft tissues at the umbilicus.
+ROCOv2_2023_train_000958,CT-scan showing decreasing size of thrombus within portal vein aneurysm (white arrows) with diminished extension to SMV (black arrows) and SV (arrowheads).
+ROCOv2_2023_train_055829,Chest Computed Tomography Scan. Sagittal oblique multiplanar reformat (MPR) from outside CT scan demonstrating discontinuity of diaphragm (white arrows) through which portions of the stomach (S) and transverse colon (C) have herniated.
+ROCOv2_2023_train_036619,Maximum intensity projections (MIP) images (a–b) and volume rendering images (VR) (c) provide comprehensive evaluation of vascular anatomy. 
+ROCOv2_2023_train_050177,Post-treatment PA chest radiograph of the case 1: no evidence of pleural effusion was seen.
+ROCOv2_2023_train_006194,Transesophageal echocardiogram at 0 degree demonstrating the connection between the mid portion of coronary sinus and left atrium. Abbreviations: CS: Coronary Sinus; LA: Left Atrium; RV: Right Ventricle
+ROCOv2_2023_train_044165,Photograph of the X-ray skull showing both sides equal.
+ROCOv2_2023_train_051077,CT abdomen (axial plan): tumor mass in topography of head of the pancreas.
+ROCOv2_2023_train_020456,"Chest X-ray AP portable shows bilateral progressive infiltrates, basal predominant, pneumomediastinum (red arrow), subcutaneous emphysema, and endotracheal tube in good position."
+ROCOv2_2023_train_035889,Radiograph from our emergency department displaying a three–four‐part fracture. The humeral shaft is medialized. The dent in the glenoid is believed to be caused by trauma. There is a potential head split component because of two overlapping circular components.
+ROCOv2_2023_train_050839,Fluoroscopy after contrast dye application via the “hole in the stomach” revealed a large intrathoracal herniation of the gastric fundus.
+ROCOv2_2023_train_051082,Pre-operative chest CT scan demonstrated the mass measuring 18 × 15 mm with spiculation at the periphery of S9 of the right lower lobe.
+ROCOv2_2023_train_003822,"Dental anomalies encountered in Coffin-Lowry syndrome.This panoramic radiograph shows oligodontia (more than six permanent missing teeth (white stars: 12, 22, 41, 31, 45, 35, 47, 37). The deformations observed on this panoramic radiograph are linked to movements during the X-Ray acquisition process and difficulties for handicapped patient to remain still during the procedure."
+ROCOv2_2023_train_052064,A 37-year-old Afro-Caribbean woman with a history of menorrhagia. Transvaginal ultrasound image showed a bulky fibroid uterus with multiple intramural fibroids. The largest fibroid (pictured above) is at the fundus on the posterior wall measuring 4.5 × 4 cm.
+ROCOv2_2023_train_025734,Axial CT showing perinephric fluid (long arrow) surrounding renal cortex (medium arrow) and parapelvic fluid (short arrow).
+ROCOv2_2023_train_055619,Invertogram of the child showing high type of ARM.
+ROCOv2_2023_train_057926,"Coronal computed tomography image of the affected hip joint. The yellow arrow indicates the protrusion of the femoral head through the acetabular shell; the green arrow demonstrates the focal osteolysis in Delee and Charnley zone 1, and the small red arrows indicate the radiolucent line around the acetabular component."
+ROCOv2_2023_train_013444,Left pulmonary vein stenosis computed tomography pulmonary angiography scan.
+ROCOv2_2023_train_052604,Coronal window CT-scan on day 1 showing pneumonitis with tree-in bud pattern and ground glass opacities
+ROCOv2_2023_train_047815,Post-operative Duplex ultrasound control assessing the complete exclusion of the lesion.
+ROCOv2_2023_train_007839,T1-weighted magnetic resonance imaging (MRI) section through the brain shows single brain metastasis from lung disease.
+ROCOv2_2023_train_022024,"Another patient with nutcracker syndrome and pelvic congestion syndrome; angiographic acquisition shows left pelvic varicocele, characterized by appreciable dilatation of the left ovarian vein."
+ROCOv2_2023_train_036432,Magnetic resonance imaging after removal of OALL showing spinal canal stenosis due to ossification of the posterior longitudinal ligament at C4-5.
+ROCOv2_2023_train_037243,"A 42-year-old male with hepatitis B.Spectral analysis of the main portal vein demonstrates elevated peak systolic velocity. A peak velocity of 51.6 cm/sec is obtained when the Doppler angle is 52°, which utilizing proper technique is likely accurate."
+ROCOv2_2023_train_049976,"Transthoracic echocardiography showing an appropriate veno-venous cannula positioning, and B a venous cannula inserted too far into the inferior vena cava. RA, right atrium; LA, left atrium; IVC, inferior vena cava; SVC, superior vena cava; TV, tricuspid valve; *outflow orifice toward the tricuspid valve."
+ROCOv2_2023_train_008616,"Oblique view of CTA image, showing the V3 and V4 segments of the VA. V4L length of the V4 segment; V4D Diameter of the V4 segment; VBA the angle at the vertebrobasilar junction."
