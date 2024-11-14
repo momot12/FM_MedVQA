@@ -1,0 +1,50 @@
+[34m[1mwandb[0m: [33mWARNING[0m Serializing object of type dict that is 147552 bytes
+[34m[1mwandb[0m: [33mWARNING[0m Serializing object of type dict that is 147552 bytes
+Token indices sequence length is longer than the specified maximum sequence length for this model (77 > 40). Running this sequence through the model will result in indexing errors
+5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d6.29.55dc3a68c-e34e-4080-9c3e-2a532b2ccb4d
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d6.29.55dc3a68c-e34e-4080-9c3e-2a532b2ccb4d
+Token indices sequence length is longer than the specified maximum sequence length for this model (45 > 40). Running this sequence through the model will result in indexing errors
+5dc3a68c-e34e-4080-9c3e-2a532b2ccb4d6.29.55dc3a68c-e34e-4080-9c3e-2a532b2ccb4d
+dict_keys(['input_ids', 'token_type_ids', 'attention_mask', 'pixel_values', 'pixel_mask'])
+Image tensor shape: torch.Size([4, 3, 384, 384])
+Input IDs shape: torch.Size([4, 128])
+Sample input IDs: tensor([  101, 14931, 13878,  1013, 21877, 28530, 26819,  3193,  1024,  1996,
+         8612,  8131,  2014,  6200,  3064, 24176, 27345,  2594, 25100,   102,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0])
+Sample pixel values: tensor([[[-0.9294, -0.9373, -0.9294,  ..., -0.8588, -0.8510, -0.8510],
+         [-0.9373, -0.9294, -0.9294,  ..., -0.8588, -0.8588, -0.8510],
+         [-0.9451, -0.9294, -0.9216,  ..., -0.8588, -0.8588, -0.8510],
+         ...,
+         [-0.9216, -0.9059, -0.9059,  ..., -0.8510, -0.8431, -0.8431],
+         [-0.9216, -0.9137, -0.9059,  ..., -0.8510, -0.8431, -0.8510],
+         [-0.9216, -0.9216, -0.9059,  ..., -0.8431, -0.8431, -0.8510]],
+
+        [[-0.9216, -0.9294, -0.9216,  ..., -0.8510, -0.8431, -0.8431],
+         [-0.9294, -0.9216, -0.9216,  ..., -0.8588, -0.8510, -0.8431],
+         [-0.9373, -0.9216, -0.9137,  ..., -0.8588, -0.8510, -0.8431],
+         ...,
+         [-0.8824, -0.8667, -0.8667,  ..., -0.7961, -0.7882, -0.7882],
+         [-0.8902, -0.8745, -0.8667,  ..., -0.7961, -0.7882, -0.7961],
+         [-0.8902, -0.8824, -0.8667,  ..., -0.7882, -0.7882, -0.7961]],
+
+        [[-0.9059, -0.9137, -0.9059,  ..., -0.8353, -0.8275, -0.8275],
+         [-0.9137, -0.9059, -0.9059,  ..., -0.8431, -0.8353, -0.8275],
+         [-0.9216, -0.9059, -0.8980,  ..., -0.8431, -0.8353, -0.8275],
+         ...,
+         [-0.8275, -0.8275, -0.8353,  ..., -0.7333, -0.7255, -0.7255],
+         [-0.8275, -0.8275, -0.8275,  ..., -0.7333, -0.7255, -0.7333],
+         [-0.8275, -0.8353, -0.8353,  ..., -0.7255, -0.7255, -0.7333]]])
