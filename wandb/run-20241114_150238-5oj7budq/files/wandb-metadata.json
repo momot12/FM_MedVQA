@@ -1,0 +1,49 @@
+{
+  "os":  "Linux-6.11.7-200.fc40.x86_64-x86_64-with-glibc2.39",
+  "python":  "3.9.20",
+  "startedAt":  "2024-11-14T14:02:38.463423Z",
+  "program":  "/home/users1/linchi/2024WS-FM/FM_MedVQA/vilt_peft.py",
+  "codePath":  "vilt_peft.py",
+  "git":  {
+    "remote":  "https://github.com/momot12/FM_MedVQA",
+    "commit":  "9f513e856243f07d077c24b1df15456fbd7f9eca"
+  },
+  "email":  "chengweilin.1997@gmail.com",
+  "root":  "/home/users1/linchi/2024WS-FM/FM_MedVQA",
+  "host":  "nandu.ims.uni-stuttgart.de",
+  "username":  "linchi",
+  "executable":  "/home/users1/linchi/2024WS-FM/FM_MedVQA/eepy/med_vqa_py3.9/bin/python3.9",
+  "codePathLocal":  "vilt_peft.py",
+  "cpu_count":  32,
+  "cpu_count_logical":  64,
+  "gpu":  "NVIDIA RTX A6000",
+  "gpu_count":  2,
+  "disk":  {
+    "/":  {
+      "total":  "158841823232",
+      "used":  "116252069888"
+    }
+  },
+  "memory":  {
+    "total":  "811443257344"
+  },
+  "cpu":  {
+    "count":  32,
+    "countLogical":  64
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA RTX A6000",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  10752,
+      "architecture":  "Ampere"
+    },
+    {
+      "name":  "NVIDIA RTX 6000 Ada Generation",
+      "memoryTotal":  "51527024640",
+      "cudaCores":  18176,
+      "architecture":  "Ada"
+    }
+  ],
+  "cudaVersion":  "12.7"
+}

@@ -1,0 +1,8 @@
+{"time":"2024-11-13T16:58:19.101788276+01:00","level":"INFO","msg":"using version","core version":"0.18.5"}
+{"time":"2024-11-13T16:58:19.101824436+01:00","level":"INFO","msg":"created symlink","path":"/home/users1/linchi/2024WS-FM/FM_MedVQA/wandb/run-20241113_165819-4t4whxnz/logs/debug-core.log"}
+{"time":"2024-11-13T16:58:19.216324874+01:00","level":"INFO","msg":"created new stream","id":"4t4whxnz"}
+{"time":"2024-11-13T16:58:19.216405373+01:00","level":"INFO","msg":"stream: started","id":"4t4whxnz"}
+{"time":"2024-11-13T16:58:19.216531912+01:00","level":"INFO","msg":"sender: started","stream_id":"4t4whxnz"}
+{"time":"2024-11-13T16:58:19.216568382+01:00","level":"INFO","msg":"handler: started","stream_id":{"value":"4t4whxnz"}}
+{"time":"2024-11-13T16:58:19.216488642+01:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"4t4whxnz"}}
+{"time":"2024-11-13T16:58:19.524462338+01:00","level":"INFO","msg":"Starting system monitor"}
