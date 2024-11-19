@@ -33,6 +33,43 @@ class ROCOv2Dataset(Dataset):
         self.negative_sample_ratio = negative_sample_ratio
         self.max_length = max_length
 
+    def mask_tokens(inputs, tokenizer, mlm_probability=0.15):
+        """
+        Mask tokens for MLM.
+        Args:
+            inputs: Tokenized inputs with input_ids.
+            tokenizer: Hugging Face tokenizer with mask token support.
+            mlm_probability: Probability of masking a token.
+        """
+        labels = inputs.clone()  # Highlighted: Clone the input tensor to create labels
+
+        # Randomly mask tokens with a probability
+        probability_matrix = torch.full(labels.shape, mlm_probability)
+        masked_indices = torch.bernoulli(probability_matrix).bool()
+
+        # We only mask non-special tokens
+        special_tokens_mask = torch.tensor(  # Highlighted: Ensure tensor type
+            tokenizer.get_special_tokens_mask(
+                inputs.tolist(), already_has_special_tokens=True
+            ),
+            dtype=torch.bool
+        )
+        masked_indices &= ~special_tokens_mask
+
+        # Set labels to -100 for unmasked tokens (ignored in loss)
+        labels[~masked_indices] = -100
+
+        # Replace 80% of the masked tokens with [MASK]
+        indices_replaced = torch.bernoulli(torch.full(labels.shape, 0.8)).bool() & masked_indices
+        inputs[indices_replaced] = tokenizer.mask_token_id
+
+        # Replace 10% of the masked tokens with random tokens
+        indices_random = torch.bernoulli(torch.full(labels.shape, 0.5)).bool() & masked_indices & ~indices_replaced
+        random_tokens = torch.randint(len(tokenizer), labels.shape, dtype=torch.long)
+        inputs[indices_random] = random_tokens[indices_random]
+
+        return inputs, labels
+
     def __len__(self):
         return len(self.captions_df)
 
@@ -74,12 +111,21 @@ class ROCOv2Dataset(Dataset):
         # Flatten to remove the batch dimension
         text_inputs = {key: val.squeeze(0) for key, val in text_inputs.items()}
 
+        # Mask tokens for MLM
+        masked_input_ids, mlm_labels = self.mask_tokens(  # Highlighted: Call updated static method
+            text_inputs['input_ids'], self.tokenizer
+        )
+
         return {
             'image': image,
             'input_ids': text_inputs['input_ids'],
             'attention_mask': text_inputs['attention_mask'],
-            'label': torch.tensor(label)
+            'mlm_input_ids': masked_input_ids,
+            'mlm_labels': mlm_labels,
+            'label': torch.tensor(label)  # ITM label
         }
+
+
 
 # load model and processor
 processor = ViltProcessor.from_pretrained("dandelin/vilt-b32-mlm", cache_dir=hf_cache_path)
@@ -127,8 +173,9 @@ model.print_trainable_parameters()
 # Optimizer
 optimizer = AdamW(model.parameters(), lr=5e-5)
 
-# Loss function for ITM (binary classification)
-loss_fn = nn.CrossEntropyLoss()  # or nn.BCEWithLogitsLoss() if your labels are floats
+# Loss functions
+itm_loss_fn = nn.CrossEntropyLoss()  # ITM binary classification
+mlm_loss_fn = nn.CrossEntropyLoss(ignore_index=-100)  # Ignore non-masked tokens
 
 output_dir = 'eepy/vilt-lora/output'
 logging_dir = 'eepy/vilt-lora/logging'
@@ -160,39 +207,53 @@ wandb.init(
 # Training loop
 for epoch in range(num_epochs):
     print(f"Epoch {epoch + 1}/{num_epochs}")
-    epoch_loss = 0
+    epoch_itm_loss, epoch_mlm_loss = 0, 0
+
     for batch in tqdm(train_loader):
         # Move batch data to device (e.g., GPU)
         images = batch['image'].to(device)
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
+        mlm_input_ids = batch['mlm_input_ids'].to(device)
+        mlm_labels = batch['mlm_labels'].to(device)
         labels = batch['label'].to(device)
 
         # Forward pass
         outputs = model(
             pixel_values=images,
-            input_ids=input_ids,
+            input_ids=mlm_input_ids,  # Use masked input for MLM
             attention_mask=attention_mask
         )
 
-        # ITM loss for image-text matching
-        logits = outputs.logits  # Adjust based on output structure
-        logits = outputs.logits[:, 0, :2]  # Shape: [batch_size, 2] for binary classification
+        # ITM loss (from [CLS] token logits)
+        itm_logits = outputs.logits[:, 0, :2]
+        itm_loss = itm_loss_fn(itm_logits, labels)
+        
+        # MLM loss (from all logits)
+        mlm_logits = outputs.logits
+        mlm_loss = mlm_loss_fn(
+            mlm_logits.view(-1, mlm_logits.size(-1)),  # Flatten logits
+            mlm_labels.view(-1)  # Flatten labels
+        )
 
-        loss = loss_fn(logits, labels)
+        # Combine losses
+        loss = itm_loss + mlm_loss
 
         # Backward pass and optimization
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
-        epoch_loss += loss.item()
+        epoch_itm_loss += itm_loss.item()
+        epoch_mlm_loss += mlm_loss.item()
 
         # Log loss to WandB
         wandb.log({"loss": loss.item()})
 
-    avg_loss = epoch_loss / len(train_loader)
-    print(f"Average training loss for epoch {epoch + 1}: {avg_loss:.4f}")
+    avg_itm_loss = epoch_itm_loss / len(train_loader)
+    avg_mlm_loss = epoch_mlm_loss / len(train_loader)
+
+    print(f"Epoch {epoch + 1} - ITM Loss: {avg_itm_loss:.4f}, MLM Loss: {avg_mlm_loss:.4f}")
 
     # log average loss for the epoch
-    wandb.log({"epoch_loss": avg_loss, "epoch": epoch + 1})
+    wandb.log({"epoch": epoch + 1, "itm_loss": avg_itm_loss, "mlm_loss": avg_mlm_loss})
