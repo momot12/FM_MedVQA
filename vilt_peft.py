@@ -14,7 +14,7 @@ from peft import get_peft_model, LoraConfig
 import wandb
 
 # set device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 
 class ROCOv2Dataset(Dataset):
     def __init__(self, image_dir, caption_file, tokenizer, image_transform, negative_sample_ratio=0.5, max_length=40):
@@ -177,7 +177,7 @@ optimizer = AdamW(model.parameters(), lr=5e-5)
 itm_loss_fn = nn.CrossEntropyLoss()  # ITM binary classification
 mlm_loss_fn = nn.CrossEntropyLoss(ignore_index=-100)  # Ignore non-masked tokens
 
-output_dir = 'eepy/vilt-lora/output'
+output_dir = 'eepy/vilt-lora/ckpt'
 logging_dir = 'eepy/vilt-lora/logging'
 
 from tqdm import tqdm
@@ -188,7 +188,7 @@ model.train()
 model.to(device)
 
 # Number of epochs
-num_epochs = 10  # Adjust based on your dataset size and compute resources
+num_epochs = 100  # Adjust based on your dataset size and compute resources
 
 # Initialize WandB run
 wandb.init(
@@ -257,3 +257,6 @@ for epoch in range(num_epochs):
 
     # log average loss for the epoch
     wandb.log({"epoch": epoch + 1, "itm_loss": avg_itm_loss, "mlm_loss": avg_mlm_loss})
+
+# Save the model
+model.save_pretrained(output_dir)
