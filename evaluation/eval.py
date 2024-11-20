@@ -1,6 +1,7 @@
 import argparse
 import json
 import collections
+import numpy as np
 import random 
 import pandas as pd    
 from nltk.translate.bleu_score import sentence_bleu
@@ -14,8 +15,7 @@ warnings.simplefilter('ignore')
 def parse_option():
     parser = argparse.ArgumentParser('Evaluation for Medical VQA model generated outputs', add_help=False)
     parser.add_argument('--gt', type=str, default="test.json", help='path to groundtruth file', )
-    parser.add_argument('--candidate', type=str, default="candidate.json", help='path to candidate answer file', )
-    parser.add_argument('--pred', type=str, default="answer-file.jsonl", help='path to prediction file', )
+    parser.add_argument('--pred', type=str, default="answer-file-llava-zeorshot.jsonl", help='path to prediction file', )
     args, unparsed = parser.parse_known_args()
     return args
 
@@ -26,7 +26,7 @@ def load_jsonl(path):
             data.append(json.loads(line))
     return data 
 
-def evaluate(gt, pred, candidate, criterion=None):    
+def evaluate(gt, pred):    
     closed_scores = collections.defaultdict(list)
     bleu_scores = collections.defaultdict(list)
     exact_scores = collections.defaultdict(list)
@@ -52,9 +52,6 @@ def evaluate(gt, pred, candidate, criterion=None):
             # else:
             #     hit = 0.0
             # open_hit_scores['hit'].append(hit)
-
-            
-
             open_hit_scores['hit'].append(calculate_appearance_with_normalization(pred_value, gt_value, can_value))
             open_hit_scores['q_id'].append(pred_item['question_id'])
 
@@ -98,34 +95,33 @@ def evaluate(gt, pred, candidate, criterion=None):
                 closed_scores['hit'].append(0)
     
     # import pdb; pdb.set_trace()
-    exact_score = sum(exact_scores['hit']) / len(exact_scores['hit'])
-    f1_score = sum(f1_scores['f1']) / len(f1_scores['f1'])
-    precision = sum(f1_scores['precision']) / len(f1_scores['precision'])
-    recall = sum(f1_scores['recall']) / len(f1_scores['recall'])
+    # exact_score = sum(exact_scores['hit']) / len(exact_scores['hit'])
+    # f1_score = sum(f1_scores['f1']) / len(f1_scores['f1'])
+    # precision = sum(f1_scores['precision']) / len(f1_scores['precision'])
+    # recall = sum(f1_scores['recall']) / len(f1_scores['recall'])
+    # bleu_score   = sum(bleu_scores['bleu_score']) / len(bleu_scores['bleu_score'])
+    # bleu_score_1 = sum(bleu_scores['bleu_score_1']) / len(bleu_scores['bleu_score_1'])
+    # bleu_score_2 = sum(bleu_scores['bleu_score_2']) / len(bleu_scores['bleu_score_2'])
+    # bleu_score_3 = sum(bleu_scores['bleu_score_3']) / len(bleu_scores['bleu_score_3'])
+    # open_hit_score = sum(open_hit_scores['hit']) / len(open_hit_scores['hit'])
+    # print(closed_scores)
 
-    bleu_score   = sum(bleu_scores['bleu_score']) / len(bleu_scores['bleu_score'])
-    bleu_score_1 = sum(bleu_scores['bleu_score_1']) / len(bleu_scores['bleu_score_1'])
-    bleu_score_2 = sum(bleu_scores['bleu_score_2']) / len(bleu_scores['bleu_score_2'])
-    bleu_score_3 = sum(bleu_scores['bleu_score_3']) / len(bleu_scores['bleu_score_3'])
-
-    open_hit_score = sum(open_hit_scores['hit']) / len(open_hit_scores['hit'])
-    print(closed_scores)
-    closed_score = sum(closed_scores['hit']) / len(closed_scores['hit']) if len(closed_scores['hit']) != 0 else 0.0
+    closed_score = np.mean(closed_scores['hit']) if len(closed_scores['hit']) != 0 else 0.0
 
     num_open, num_close = len(closed_scores['hit']), len(open_hit_scores['hit'])
     print(f'num_open {num_open} || num_close {num_close}')
 
     return tabulate(
         [
-            ['exact match score', exact_score*100], 
-            ['f1 score', f1_score*100], 
-            ['precision', precision*100], 
-            ['recall', recall*100], 
-            ['bleu_score', bleu_score*100], 
-            ['bleu_score_1', bleu_score_1*100], 
-            ['bleu_score_2', bleu_score_2*100], 
-            ['bleu_score_3', bleu_score_3*100], 
-            ['open accuracy', open_hit_score*100],
+            ['exact match score', np.mean(exact_scores['hit'])*100], 
+            ['f1 score', np.mean(f1_score['f1'])*100], 
+            ['precision', np.mean(f1_score['precision'])*100], 
+            ['recall', np.mean(f1_scores['recall'])*100], 
+            ['bleu_score', np.mean(bleu_scores['bleu_score'])*100], 
+            ['bleu_score_1', np.mean(bleu_scores['bleu_score_1'])*100], 
+            ['bleu_score_2', np.mean(bleu_scores['bleu_score_2'])*100], 
+            ['bleu_score_3', np.mean(bleu_scores['bleu_score_3'])*100], 
+            ['open accuracy', np.mean(open_hit_scores['hit'])*100],
             ['yes/no accuracy', closed_score*100]
         ], 
         headers=['Metric', 'Performance']
@@ -135,11 +131,18 @@ if __name__ == '__main__':
     args = parse_option()
 
     dataset = args.gt.split("/")[-2]
+
     print(f"\n========\n {dataset}")
 
     gt = json.load(open(args.gt, 'r'))
+
+    print (gt)
+
     candidate = json.load(open(args.candidate, 'r'))
+
+    print (candidate)
     pred = load_jsonl(args.pred)
+    print ("pred: ", pred)
 
     gt_ids = [item['id'] for item in gt]
     pred_ids = [item['question_id'] for item in pred]
@@ -149,5 +152,5 @@ if __name__ == '__main__':
     assert gt_ids == pred_ids, "please make sure pred and gt are exactly matched"
 
     # perform evaluation
-    results = evaluate(gt, pred, candidate)
+    results = evaluate(gt, pred)
     print(results)
