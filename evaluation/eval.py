@@ -35,7 +35,7 @@ def evaluate(gt, pred):
 
     for gt_item, pred_item in zip(gt, pred):
         try:
-            gt_results = gt_item['conversations']
+            gt_results = gt_item['conversations']  
         except:
             gt_results = gt_item['conversatons']
         gt_value = gt_results[1]['value'].lower()
@@ -94,18 +94,6 @@ def evaluate(gt, pred):
             else:
                 closed_scores['hit'].append(0)
     
-    # import pdb; pdb.set_trace()
-    # exact_score = sum(exact_scores['hit']) / len(exact_scores['hit'])
-    # f1_score = sum(f1_scores['f1']) / len(f1_scores['f1'])
-    # precision = sum(f1_scores['precision']) / len(f1_scores['precision'])
-    # recall = sum(f1_scores['recall']) / len(f1_scores['recall'])
-    # bleu_score   = sum(bleu_scores['bleu_score']) / len(bleu_scores['bleu_score'])
-    # bleu_score_1 = sum(bleu_scores['bleu_score_1']) / len(bleu_scores['bleu_score_1'])
-    # bleu_score_2 = sum(bleu_scores['bleu_score_2']) / len(bleu_scores['bleu_score_2'])
-    # bleu_score_3 = sum(bleu_scores['bleu_score_3']) / len(bleu_scores['bleu_score_3'])
-    # open_hit_score = sum(open_hit_scores['hit']) / len(open_hit_scores['hit'])
-    # print(closed_scores)
-
     closed_score = np.mean(closed_scores['hit']) if len(closed_scores['hit']) != 0 else 0.0
 
     num_open, num_close = len(closed_scores['hit']), len(open_hit_scores['hit'])
