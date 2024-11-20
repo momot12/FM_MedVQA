@@ -125,10 +125,6 @@ if __name__ == '__main__':
     gt = json.load(open(args.gt, 'r'))
 
     print (gt)
-
-    candidate = json.load(open(args.candidate, 'r'))
-
-    print (candidate)
     pred = load_jsonl(args.pred)
     print ("pred: ", pred)
 
