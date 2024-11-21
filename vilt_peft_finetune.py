@@ -1,29 +1,25 @@
 import torch
-from transformers import ViltProcessor, ViltForQuestionAnswering, TrainingArguments, Trainer
+from transformers import ViltProcessor, ViltForMaskedLM, ViltForQuestionAnswering, TrainingArguments, Trainer
 from datasets import load_dataset
 from peft import PeftModel, PeftConfig  # LoRA utilities
 
-# Path to cache directory
+# Path to directory
 data_cache_dir = "eepy/datasets"
 model_cache_dir = "eepy/hf-cache"
+pretrain_lora_ckpt = 'eepy/vilt-lora/ckpt'
+output_dir = 'eepy/vilt-lora/vqa_model_lora'
+logging_dir = 'eepy/vilt-lora/logging'
 
 # Load the VQA-RAD dataset
 ds_vqa_rad = load_dataset("flaviagiammarino/vqa-rad", cache_dir=data_cache_dir)
 
 # Paths for processor, pre-trained model, and LoRA checkpoint
-processor_path = "eepy/vilt-lora/ckpt/processor"
-base_model_path = "dandelin/vilt-b32-finetuned-vqa"  # Base pre-trained model
-lora_model_path = "eepy/vilt-lora/ckpt/test.pt"      # LoRA checkpoint
-
-# Load processor (assuming it's saved in a local directory)
-processor = ViltProcessor.from_pretrained(processor_path)
-
-# Load base model
-base_model = ViltForQuestionAnswering.from_pretrained(base_model_path)
+processor = ViltProcessor.from_pretrained("dandelin/vilt-b32-mlm", cache_dir=model_cache_dir)
+base_model = ViltForMaskedLM.from_pretrained("dandelin/vilt-b32-mlm", cache_dir=model_cache_dir)
 
 # Load LoRA configuration and apply it to the model
-lora_config = PeftConfig.from_pretrained(lora_model_path)
-model = PeftModel.from_pretrained(base_model, lora_model_path)
+lora_config = PeftConfig.from_pretrained(pretrain_lora_ckpt)
+model = PeftModel.from_pretrained(base_model, pretrain_lora_ckpt)
 
 # Preprocess the dataset
 def preprocess(example):
@@ -32,6 +28,7 @@ def preprocess(example):
         text=example["question"],
         padding="max_length",
         truncation=True,
+        max_length=480,
         return_tensors="pt"
     )
     # Assuming the answer is a single string. Convert it to a label index or tensor.
@@ -44,7 +41,7 @@ test_dataset = ds_vqa_rad["test"].map(preprocess, remove_columns=ds_vqa_rad["tes
 
 # Define training arguments
 training_args = TrainingArguments(
-    output_dir="./vqa_model_lora",
+    output_dir=output_dir,
     per_device_train_batch_size=8,
     per_device_eval_batch_size=8,
     num_train_epochs=3,
