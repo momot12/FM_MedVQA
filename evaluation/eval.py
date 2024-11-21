@@ -33,6 +33,13 @@ def evaluate(gt, pred):
     f1_scores = collections.defaultdict(list)
     open_hit_scores = collections.defaultdict(list)
 
+    bleu_score = []
+    bleu_score_1 = []
+    bleu_score_2 = []
+    bleu_score_3 = []
+    precision = []
+    recall = []
+
     for gt_item, pred_item in zip(gt, pred):
         try:
             gt_results = gt_item['conversations']  
@@ -61,8 +68,8 @@ def evaluate(gt, pred):
 
             f1_score, precision, recall = calculate_f1score(pred_value, gt_value)
             f1_scores['f1'].append(f1_score)
-            f1_scores['precision'].append(precision)
-            f1_scores['recall'].append(recall)
+            precision.append(precision)
+            recall.append(recall)
             f1_scores['q_id'].append(pred_item['question_id'])
 
             # if isinstance(f1_scores['hit'][-1], str):
@@ -78,10 +85,10 @@ def evaluate(gt, pred):
                                     hypothesis=str(pred_value).lower().split(), weights=(0, 0, 1, 0))
             
             bleu_scores['q_id'].append(pred_item['question_id'])
-            bleu_scores['bleu_score'].append(b_score)
-            bleu_scores['bleu_score_1'].append(b_score_1)
-            bleu_scores['bleu_score_2'].append(b_score_2)
-            bleu_scores['bleu_score_3'].append(b_score_3)
+            bleu_score.append(b_score)
+            bleu_score_1.append(b_score_1)
+            bleu_score_2.append(b_score_2)
+            bleu_score_3.append(b_score_3)
 
         elif gt_item['answer_type'] == 'CLOSED':
             # for close-ended question (Yes/No)
@@ -103,12 +110,12 @@ def evaluate(gt, pred):
         [
             ['exact match score', np.mean(exact_scores['hit'])*100], 
             ['f1 score', np.mean(f1_score['f1'])*100], 
-            ['precision', np.mean(f1_score['precision'])*100], 
-            ['recall', np.mean(f1_scores['recall'])*100], 
-            ['bleu_score', np.mean(bleu_scores['bleu_score'])*100], 
-            ['bleu_score_1', np.mean(bleu_scores['bleu_score_1'])*100], 
-            ['bleu_score_2', np.mean(bleu_scores['bleu_score_2'])*100], 
-            ['bleu_score_3', np.mean(bleu_scores['bleu_score_3'])*100], 
+            ['precision', np.mean(precision)*100], 
+            ['recall', np.mean(recall)*100], 
+            ['bleu_score', np.mean(bleu_score)*100], 
+            ['bleu_score_1', np.mean(bleu_score_1)*100], 
+            ['bleu_score_2', np.mean(bleu_score_2)*100], 
+            ['bleu_score_3', np.mean(bleu_score_3)*100], 
             ['open accuracy', np.mean(open_hit_scores['hit'])*100],
             ['yes/no accuracy', closed_score*100]
         ], 
