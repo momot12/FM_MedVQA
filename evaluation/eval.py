@@ -26,7 +26,11 @@ def load_jsonl(path):
             data.append(json.loads(line))
     return data 
 
-def evaluate(gt, pred):    
+
+# output format (json) --> {question_id: int, question: string, answer_pred: string, answer_type: OPEN/CLOSED}
+def evaluate(gt, pred):
+    # pred: output json file
+    #   gt: from given test set   
     closed_scores = collections.defaultdict(list)
     bleu_scores = collections.defaultdict(list)
     exact_scores = collections.defaultdict(list)
@@ -44,7 +48,7 @@ def evaluate(gt, pred):
         try:
             gt_results = gt_item['conversations']  
         except:
-            gt_results = gt_item['conversatons']
+            gt_results = gt_item['conversations']
         gt_value = gt_results[1]['value'].lower()
         can_value = gt_results[1]['value'].lower()
         pred_value = pred_item['text'].lower()
@@ -109,7 +113,7 @@ def evaluate(gt, pred):
     return tabulate(
         [
             ['exact match score', np.mean(exact_scores['hit'])*100], 
-            ['f1 score', np.mean(f1_score['f1'])*100], 
+            ['f1 score', np.mean(f1_score['f1'])*100], # micro F1
             ['precision', np.mean(precision)*100], 
             ['recall', np.mean(recall)*100], 
             ['bleu_score', np.mean(bleu_score)*100], 
@@ -130,6 +134,8 @@ if __name__ == '__main__':
     print(f"\n========\n {dataset}")
 
     gt = json.load(open(args.gt, 'r'))
+    
+    # [ {}, ] 
 
     print (gt)
     pred = load_jsonl(args.pred)
