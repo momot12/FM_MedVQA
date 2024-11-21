@@ -193,7 +193,7 @@ model.train()
 model.to(device)
 
 # Number of epochs
-num_epochs = 100  # Adjust based on your dataset size and compute resources
+num_epochs = 10  # Adjust based on your dataset size and compute resources
 
 # Initialize WandB run
 wandb.init(
