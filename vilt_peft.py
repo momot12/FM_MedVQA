@@ -14,7 +14,7 @@ from peft import get_peft_model, LoraConfig
 import wandb
 
 # set device
-device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class ROCOv2Dataset(Dataset):
     def __init__(self, image_dir, caption_file, tokenizer, image_transform, negative_sample_ratio=0.5, max_length=40):
@@ -33,24 +33,28 @@ class ROCOv2Dataset(Dataset):
         self.negative_sample_ratio = negative_sample_ratio
         self.max_length = max_length
 
-    def mask_tokens(inputs, tokenizer, mlm_probability=0.15):
+    @staticmethod
+    def mask_tokens(input_ids, tokenizer, mlm_probability=0.15):
         """
         Mask tokens for MLM.
         Args:
-            inputs: Tokenized inputs with input_ids.
+            input_ids: Tokenized input tensor with shape [sequence_length].
             tokenizer: Hugging Face tokenizer with mask token support.
             mlm_probability: Probability of masking a token.
+        Returns:
+            masked_input_ids: Input IDs with masked tokens.
+            labels: Labels for MLM with -100 for non-masked tokens.
         """
-        labels = inputs.clone()  # Highlighted: Clone the input tensor to create labels
+        labels = input_ids.clone()  # Clone the tensor to create labels
 
         # Randomly mask tokens with a probability
         probability_matrix = torch.full(labels.shape, mlm_probability)
         masked_indices = torch.bernoulli(probability_matrix).bool()
 
         # We only mask non-special tokens
-        special_tokens_mask = torch.tensor(  # Highlighted: Ensure tensor type
+        special_tokens_mask = torch.tensor(
             tokenizer.get_special_tokens_mask(
-                inputs.tolist(), already_has_special_tokens=True
+                input_ids.tolist(), already_has_special_tokens=True
             ),
             dtype=torch.bool
         )
@@ -61,14 +65,14 @@ class ROCOv2Dataset(Dataset):
 
         # Replace 80% of the masked tokens with [MASK]
         indices_replaced = torch.bernoulli(torch.full(labels.shape, 0.8)).bool() & masked_indices
-        inputs[indices_replaced] = tokenizer.mask_token_id
+        input_ids[indices_replaced] = tokenizer.mask_token_id
 
         # Replace 10% of the masked tokens with random tokens
         indices_random = torch.bernoulli(torch.full(labels.shape, 0.5)).bool() & masked_indices & ~indices_replaced
-        random_tokens = torch.randint(len(tokenizer), labels.shape, dtype=torch.long)
-        inputs[indices_random] = random_tokens[indices_random]
+        random_tokens = torch.randint(len(tokenizer), input_ids.shape, dtype=torch.long)
+        input_ids[indices_random] = random_tokens[indices_random]
 
-        return inputs, labels
+        return input_ids, labels
 
     def __len__(self):
         return len(self.captions_df)
@@ -112,8 +116,9 @@ class ROCOv2Dataset(Dataset):
         text_inputs = {key: val.squeeze(0) for key, val in text_inputs.items()}
 
         # Mask tokens for MLM
-        masked_input_ids, mlm_labels = self.mask_tokens(  # Highlighted: Call updated static method
-            text_inputs['input_ids'], self.tokenizer
+        masked_input_ids, mlm_labels = self.mask_tokens(
+            text_inputs['input_ids'],  # Ensure tensor is passed
+            self.tokenizer
         )
 
         return {
