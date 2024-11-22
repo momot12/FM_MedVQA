@@ -21,6 +21,9 @@ BATCH_SIZE = 8
 NUM_CLASSES = 10 # for output layer 
 LEARNING_RATE = 1e-4
 EPOCHS = 3
+DATASET = "vqarad"
+# Llava_med_EPOCHS_LR_BATCH_DATASET
+SAVED_MODEL_NAME = f"Llava_med_{EPOCHS}_{LEARNING_RATE}_{BATCH_SIZE}_{DATASET}.pth"
 
 
 ### MODEL and TOKENIZER ###
@@ -154,3 +157,24 @@ for epoch in range(EPOCHS):
         optimizer.step()
 
     print(f"Epoch {epoch + 1}, Loss: {loss.item():.4f}")
+    
+
+# save model after last epoch   
+torch.save({
+    'epoch': EPOCHS,
+    'model_state_dict': model.state_dict(),
+    'output_layer_state_dict': output_layer.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+    'loss': loss.item(),
+}, SAVED_MODEL_NAME)
+
+
+"""
+# for later: to call model
+checkpoint = torch.load(SAVED_MODEL_NAME)
+model.load_state_dict(checkpoint['model_state_dict'])
+output_layer.load_state_dict(checkpoint['output_layer_state_dict'])
+optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+epoch = checkpoint['epoch']
+loss = checkpoint['loss']
+"""
