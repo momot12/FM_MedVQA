@@ -48,7 +48,7 @@ def evaluate(gt, pred):
     for gt_item, pred_item in zip(gt, pred):
         gt_value = gt_item['answer'].lower()
         # can_value = gt_results[1]['value'].lower()
-        pred_value = pred_item['answer'].lower()
+        pred_value = pred_item['answer_pred'].lower()
 
         gt_value = normalize_word(gt_value)
         pred_value = normalize_word(pred_value)
@@ -60,9 +60,6 @@ def evaluate(gt, pred):
             # else:
             #     hit = 0.0
             # open_hit_scores['hit'].append(hit)
-            # open_hit_scores['hit'].append(calculate_appearance_with_normalization(pred_value, gt_value, can_value))
-            open_hit_scores['q_id'].append(pred_item['question_id'])
-
             exact_scores['hit'].append(calculate_exactmatch(pred_value, gt_value))
             exact_scores['q_id'].append(pred_item['question_id'])
 
@@ -117,7 +114,6 @@ def evaluate(gt, pred):
             ['bleu_score_1', np.mean(bleu_score_1)*100], 
             ['bleu_score_2', np.mean(bleu_score_2)*100], 
             ['bleu_score_3', np.mean(bleu_score_3)*100], 
-            # ['open accuracy', np.mean(open_hit_scores['hit'])*100],
             ['yes/no accuracy', closed_score*100]
         ], 
         headers=['Metric', 'Performance']
