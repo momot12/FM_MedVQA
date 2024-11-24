@@ -26,8 +26,11 @@ def load_jsonl(path):
             data.append(json.loads(line))
     return data 
 
-# gt (ground truth) json format: {"prompt": string, "answer": string, "answer_type": OPEN or CLOSED, }
-def evaluate(gt, pred):    
+
+# output format (json) --> {question_id: int, question: string, answer_pred: string, answer_type: OPEN/CLOSED}
+def evaluate(gt, pred):
+    # pred: output json file
+    #   gt: from given test set   
     closed_scores = collections.defaultdict(list)
     bleu_scores = collections.defaultdict(list)
     exact_scores = collections.defaultdict(list)
@@ -128,6 +131,8 @@ if __name__ == '__main__':
     print(f"\n========\n {dataset}")
 
     gt = json.load(open(args.gt, 'r'))
+    
+    # [ {}, ] 
 
     # print (gt)
     pred = json.load(open(args.pred, 'r'))
