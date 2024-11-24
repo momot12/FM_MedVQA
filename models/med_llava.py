@@ -1,6 +1,13 @@
 datasets_path = 'eepy/datasets'
 hf_cache_path = 'eepy/hf-cache'
 
-from transformers import AutoModelForCausalLM
+cache_dir = "eepy/llava-med-v1.5-mistral-7b"
 
-model = AutoModelForCausalLM.from_pretrained("microsoft/llava-med-v1.5-mistral-7b", cache_dir=hf_cache_path)
+from transformers import LlamaForCausalLM, AutoTokenizer, MistralForCausalLM
+
+
+# Query tokenizer and model from cache
+tokenizer = AutoTokenizer.from_pretrained(cache_dir, local_files_only=True)
+
+#model = LlamaForCausalLM.from_pretrained(cache_dir, local_files_only=True, device_map="auto")
+model = MistralForCausalLM.from_pretrained(cache_dir, local_files_only=True, device_map="auto")
