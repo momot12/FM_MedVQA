@@ -26,6 +26,7 @@ def load_jsonl(path):
             data.append(json.loads(line))
     return data 
 
+# gt (ground truth) json format: {"prompt": string, "answer": string, "answer_type": OPEN or CLOSED, }
 def evaluate(gt, pred):    
     closed_scores = collections.defaultdict(list)
     bleu_scores = collections.defaultdict(list)
@@ -42,13 +43,9 @@ def evaluate(gt, pred):
     f1 = []
 
     for gt_item, pred_item in zip(gt, pred):
-        try:
-            gt_results = gt_item['conversations']  
-        except:
-            gt_results = gt_item['conversatons']
-        gt_value = gt_results[1]['value'].lower()
-        can_value = gt_results[1]['value'].lower()
-        pred_value = pred_item['text'].lower()
+        gt_value = gt_item['answer'].lower()
+        # can_value = gt_results[1]['value'].lower()
+        pred_value = pred_item['answer'].lower()
 
         gt_value = normalize_word(gt_value)
         pred_value = normalize_word(pred_value)
