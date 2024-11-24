@@ -83,7 +83,6 @@ def calculate_appearance_with_normalization(prediction, reference, candidate_set
     prediction = normalize_word(prediction)
     reference = normalize_word(reference)
     prediction_words = split_sentence(prediction, 1)
-    reference_words = split_sentence(reference, 1)
 
     # candidate_set = candidate_set['0']
 

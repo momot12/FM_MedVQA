@@ -39,6 +39,7 @@ def evaluate(gt, pred):
     bleu_score_3 = []
     precision = []
     recall = []
+    f1 = []
 
     for gt_item, pred_item in zip(gt, pred):
         try:
@@ -59,7 +60,7 @@ def evaluate(gt, pred):
             # else:
             #     hit = 0.0
             # open_hit_scores['hit'].append(hit)
-            open_hit_scores['hit'].append(calculate_appearance_with_normalization(pred_value, gt_value, can_value))
+            # open_hit_scores['hit'].append(calculate_appearance_with_normalization(pred_value, gt_value, can_value))
             open_hit_scores['q_id'].append(pred_item['question_id'])
 
             exact_scores['hit'].append(calculate_exactmatch(pred_value, gt_value))
@@ -67,7 +68,7 @@ def evaluate(gt, pred):
 
 
             f1_score, precision, recall = calculate_f1score(pred_value, gt_value)
-            f1_scores['f1'].append(f1_score)
+            f1.append(f1_score)
             precision.append(precision)
             recall.append(recall)
             f1_scores['q_id'].append(pred_item['question_id'])
@@ -109,14 +110,14 @@ def evaluate(gt, pred):
     return tabulate(
         [
             ['exact match score', np.mean(exact_scores['hit'])*100], 
-            ['f1 score', np.mean(f1_score['f1'])*100], 
+            ['f1 score', np.mean(f1)*100], 
             ['precision', np.mean(precision)*100], 
             ['recall', np.mean(recall)*100], 
             ['bleu_score', np.mean(bleu_score)*100], 
             ['bleu_score_1', np.mean(bleu_score_1)*100], 
             ['bleu_score_2', np.mean(bleu_score_2)*100], 
             ['bleu_score_3', np.mean(bleu_score_3)*100], 
-            ['open accuracy', np.mean(open_hit_scores['hit'])*100],
+            # ['open accuracy', np.mean(open_hit_scores['hit'])*100],
             ['yes/no accuracy', closed_score*100]
         ], 
         headers=['Metric', 'Performance']
@@ -131,9 +132,9 @@ if __name__ == '__main__':
 
     gt = json.load(open(args.gt, 'r'))
 
-    print (gt)
-    pred = load_jsonl(args.pred)
-    print ("pred: ", pred)
+    # print (gt)
+    pred = json.load(open(args.pred, 'r'))
+    # print ("pred: ", pred)
 
     gt_ids = [item['id'] for item in gt]
     pred_ids = [item['question_id'] for item in pred]
