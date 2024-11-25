@@ -41,9 +41,9 @@ def evaluate(gt, pred):
     bleu_score_1 = []
     bleu_score_2 = []
     bleu_score_3 = []
-    precision = []
-    recall = []
-    f1 = []
+    precisionList = []
+    recallList = []
+    f1List = []
 
     for gt_item, pred_item in zip(gt, pred):
         gt_value = gt_item['answer'].lower()
@@ -65,9 +65,9 @@ def evaluate(gt, pred):
 
 
             f1_score, precision, recall = calculate_f1score(pred_value, gt_value)
-            f1.append(f1_score)
-            precision.append(precision)
-            recall.append(recall)
+            f1List.append(f1_score)
+            precisionList.append(precision)
+            recallList.append(recall)
             f1_scores['q_id'].append(pred_item['question_id'])
 
             # if isinstance(f1_scores['hit'][-1], str):
@@ -107,8 +107,8 @@ def evaluate(gt, pred):
     return tabulate(
         [
             ['exact match score', np.mean(exact_scores['hit'])*100], 
-            ['f1 score', np.mean(f1)*100], 
-            ['precision', np.mean(precision)*100], 
+            ['f1 score', np.mean(f1List)*100], 
+            ['precision', np.mean(precisionList)*100], 
             ['recall', np.mean(recall)*100], 
             ['bleu_score', np.mean(bleu_score)*100], 
             ['bleu_score_1', np.mean(bleu_score_1)*100], 
@@ -122,9 +122,9 @@ def evaluate(gt, pred):
 if __name__ == '__main__':
     args = parse_option()
 
-    dataset = args.gt.split("/")[-2]
+    # dataset = args.gt.split("/")[-2]
 
-    print(f"\n========\n {dataset}")
+    # print(f"\n========\n {dataset}")
 
     gt = json.load(open(args.gt, 'r'))
     
