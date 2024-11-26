@@ -81,3 +81,5 @@ pefomed/tasks/__pycache__/text_to_image_generation.cpython-39.pyc
 pefomed/tasks/__pycache__/vqa_reading_comprehension.cpython-39.pyc
 pefomed/tasks/__pycache__/vqa.cpython-39.pyc
 wandb*
+evaluation/eval_env
+evaluation/eval_metrics/__pycache__
