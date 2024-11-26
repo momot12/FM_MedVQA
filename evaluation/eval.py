@@ -14,8 +14,8 @@ warnings.simplefilter('ignore')
 
 def parse_option():
     parser = argparse.ArgumentParser('Evaluation for Medical VQA model generated outputs', add_help=False)
-    parser.add_argument('--gt', type=str, default="test.json", help='path to groundtruth file', )
-    parser.add_argument('--pred', type=str, default="answer-file-llava-zeorshot.jsonl", help='path to prediction file', )
+    parser.add_argument('--gt', type=str, default="gt_sample.json", help='path to groundtruth file', )
+    parser.add_argument('--pred', type=str, default="prediction_sample.json", help='path to prediction file', )
     args, unparsed = parser.parse_known_args()
     return args
 
@@ -31,12 +31,10 @@ def load_jsonl(path):
 def evaluate(gt, pred):
     # pred: output json file
     #   gt: from given test set   
-    closed_scores = collections.defaultdict(list)
-    bleu_scores = collections.defaultdict(list)
-    exact_scores = collections.defaultdict(list)
-    f1_scores = collections.defaultdict(list)
-    open_hit_scores = collections.defaultdict(list)
 
+
+    exact_hit_scores = []
+    closed_hit_scores = []
     bleu_score = []
     bleu_score_1 = []
     bleu_score_2 = []
@@ -60,15 +58,15 @@ def evaluate(gt, pred):
             # else:
             #     hit = 0.0
             # open_hit_scores['hit'].append(hit)
-            exact_scores['hit'].append(calculate_exactmatch(pred_value, gt_value))
-            exact_scores['q_id'].append(pred_item['question_id'])
+            exact_hit_scores.append(calculate_exactmatch(pred_value, gt_value))
+            # exact_scores['q_id'].append(pred_item['question_id'])
 
 
             f1_score, precision, recall = calculate_f1score(pred_value, gt_value)
             f1List.append(f1_score)
             precisionList.append(precision)
             recallList.append(recall)
-            f1_scores['q_id'].append(pred_item['question_id'])
+            # f1_scores['q_id'].append(pred_item['question_id'])
 
             # if isinstance(f1_scores['hit'][-1], str):
             #     # import pdb; pdb.set_trace()
@@ -82,7 +80,7 @@ def evaluate(gt, pred):
             b_score_3 = sentence_bleu(references=[str(gt_value).lower().split()],
                                     hypothesis=str(pred_value).lower().split(), weights=(0, 0, 1, 0))
             
-            bleu_scores['q_id'].append(pred_item['question_id'])
+            # bleu_scores['q_id'].append(pred_item['question_id'])
             bleu_score.append(b_score)
             bleu_score_1.append(b_score_1)
             bleu_score_2.append(b_score_2)
@@ -90,23 +88,23 @@ def evaluate(gt, pred):
 
         elif gt_item['answer_type'] == 'CLOSED':
             # for close-ended question (Yes/No)
-            closed_scores['q_id'].append(pred_item['question_id'])
+            # closed_scores['q_id'].append(pred_item['question_id'])
             if 'yes' in pred_value or 'no' in pred_value:
                 if gt_value in pred_value:
-                    closed_scores['hit'].append(1)
+                    closed_hit_scores.append(1)
                 else:
-                    closed_scores['hit'].append(0)
+                    closed_hit_scores.append(0)
             else:
-                closed_scores['hit'].append(0)
+                closed_hit_scores.append(0)
     
-    closed_score = np.mean(closed_scores['hit']) if len(closed_scores['hit']) != 0 else 0.0
+    closed_score = np.mean(closed_hit_scores) if len(closed_hit_scores) != 0 else 0.0
 
-    num_open, num_close = len(closed_scores['hit']), len(open_hit_scores['hit'])
+    num_open, num_close = len(closed_hit_scores), len(closed_hit_scores)
     print(f'num_open {num_open} || num_close {num_close}')
 
     return tabulate(
         [
-            ['exact match score', np.mean(exact_scores['hit'])*100], 
+            ['exact match score', np.mean(exact_hit_scores)*100], 
             ['f1 score', np.mean(f1List)*100], 
             ['precision', np.mean(precisionList)*100], 
             ['recall', np.mean(recall)*100], 
@@ -121,10 +119,6 @@ def evaluate(gt, pred):
 
 if __name__ == '__main__':
     args = parse_option()
-
-    # dataset = args.gt.split("/")[-2]
-
-    # print(f"\n========\n {dataset}")
 
     gt = json.load(open(args.gt, 'r'))
     
