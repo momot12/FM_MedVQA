@@ -8,7 +8,7 @@ from peft import get_peft_model, LoraConfig
 import wandb
 from tqdm import tqdm
 import torch
-from datasets.vilt.datasets import ROCOv2Dataset
+from medvqa.datasets.vilt.datasets import ROCOv2Dataset
 
 # Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
