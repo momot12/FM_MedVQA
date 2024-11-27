@@ -9,7 +9,7 @@ from transformers import LlamaForCausalLM, AutoTokenizer, MistralForCausalLM, Ad
 
 #NOTE: Problem from line 126
 
-cache_dir = "eepy/llava-med-v1.5-mistral-7b"
+cache_dir = "/mount/studenten-temp1/users/takamo/llava-med-v1.5-mistral-7b"
 
 # set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
