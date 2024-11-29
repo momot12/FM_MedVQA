@@ -51,7 +51,7 @@ def evaluate(gt, pred):
         gt_value = normalize_word(gt_value)
         pred_value = normalize_word(pred_value)
 
-        if gt_item['question_type'] == 'OPEN':
+        if gt_item['answer_type'] == 'OPEN':
             # for open-ended question
             # if gt_value in pred_value:
             #     hit = 1.0
@@ -86,7 +86,7 @@ def evaluate(gt, pred):
             bleu_score_2.append(b_score_2)
             bleu_score_3.append(b_score_3)
 
-        elif gt_item['question_type'] == 'CLOSED':
+        elif gt_item['answer_type'] == 'CLOSED':
             # for close-ended question (Yes/No)
             # closed_scores['q_id'].append(pred_item['question_id'])
             if 'yes' in pred_value or 'no' in pred_value:
