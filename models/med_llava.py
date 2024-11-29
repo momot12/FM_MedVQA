@@ -1,5 +1,5 @@
-datasets_path = 'eepy/datasets'
-hf_cache_path = 'eepy/hf-cache'
+dataset_cache_dir = '../datasets'
+model_cache_dir = "/mount/studenten-temp1/users/takamo/llava-med-v1.5-mistral-7b"
 
 import torch
 import torch.nn as nn
@@ -9,15 +9,12 @@ from transformers import LlamaForCausalLM, AutoTokenizer, MistralForCausalLM, Ad
 
 #NOTE: Problem from line 126
 
-cache_dir = "/mount/studenten-temp1/users/takamo/llava-med-v1.5-mistral-7b"
-
 # set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-
+print("Using device: {}".format(device))
 ### PARAMS to set ###
 MAX_LENGTH = 256
-BATCH_SIZE = 8
+BATCH_SIZE = 4
 NUM_CLASSES = 10 # for output layer 
 LEARNING_RATE = 1e-4
 EPOCHS = 3
@@ -28,16 +25,16 @@ SAVED_MODEL_NAME = f"Llava_med_{EPOCHS}_{LEARNING_RATE}_{BATCH_SIZE}_{DATASET}.p
 
 ### MODEL and TOKENIZER ###
 # Query tokenizer and model from cache
-tokenizer = AutoTokenizer.from_pretrained(cache_dir, local_files_only=True)
+tokenizer = AutoTokenizer.from_pretrained(model_cache_dir, local_files_only=True)
 #model = LlamaForCausalLM.from_pretrained(cache_dir, local_files_only=True, device_map="auto")
-model = MistralForCausalLM.from_pretrained(cache_dir, local_files_only=True, device_map="auto")
+model = MistralForCausalLM.from_pretrained(model_cache_dir, local_files_only=True, device_map="auto")
 
 print(f"*** Finished querying tokenizer and llava-med model. ***\n\n*** Prepping data. ***")
 
 
 ### DATASET PROCESSING - VQA_RAD ###
 # Format --> {'image': PIL.JPEG, 'question': 'are regions of the brain infarcted?', 'answer': 'yes'}
-vqa_rad = load_dataset("flaviagiammarino/vqa-rad", cache_dir=cache_dir)
+vqa_rad = load_dataset("flaviagiammarino/vqa-rad", cache_dir=dataset_cache_dir)
 
 # answer_map format --> {'yes': 0, 'no': 1, 'cardiovascular': 2, 'right': 1984, ...}
 answer_map = {}
