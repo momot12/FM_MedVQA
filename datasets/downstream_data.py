@@ -9,6 +9,8 @@ print('loaded vqa rad')
 ds_slake = load_dataset("mdwiratathya/SLAKE-vqa-english", cache_dir=dataset_cache_dir)
 print('loaded slake')
 
+print(ds_slake)
+
 # PathVQA
 ds_pathVQA = load_dataset("flaviagiammarino/path-vqa", cache_dir=dataset_cache_dir)
 print('loaded pathvqa')

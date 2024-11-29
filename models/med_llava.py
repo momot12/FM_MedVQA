@@ -1,5 +1,5 @@
 dataset_cache_dir = '../datasets'
-model_cache_dir = "llava-med-v1.5-mistral-7b"
+model_cache_dir = "/mount/studenten-temp1/users/takamo/llava-med-v1.5-mistral-7b"
 
 import torch
 import torch.nn as nn
@@ -8,7 +8,6 @@ from torch.utils.data import DataLoader
 from transformers import LlamaForCausalLM, AutoTokenizer, MistralForCausalLM, AdamW
 
 #NOTE: Problem from line 126
-
 
 # set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

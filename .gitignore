@@ -83,3 +83,4 @@ pefomed/tasks/__pycache__/vqa.cpython-39.pyc
 wandb*
 evaluation/eval_env
 evaluation/eval_metrics/__pycache__
+data
