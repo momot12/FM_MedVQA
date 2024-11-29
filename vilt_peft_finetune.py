@@ -63,15 +63,16 @@ image_transform = transforms.Compose([
 def init_wandb(args):
     # Initialize WandB run
     wandb.init(
-        project="PEFT-ViLT-finetune-vqa-rad",     # Replace with your project name
-        entity="cwlin",     # Replace with your WandB username or team
+        project="PEFT-ViLT-finetune-vqa-rad",
+        entity="2024FM-MedVQA",
         config={
             "epochs": args.num_epochs,
             "batch_size": args.batch_size,
             "learning_rate": 5e-5,
             "lora_r": 8,
             "lora_alpha": 16,
-            "lora_dropout": 0.1
+            "lora_dropout": 0.1,
+            "user": "cwlin"
         }
     )
 
