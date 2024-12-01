@@ -85,7 +85,7 @@ def apply_lora_to_model(model):
     """
     # Define LoRA configuration
     lora_config = LoraConfig(
-        target_modules=['query', 'key', 'value'],
+        target_modules=["q_proj", "k_proj", "v_proj"],  # LLaVA's attention layers
         task_type='vision_language',
         r=8,  # Low-rank dimension
         lora_alpha=16,  # Scaling factor
