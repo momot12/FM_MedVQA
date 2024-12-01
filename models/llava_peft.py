@@ -17,7 +17,7 @@ parser.add_argument('--sample', action='store_true', help='Use sample dataset')
 parser.add_argument('--image_dir', type=str, default='data/ROCOv2', help='Directory containing images and captions')
 parser.add_argument('--output_dir', type=str, default='output/llava-peft/ckpt', help='Output directory')
 parser.add_argument('--num_epochs', type=int, default=10, help='Number of epochs to train')
-parser.add_argument('--batch_size', type=int, default=4, help='Batch size')
+parser.add_argument('--batch_size', type=int, default=2, help='Batch size')
 args = parser.parse_args()
 
 def load_dataset(args, tokenizer):
@@ -87,8 +87,8 @@ def apply_lora_to_model(model):
     lora_config = LoraConfig(
         target_modules=["q_proj", "k_proj", "v_proj"],  # LLaVA's attention layers
         task_type='vision_language',
-        r=8,  # Low-rank dimension
-        lora_alpha=16,  # Scaling factor
+        r=4,  # Low-rank dimension
+        lora_alpha=8,  # Scaling factor
         lora_dropout=0.1  # Dropout for LoRA layers
     )
 
