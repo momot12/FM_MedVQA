@@ -4,9 +4,6 @@ wandb*
 evaluation/eval_env
 evaluation/eval_metrics/__pycache__
 *.ipynb
-medvqa/datasets/__pycache__/__init__.cpython-39.pyc
-medvqa/datasets/llava/__pycache__/__init__.cpython-39.pyc
-medvqa/datasets/llava/__pycache__/datasets.cpython-39.pyc
-wandb/debug-internal.log
-wandb/debug.log
-wandb/latest-run
+*cpython-39.pyc
+wandb
+.vscode
