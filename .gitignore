@@ -4,3 +4,6 @@ wandb*
 evaluation/eval_env
 evaluation/eval_metrics/__pycache__
 *.ipynb
+*cpython-39.pyc
+wandb
+.vscode
