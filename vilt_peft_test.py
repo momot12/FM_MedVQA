@@ -34,25 +34,29 @@ image_transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
 ])
+# loop through the test dataset
+for idx, test_example in enumerate(ds_vqa_rad['test']):
+    # test_example['image'].show()
+    image = test_example['image'].convert("RGB")
+    question = test_example['question']
 
-# Example test loop (using the first example from the dataset)
-test_example = ds_vqa_rad['test'][0]  # Example from the test set
-image = test_example['image'].convert("RGB")
-# image = Image.open(test_example['image']).convert("RGB")
-question = test_example['question']
+    # Preprocess image and text
+    inputs = processor(text=question, images=image, return_tensors="pt", padding=True)
+    inputs = {key: value.to(device) for key, value in inputs.items()}
 
-# Preprocess image and text
-inputs = processor(text=question, images=image, return_tensors="pt", padding=True)
-inputs = {key: value.to(device) for key, value in inputs.items()}
+    # Inference
+    with torch.no_grad():
+        outputs = model(**inputs)
+        predicted_ids = outputs.logits.argmax(dim=-1)
 
-# Inference
-with torch.no_grad():
-    outputs = model(**inputs)
-    predicted_ids = outputs.logits.argmax(dim=-1)
+    # Decode the output
+    predicted_answer = tokenizer.decode(predicted_ids[0], skip_special_tokens=True)
 
-# Decode the output
-predicted_answer = tokenizer.decode(predicted_ids[0], skip_special_tokens=True)
-
-# Output the predicted answer
-print(f"Question: {question}")
-print(f"Predicted Answer: {predicted_answer}")
+    # Output the predicted answer
+    print(f"Question: {question}")
+    print(f"Predicted Answer: {predicted_answer}")
+    # print ground truth answer
+    print(f"Ground Truth Answer: {test_example['answer']}")
+    # print image
+    if idx == 2:
+        break
