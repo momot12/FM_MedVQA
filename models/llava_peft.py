@@ -5,9 +5,13 @@ import torch
 from transformers import AdamW, LlavaProcessor, LlavaForConditionalGeneration
 from peft import get_peft_model, LoraConfig
 import wandb
+import sys
+print(os.getcwd())
+sys.path.append('/home/users1/linchi/2024WS-FM/FM_MedVQA')
 from medvqa.datasets.llava.datasets import ROCOv2Dataset
 import argparse
 from tqdm import tqdm
+os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
 
 
 parser = argparse.ArgumentParser()
@@ -17,7 +21,8 @@ parser.add_argument('--sample', action='store_true', help='Use sample dataset')
 parser.add_argument('--image_dir', type=str, default='data/ROCOv2', help='Directory containing images and captions')
 parser.add_argument('--output_dir', type=str, default='output/llava-peft/ckpt', help='Output directory')
 parser.add_argument('--num_epochs', type=int, default=10, help='Number of epochs to train')
-parser.add_argument('--batch_size', type=int, default=2, help='Batch size')
+parser.add_argument('--batch_size', type=int, default=1, help='Batch size')
+parser.add_argument('--device_id', type=int, help='GPU device ID')
 args = parser.parse_args()
 
 def load_dataset(args, tokenizer):
@@ -47,17 +52,17 @@ def load_dataset(args, tokenizer):
     ])
     # Create dataset instances
     train_dataset = ROCOv2Dataset(train_image_dir, train_caption_file, tokenizer, image_transform)
-    valid_dataset = ROCOv2Dataset(valid_image_dir, valid_caption_file, tokenizer, image_transform)
-    test_dataset = ROCOv2Dataset(test_image_dir, test_caption_file, tokenizer, image_transform)
+    # valid_dataset = ROCOv2Dataset(valid_image_dir, valid_caption_file, tokenizer, image_transform)
+    # test_dataset = ROCOv2Dataset(test_image_dir, test_caption_file, tokenizer, image_transform)
     # Create DataLoaders
-    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=4)
-    valid_loader = DataLoader(valid_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
-    test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=4)
+    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=1)
+    # valid_loader = DataLoader(valid_dataset, batch_size=args.batch_size, shuffle=False, num_workers=1)
+    # test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=1)
 
     print(f"Train dataset: {len(train_dataset)} samples")
-    print(f"Valid dataset: {len(valid_dataset)} samples")
-    print(f"Test dataset: {len(test_dataset)} samples")
-    return train_loader, valid_loader, test_loader
+    # print(f"Valid dataset: {len(valid_dataset)} samples")
+    # print(f"Test dataset: {len(test_dataset)} samples")
+    return train_loader # , valid_loader, test_loader
 
 def init_wandb(num_epochs, train_loader):
     # Initialize WandB run
@@ -68,8 +73,8 @@ def init_wandb(num_epochs, train_loader):
             "epochs": num_epochs,
             "batch_size": train_loader.batch_size,
             "learning_rate": 5e-5,
-            "lora_r": 8,
-            "lora_alpha": 16,
+            "lora_r": 2,
+            "lora_alpha": 4,
             "lora_dropout": 0.1
         }
     )
@@ -87,8 +92,8 @@ def apply_lora_to_model(model):
     lora_config = LoraConfig(
         target_modules=["q_proj", "k_proj", "v_proj"],  # LLaVA's attention layers
         task_type='vision_language',
-        r=4,  # Low-rank dimension
-        lora_alpha=8,  # Scaling factor
+        r=2,  # Low-rank dimension
+        lora_alpha=4,  # Scaling factor
         lora_dropout=0.1  # Dropout for LoRA layers
     )
 
@@ -121,6 +126,9 @@ def train(args, num_epochs, train_loader, model, optimizer, device):
 
             epoch_loss += loss.item()
 
+            del pixel_values, input_ids, attention_mask
+            torch.cuda.empty_cache()
+
         print(f"Epoch {epoch + 1} Loss: {epoch_loss:.4f}")
 
         # Log loss to WandB
@@ -140,23 +148,28 @@ def train(args, num_epochs, train_loader, model, optimizer, device):
 def main(args):
     # set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if device.type == 'cuda':
+        device = torch.device(f"cuda:{args.device_id}")
+    print(f"Using device {device}")
 
     # load model and processor
     processor = LlavaProcessor.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=args.model_cache_dir)
-    model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=args.model_cache_dir)
+    model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=args.model_cache_dir, device_map='auto')
 
-    train_loader, valid_loader, test_loader = load_dataset(args, processor)
+    
+    train_loader = load_dataset(args, processor)
 
     # Initialize WandB
     num_epochs = args.num_epochs
-    init_wandb(num_epochs, train_loader)
+    # init_wandb(num_epochs, train_loader)
 
     # Apply LoRA to the model
     model = apply_lora_to_model(model)
-    
+    # model = torch.nn.DataParallel(model)
+        
     # Set model to training mode
-    model.train()
-    model.to(device)
+    # model.train()
+    # model.to(device)
 
     # Optimizer
     optimizer = AdamW(model.parameters(), lr=5e-5)
