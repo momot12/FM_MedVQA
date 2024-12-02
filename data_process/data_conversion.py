@@ -5,8 +5,10 @@ import json
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_cache_dir', type=str, default='data/data_cache', help='Directory to cache datasets')
-parser.add_argument('--folder_path', type=str, default='datasets/VQA-RAD', help='Directory to save images and jsonl')
+parser.add_argument('--folder_path', type=str, default='data/VQA-RAD', help='Directory to save images and jsonl')
 parser.add_argument('--split', type=str, default='test', help='Split of the dataset')
+parser.add_argument('--image', action='store_true', help='Save images')
+parser.add_argument('--qa', action='store_true', help='Save question-answer pairs')
 args = parser.parse_args()
 
 data_cache_dir = '/mount/studenten-temp1/users/linchi/2024WS-FM/datasets/data_cache'
@@ -46,6 +48,7 @@ def classify_question_answer(row):
 # Function to save question-answer pairs to JSONL
 def save_qa_to_jsonl(dataset, jsonl_path):
     with open(jsonl_path, 'w') as f:
+        f.write("[")
         for idx, row in enumerate(dataset):
             question, question_type, answer, answer_type = classify_question_answer(row)
             data = {
@@ -56,16 +59,22 @@ def save_qa_to_jsonl(dataset, jsonl_path):
                 "question_type": question_type,
                 "answer_type": answer_type,
             }
-            f.write(json.dumps(data) + "\n")
+            # the last line should not have a comma
+            if idx != len(dataset) - 1:
+                f.write(json.dumps(data) + ",\n")
+            else:
+                f.write(json.dumps(data) + "]")
+        
 
 
 def main(args):
-
-    save_images(ds_vqa_rad[args.split], folder_path=folder_path, split=args.split)
+    if args.image:
+        save_images(ds_vqa_rad[args.split], folder_path=folder_path, split=args.split)
 
     jsonl_file = "question_answer_gt.jsonl"
     jsonl_path = os.path.join(args.folder_path, "_".join([args.split, jsonl_file]))
-    save_qa_to_jsonl(ds_vqa_rad[args.split], jsonl_path)
+    if args.qa:
+        save_qa_to_jsonl(ds_vqa_rad[args.split], jsonl_path)
 
     print(f"Images and question-answer pairs saved to {args.folder_path}/{args.split}")
 

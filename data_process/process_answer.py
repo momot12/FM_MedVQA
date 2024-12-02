@@ -26,7 +26,10 @@ def classify_question_answer(line):
 # Read the input JSONL file
 def process_jsonl(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8') as outfile:
-        for line in tqdm(infile, desc="Processing"):
+        outfile.write("[")
+        lines = infile.readlines()
+
+        for idx, line in tqdm(enumerate(lines)):
             # Load JSON object from line
             data = json.loads(line.strip())
 
@@ -45,7 +48,10 @@ def process_jsonl(input_file, output_file):
             del processed_data['text']
 
             # Write the processed line to the output JSONL file
-            outfile.write(json.dumps(processed_data) + '\n')
+            if idx != len(lines) - 1:
+                outfile.write(json.dumps(processed_data) + ",\n")
+            else:
+                outfile.write(json.dumps(processed_data) + "]")
 
 def main():
     # Set up argument parser
