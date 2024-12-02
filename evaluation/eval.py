@@ -107,7 +107,7 @@ def evaluate(gt, pred):
             ['exact match score', np.mean(exact_hit_scores)*100], 
             ['f1 score', np.mean(f1List)*100], 
             ['precision', np.mean(precisionList)*100], 
-            ['recall', np.mean(recall)*100], 
+            ['recall', np.mean(recallList)*100], 
             ['bleu_score', np.mean(bleu_score)*100], 
             ['bleu_score_1', np.mean(bleu_score_1)*100], 
             ['bleu_score_2', np.mean(bleu_score_2)*100], 
