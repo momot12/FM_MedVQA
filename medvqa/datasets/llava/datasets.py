@@ -34,6 +34,11 @@ class ROCOv2Dataset(Dataset):
         image_path = os.path.join(self.image_dir, f"{image_id}.jpg")
         image = Image.open(image_path).convert("RGB")
         # image = self.image_transform(image)
+        
+        # Set processor configurations
+        self.processor.patch_size = 16  # or another appropriate value for your model
+        self.processor.vision_feature_select_strategy = "select_all"  # or any strategy suitable for your model
+
         inputs = self.processor(image, caption, return_tensors="pt", padding='max_length', truncation=True, max_length=self.max_length)
 
         return {

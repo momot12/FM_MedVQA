@@ -2,7 +2,7 @@ import os
 from torch.utils.data import DataLoader
 from torchvision import transforms
 import torch
-from transformers import AdamW, LlavaProcessor, LlavaForConditionalGeneration
+from transformers import AdamW, LlavaProcessor, LlavaForConditionalGeneration, AutoProcessor, AutoModelForImageTextToText
 from peft import get_peft_model, LoraConfig
 import wandb
 import sys
@@ -153,9 +153,13 @@ def main(args):
     print(f"Using device {device}")
 
     # load model and processor
-    processor = LlavaProcessor.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=args.model_cache_dir)
-    model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=args.model_cache_dir, device_map='auto')
+    llava_hf = "llava-hf/llava-1.5-7b-hf"
+    tiny_llava_hf = "bczhou/tiny-llava-v1-hf"
+    # processor = LlavaProcessor.from_pretrained(llava_hf, cache_dir=args.model_cache_dir)
+    # model = LlavaForConditionalGeneration.from_pretrained(llava_hf, cache_dir=args.model_cache_dir, device_map='auto')
 
+    processor = AutoProcessor.from_pretrained(tiny_llava_hf, cache_dir=args.model_cache_dir)
+    model = AutoModelForImageTextToText.from_pretrained(tiny_llava_hf, cache_dir=args.model_cache_dir, device_map='auto')
     
     train_loader = load_dataset(args, processor)
 
