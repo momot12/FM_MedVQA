@@ -1,28 +1,74 @@
 import pandas as pd
 
 
-path_gt = "/mount/studenten/team-lab-cl/data2024/fm_med_vqa/momo_fm/FM_MedVQA/data/VQA-RAD/test_question_answer_gt.jsonl"
+# for GROUND TRUTH
+def gt_distribution(df_gt):
 
-# Read the JSONL file
-df = pd.read_json(path_gt)
+    yes = []
+    no = []
+    open_answer = []
+    for index, row in df_gt.iterrows():
 
-
-yes = []
-no = []
-open_answer = []
-for index, row in df.iterrows():
-
-    if row['answer_type'] == 'CLOSED':
-        if row['answer'].lower() == 'yes':
-            yes.append(row['answer'])
-        elif row['answer'].lower() == 'no':
-            no.append(row['answer'])
-    
-    else:
-        open_answer.append(row['answer'])
+        if row['answer_type'] == 'CLOSED':
+            if row['answer'].lower() == 'yes':
+                yes.append(row['answer'])
+            elif row['answer'].lower() == 'no':
+                no.append(row['answer'])
         
-print("Ground truth distributions for VQA-RAD test data:")
-print(f'# of yes answers: {len(yes)}\t~27%')
-print(f'# of yes answers: {len(no)}\t~30%')
-print(f'# of open answers: {len(open_answer)}\t~43%')
-print(f'Total answers: {len(yes)+len(no)+len(open_answer)}')
+        else:
+            open_answer.append(row['answer'])
+    
+    total = len(yes)+len(no)+len(open_answer)  
+    yes_percent = f'~{(len(yes)/total)*100:.2f}%'
+    no_percent = f'~{(len(no)/total)*100:.2f}%'
+    open_percent = f'~{(len(open_answer)/total)*100:.2f}%'
+            
+    print("Ground truth distributions for VQA-RAD test data:")
+    print(f'# of yes answers: {len(yes)}\t{yes_percent}')
+    print(f'# of yes answers: {len(no)}\t{no_percent}')
+    print(f'# of open answers: {len(open_answer)}\t{open_percent}')
+    print(f'Total answers: {total}\n')
+    
+    
+# for PRED
+def pred_distribution(df_pred):
+
+    yes = []
+    no = []
+    open_answer = []
+    for index, row in df_pred.iterrows():
+
+        if row['answer_type'] == 'CLOSED':
+            if row['answer'].lower() == 'yes':
+                yes.append(row['answer'])
+            elif row['answer'].lower() == 'no':
+                no.append(row['answer'])
+        
+        else:
+            open_answer.append(row['answer'])
+    
+    total = len(yes)+len(no)+len(open_answer)  
+    yes_percent = f'~{(len(yes)/total)*100:.2f}%'
+    no_percent = f'~{(len(no)/total)*100:.2f}%'
+    open_percent = f'~{(len(open_answer)/total)*100:.2f}%'
+            
+    print("Ground truth distributions for VQA-RAD test data:")
+    print(f'# of yes answers: {len(yes)}\t{yes_percent}')
+    print(f'# of yes answers: {len(no)}\t{no_percent}')
+    print(f'# of open answers: {len(open_answer)}\t{open_percent}')
+    print(f'Total answers: {total}\n')
+
+
+
+# GT: vqarad
+path_gt_vqarad = "/mount/studenten/team-lab-cl/data2024/fm_med_vqa/momo_fm/FM_MedVQA/data/VQA-RAD/test_question_answer_gt.jsonl"
+df_gt_vqarad = pd.read_json(path_gt_vqarad)
+
+#gt_distribution(df_gt=df_gt_vqarad)
+
+# INFERENCE: tiny llava - vqarad
+path_out = "/mount/studenten/team-lab-cl/data2024/fm_med_vqa/momo_fm/FM_MedVQA/OUTPUTS_jsonl/tinyllava_test_vqa_rad_answer_pred.jsonl"
+
+df_2 = pd.read_json(path_out)
+
+print(df_2)
