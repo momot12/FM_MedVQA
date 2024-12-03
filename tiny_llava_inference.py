@@ -31,7 +31,7 @@ for idx, data in tqdm(enumerate(lines)):
     question = data['question']
     prompt += f'{question} ASSISTANT:'
     image = Image.open(f'data/VQA-RAD/test/{data["id"]}.png')
-    inputs = processor(images=image, text=prompt, return_tensors="pt")#.to(device)
+    inputs = processor(images=image, text=prompt, return_tensors="pt").to(device)
     generate_ids = model.generate(**inputs, max_new_tokens=15)
     output = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 
