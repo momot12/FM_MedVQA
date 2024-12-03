@@ -3,17 +3,28 @@ import os
 import argparse
 import json
 
+
+url = 'mdwiratathya/SLAKE-vqa-english' # SLAKE
+#url = 'flaviagiammarino/vqa-rad' # VQA-RAD
+
+folder = 'SLAKE'
+#folder = 'VQA-RAD'
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_cache_dir', type=str, default='data/data_cache', help='Directory to cache datasets')
-parser.add_argument('--folder_path', type=str, default='data/VQA-RAD', help='Directory to save images and jsonl')
+parser.add_argument('--folder_path', type=str, default='data/'+folder, help='Directory to save images and jsonl')
 parser.add_argument('--split', type=str, default='test', help='Split of the dataset')
 parser.add_argument('--image', action='store_true', help='Save images')
 parser.add_argument('--qa', action='store_true', help='Save question-answer pairs')
 args = parser.parse_args()
 
+
 data_cache_dir = '/mount/studenten-temp1/users/linchi/2024WS-FM/datasets/data_cache'
-ds_vqa_rad = load_dataset("flaviagiammarino/vqa-rad", cache_dir=data_cache_dir)
-folder_path = '/mount/studenten-temp1/users/linchi/2024WS-FM/datasets/VQA-RAD'
+ds_vqa_rad = load_dataset(url, cache_dir=data_cache_dir)
+
+print(ds_vqa_rad)
+
+folder_path = '/mount/studenten-temp1/users/linchi/2024WS-FM/datasets/' + folder
 
 
 # Function to save images

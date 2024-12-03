@@ -1,24 +1,27 @@
+# Load model directly
+from transformers import AutoProcessor, AutoModelForImageTextToText
 from PIL import Image
-import requests
+import json
 import torch
-from transformers import AutoProcessor, LlavaForConditionalGeneration
+
 
 torch.cuda.empty_cache()
 print('Emptied cuda cache.')
 
-#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-#print(f'Device: {device}\n')
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f'Device: {device}\n')
 
-model_cache_dir = './data/model_cache'
+MODEL_CACHE = '/mount/studenten-temp1/users/takamo/FM24vqa/model_cache'
 OUTPUT = '/mount/studenten-temp1/users/takamo/FM24vqa/outputs/'
 
-model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=model_cache_dir)#.to(device)
-processor = AutoProcessor.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=model_cache_dir)
+model = AutoModelForImageTextToText.from_pretrained("bczhou/tiny-llava-v1-hf", cache_dir=MODEL_CACHE).to(device)
+processor = AutoProcessor.from_pretrained("bczhou/tiny-llava-v1-hf", cache_dir=MODEL_CACHE)
+
 print('*** Loaded model and processor. ***\n\n*** Starting inference ***')
 
 from tqdm import tqdm
 import json
-output_file = open(OUTPUT+'llava_outputs/llava_test_vqa_rad_answer_pred.jsonl', 'w')
+output_file = open(OUTPUT+'llava_outputs/tinyllava_test_vqa_rad_answer_pred.jsonl', 'w')
 output_file.write('[\n')
 
 lines = json.load(open('data/VQA-RAD/test_question_answer_gt.jsonl', 'r'))
