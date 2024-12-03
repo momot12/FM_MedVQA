@@ -1,150 +1,180 @@
-datasets_path = 'eepy/datasets'
-hf_cache_path = 'eepy/hf-cache'
-
-
+import os
 from torch.utils.data import DataLoader
 from torchvision import transforms
 import torch
-import torch.nn as nn
-from transformers import AdamW, AutoProcessor, LlavaForConditionalGeneration
+from transformers import AdamW, LlavaProcessor, LlavaForConditionalGeneration
 from peft import get_peft_model, LoraConfig
 import wandb
-from datasets.rocov2 import ROCOv2Dataset
-
-
-# set device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-
-# load model and processor
-processor = AutoProcessor.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=hf_cache_path)
-model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=hf_cache_path)
-
-# Define paths
-train_image_dir = 'sample_datasets/ROCOv2/train'
-train_caption_file = 'sample_datasets/ROCOv2/sample_train_captions.csv'
-valid_image_dir = 'sample_datasets/ROCOv2/valid'
-valid_caption_file = 'sample_datasets/ROCOv2/sample_valid_captions.csv'
-test_image_dir = 'sample_datasets/ROCOv2/test'
-test_caption_file = 'sample_datasets/ROCOv2/sample_test_captions.csv'
-
-
-image_transform = transforms.Compose([
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-])
-
-# Create dataset instances
-train_dataset = ROCOv2Dataset(train_image_dir, train_caption_file, processor, image_transform)
-valid_dataset = ROCOv2Dataset(valid_image_dir, valid_caption_file, processor, image_transform)
-test_dataset = ROCOv2Dataset(test_image_dir, test_caption_file, processor, image_transform)
-
-# Create DataLoaders
-train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True, num_workers=4)
-valid_loader = DataLoader(valid_dataset, batch_size=4, shuffle=False, num_workers=4)
-test_loader = DataLoader(test_dataset, batch_size=4, shuffle=False, num_workers=4)
-
-# Define LoRA configuration
-lora_config = LoraConfig(
-    target_modules=["q_proj", "k_proj", "v_proj"],  # LLaVA's attention layers
-    task_type='vision_language',
-    r=8,  # Low-rank dimension
-    lora_alpha=16,  # Scaling factor
-    lora_dropout=0.1  # Dropout for LoRA layers
-)
-
-# Wrap model with LoRA
-model = get_peft_model(model, lora_config)
-model.print_trainable_parameters()
-
-# Optimizer
-optimizer = AdamW(model.parameters(), lr=5e-5)
-
-# Loss function for ITM (binary classification)
-loss_fn = nn.CrossEntropyLoss()  # or nn.BCEWithLogitsLoss() if your labels are floats
-
-output_dir = 'eepy/llava-lora/output'
-logging_dir = 'eepy/llava-lora/logging'
-ckpt_dir = 'eepy/llava-lora/ckpt'
-
+import sys
+print(os.getcwd())
+sys.path.append('/home/users1/linchi/2024WS-FM/FM_MedVQA')
+from medvqa.datasets.llava.datasets import ROCOv2Dataset
+import argparse
 from tqdm import tqdm
-import torch
-
-# Set model to training mode
-model.train()
-model.to(device)
-
-# Number of epochs
-num_epochs = 10  # Adjust based on your dataset size and compute resources
-
-# Initialize WandB run
-wandb.init(
-    project="PEFT-LLaVA-ITM", # image-text-matching
-    entity="cwlin",
-    config={
-        "epochs": num_epochs,
-        "batch_size": train_loader.batch_size,
-        "learning_rate": 5e-5,
-        "lora_r": 8,
-        "lora_alpha": 16,
-        "lora_dropout": 0.1
-    }
-)
+os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'expandable_segments:True'
 
 
-# Training loop
-for epoch in range(num_epochs):
-    print(f"Epoch {epoch + 1}/{num_epochs}")
-    epoch_loss = 0
-    for batch in tqdm(train_loader):
-        # Move batch data to device
-        images = batch['image'].to(device)
-        captions = batch['caption']  # Captions remain as strings for processor
-        labels = batch['label'].to(device)
+parser = argparse.ArgumentParser()
+parser.add_argument('--data_cache_dir', type=str, default='data/data_cache', help='Directory to cache datasets')
+parser.add_argument('--model_cache_dir', type=str, default='data/model_cache', help='Directory to cache models')
+parser.add_argument('--sample', action='store_true', help='Use sample dataset')
+parser.add_argument('--image_dir', type=str, default='data/ROCOv2', help='Directory containing images and captions')
+parser.add_argument('--output_dir', type=str, default='output/llava-peft/ckpt', help='Output directory')
+parser.add_argument('--num_epochs', type=int, default=10, help='Number of epochs to train')
+parser.add_argument('--batch_size', type=int, default=1, help='Batch size')
+parser.add_argument('--device_id', type=int, help='GPU device ID')
+args = parser.parse_args()
 
-        # Preprocess inputs
-        inputs = processor(
-            text=captions,
-            images=images,
-            return_tensors="pt",
-            padding=True
-        ).to(device)
+def load_dataset(args, tokenizer):
+    if args.sample:
+        # Define paths
+        print('Using sample dataset')
+        train_image_dir = 'sample_datasets/ROCOv2/train'
+        train_caption_file = 'sample_datasets/ROCOv2/sample_train_captions.csv'
+        valid_image_dir = 'sample_datasets/ROCOv2/valid'
+        valid_caption_file = 'sample_datasets/ROCOv2/sample_valid_captions.csv'
+        test_image_dir = 'sample_datasets/ROCOv2/test'
+        test_caption_file = 'sample_datasets/ROCOv2/sample_test_captions.csv'
+    else:
+        print('Using full dataset')
+        # args
+        train_image_dir = os.path.join(args.image_dir, 'train')
+        train_caption_file = os.path.join(args.image_dir, 'train_captions.csv')
+        valid_image_dir = os.path.join(args.image_dir, 'valid')
+        valid_caption_file = os.path.join(args.image_dir, 'valid_captions.csv')
+        test_image_dir = os.path.join(args.image_dir, 'test')
+        test_caption_file = os.path.join(args.image_dir, 'test_captions.csv')
 
-        # Forward pass
-        outputs = model(**inputs)
 
-        # ITM logits for binary classification
-        logits = outputs.logits[:, 0, :2]  # Adjust this indexing based on output format
-        
-        loss = loss_fn(logits, labels)
+    image_transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+    ])
+    # Create dataset instances
+    train_dataset = ROCOv2Dataset(train_image_dir, train_caption_file, tokenizer, image_transform)
+    # valid_dataset = ROCOv2Dataset(valid_image_dir, valid_caption_file, tokenizer, image_transform)
+    # test_dataset = ROCOv2Dataset(test_image_dir, test_caption_file, tokenizer, image_transform)
+    # Create DataLoaders
+    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=1)
+    # valid_loader = DataLoader(valid_dataset, batch_size=args.batch_size, shuffle=False, num_workers=1)
+    # test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=1)
 
-        # Backward pass and optimization
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+    print(f"Train dataset: {len(train_dataset)} samples")
+    # print(f"Valid dataset: {len(valid_dataset)} samples")
+    # print(f"Test dataset: {len(test_dataset)} samples")
+    return train_loader # , valid_loader, test_loader
 
-        epoch_loss += loss.item()
+def init_wandb(num_epochs, train_loader):
+    # Initialize WandB run
+    wandb.init(
+        project="PEFT-Llava-pretrain-conditional-generation",
+        entity="cwlin",     # Replace with your WandB username or team
+        config={
+            "epochs": num_epochs,
+            "batch_size": train_loader.batch_size,
+            "learning_rate": 5e-5,
+            "lora_r": 2,
+            "lora_alpha": 4,
+            "lora_dropout": 0.1
+        }
+    )
+
+def apply_lora_to_model(model):
+    """
+    Apply LoRA to the model.
+    Args:
+        model: Base model to apply LoRA.
+        lora_config: LoRA configuration.
+    Returns:
+        model: Model with LoRA applied.
+    """
+    # Define LoRA configuration
+    lora_config = LoraConfig(
+        target_modules=["q_proj", "k_proj", "v_proj"],  # LLaVA's attention layers
+        task_type='vision_language',
+        r=2,  # Low-rank dimension
+        lora_alpha=4,  # Scaling factor
+        lora_dropout=0.1  # Dropout for LoRA layers
+    )
+
+    # Apply LoRA to the model
+    model = get_peft_model(model, lora_config)
+    model.print_trainable_parameters()
+    return model
+
+def train(args, num_epochs, train_loader, model, optimizer, device):
+    # Training loop
+    for epoch in range(num_epochs):
+        print(f"Epoch {epoch + 1}/{num_epochs}")
+        epoch_loss = 0
+        for batch in tqdm(train_loader):
+            pixel_values = batch['pixel_values'].to(device)
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            
+            outputs = model(
+                pixel_values=pixel_values,
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                labels=input_ids
+            )
+            loss = outputs.loss
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            epoch_loss += loss.item()
+
+            del pixel_values, input_ids, attention_mask
+            torch.cuda.empty_cache()
+
+        print(f"Epoch {epoch + 1} Loss: {epoch_loss:.4f}")
 
         # Log loss to WandB
-        wandb.log({"loss": loss.item()})
+        wandb.log({"train_loss": epoch_loss})
+    
+    # save datetime to the output directory
+    import datetime
+    now = datetime.datetime.now()
+    date_and_time = now.strftime("%Y-%m-%d-%H:%M")
+    # Create output directory if it doesn't exist
+    output_dir = os.path.join(args.output_dir, date_and_time)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    model.save_pretrained(output_dir)
+    print(f"Model saved to {output_dir}")
 
-    avg_loss = epoch_loss / len(train_loader)
-    print(f"Average training loss for epoch {epoch + 1}: {avg_loss:.4f}")
+def main(args):
+    # set device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if device.type == 'cuda':
+        device = torch.device(f"cuda:{args.device_id}")
+    print(f"Using device {device}")
 
-    # Log average loss for the epoch
-    wandb.log({"epoch_loss": avg_loss, "epoch": epoch + 1})
+    # load model and processor
+    processor = LlavaProcessor.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=args.model_cache_dir)
+    model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=args.model_cache_dir, device_map='auto')
+
+    
+    train_loader = load_dataset(args, processor)
+
+    # Initialize WandB
+    num_epochs = args.num_epochs
+    # init_wandb(num_epochs, train_loader)
+
+    # Apply LoRA to the model
+    model = apply_lora_to_model(model)
+    # model = torch.nn.DataParallel(model)
+        
+    # Set model to training mode
+    # model.train()
+    # model.to(device)
+
+    # Optimizer
+    optimizer = AdamW(model.parameters(), lr=5e-5)
+    train(args, num_epochs, train_loader, model, optimizer, device=device)
 
 
-# Save model after training
-model.save_pretrained(ckpt_dir)
-
-# example
-"""
-inputs = processor(
-    text=["A cat sitting on a mat"],
-    images=torch.randn(1, 3, 224, 224),  # Example preprocessed image
-    return_tensors="pt"
-)
-outputs = model(**inputs)
-"""
+if __name__ == '__main__':
+    main(args)
