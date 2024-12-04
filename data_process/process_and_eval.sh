@@ -9,3 +9,6 @@
 
 # evaluate the model
 python3 evaluation/eval.py --gt=output/llava/test_question_answer_gt.jsonl --pred=output/llava/test_vqa_rad_answer-file.jsonl
+
+# TEST: VQA-RAD__TINY-LLAVA
+#python3 evaluation/eval.py --gt=/mount/studenten/team-lab-cl/data2024/fm_med_vqa/momo_fm/FM_MedVQA/data/VQA-RAD/test_question_answer_gt.jsonl --pred=/mount/studenten-temp1/users/takamo/FM24vqa/outputs/llava_outputs/tinyllava_test_vqa_rad_answer_pred.jsonl
