@@ -61,8 +61,8 @@ def process_data(input_file, output_file):
 def main():
     # Set up argument parser
     parser = argparse.ArgumentParser(description="Process the dataset and convert it to ground truth format.")
-    parser.add_argument('--input_file', default='data/VQA-RAD/test_question_answer_gt.jsonl', type=str, help="Path to the input file")
-    parser.add_argument('--output_file', default='data/VQA-RAD/test_question_answer_gt.jsonl',  type=str, help="Path to save the ground truth output")
+    parser.add_argument('--input_file', default='data/PathVQA/test_question_answer_gt.jsonl', type=str, help="Path to the input file")
+    parser.add_argument('--output_file', default='data/PathVQA/test_question_answer_gt.jsonl',  type=str, help="Path to save the ground truth output")
 
     # Parse the arguments
     args = parser.parse_args()

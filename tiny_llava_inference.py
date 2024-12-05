@@ -1,7 +1,8 @@
+# Load model directly
+from transformers import AutoProcessor, AutoModelForImageTextToText
 from PIL import Image
-import requests
+import json
 import torch
-from transformers import AutoProcessor, LlavaForConditionalGeneration
 
 
 # Empty cache to avoid cuda issues
@@ -18,20 +19,19 @@ DATASETS = ['VQA-RAD', 'SLAKE', 'PathVQA']
 # change to 0-VQA-RAD, 1-SLAKE, 2-PathVQA
 DS = DATASETS[2]
 
-model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=MODEL_CACHE).to(device)
-processor = AutoProcessor.from_pretrained("llava-hf/llava-1.5-7b-hf", cache_dir=MODEL_CACHE)
+model = AutoModelForImageTextToText.from_pretrained("bczhou/tiny-llava-v1-hf", cache_dir=MODEL_CACHE).to(device)
+processor = AutoProcessor.from_pretrained("bczhou/tiny-llava-v1-hf", cache_dir=MODEL_CACHE)
 
 print('*** Loaded model and processor. ***\n\n*** Starting inference ***')
 
 from tqdm import tqdm
 import json
-output_file = open(OUTPUT+f'llava_test_{DS.lower()}_answer_pred.jsonl', 'w')
+output_file = open(OUTPUT+f'tinyllava_test_{DS.lower()}_answer_pred.jsonl', 'w')
 output_file.write('[\n')
 
 lines = json.load(open(f'data/{DS}/test_question_answer_gt.jsonl', 'r'))
 outputs = []
 for idx, data in tqdm(enumerate(lines)):
-    print(idx)
     prompt = 'USER: <image>\n'
     question = data['question']
     prompt += f'{question} ASSISTANT:'
