@@ -31,6 +31,7 @@ output_file.write('[\n')
 lines = json.load(open(f'data/{DS}/test_question_answer_gt.jsonl', 'r'))
 outputs = []
 for idx, data in tqdm(enumerate(lines)):
+    print(idx)
     prompt = 'USER: <image>\n'
     question = data['question']
     prompt += f'{question} ASSISTANT:'
