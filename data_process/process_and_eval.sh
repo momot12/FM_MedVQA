@@ -35,16 +35,24 @@
 
 ### Vilt ###
 # TEST: VQA-RAD__Vilt
-echo
-echo 'VQA-RAD'
-python3 evaluation/eval.py --gt=data/VQA-RAD/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/vilt_test_vqa_rad_answer_pred.jsonl
+#echo
+#echo 'VQA-RAD'
+# python3 evaluation/eval.py --gt=data/VQA-RAD/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/vilt_test_vqa_rad_answer_pred.jsonl
 
 # TEST: SLAKE__Vilt
-echo
-echo 'SLAKE'
-python3 evaluation/eval.py --gt=data/SLAKE/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/vilt_test_slake_answer_pred.jsonl 
+# echo
+# echo 'SLAKE'
+# python3 evaluation/eval.py --gt=data/SLAKE/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/vilt_test_slake_answer_pred.jsonl 
 
 # TEST: PathVQA__Vilt
-echo
-echo 'PathVQA'
-python3 evaluation/eval.py --gt=data/PathVQA/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/vilt_test_pathvqa_answer_pred.jsonl
+# echo
+# echo 'PathVQA'
+# python3 evaluation/eval.py --gt=data/PathVQA/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/vilt_test_pathvqa_answer_pred.jsonl
+
+
+### TinyLlava - Token limit = 1024 ###
+# TEST: VQA-RAD__TINY-LLAVA
+#python3 evaluation/eval.py --gt=data/VQA-RAD/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/1024_tinyllava_test_vqa-rad_answer_pred.jsonl
+
+# TEST: SLAKE__TINY-LLAVA
+python3 evaluation/eval.py --gt=data/SLAKE/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/1024_tinyllava_test_slake_answer_pred.jsonl
