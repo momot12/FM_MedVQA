@@ -6,12 +6,33 @@ from nltk.corpus import stopwords
 from nltk import pos_tag
 
 
-file_pred = 'OUTPUTS_jsonl/tinyllava_test_vqa_rad_answer_pred.jsonl'
-df_pred = pd.read_json(file_pred)
+DATASETS = ['VQA-RAD', 'SLAKE', 'PathVQA']
+MODELS = ['tinyllava', 'vilt', 'llavamed']
+MODEL_TYPE = ['IN', 'FT']
+# change to 0-VQA-RAD, 1-SLAKE, 2-PathVQA
+DS = DATASETS[0]
+# change to 0-tinyllava, 1-vilt, 2-llavamed
+MODEL = MODELS[2]
+# change to 0-inference, 1-finetune
+M_TYPE = MODEL_TYPE[0]
 
-file_gt = 'data/VQA-RAD/test_question_answer_gt.jsonl'
+
+# GROUND TRUTH FILES
+DATASETS = ['VQA-RAD', 'SLAKE', 'PathVQA']
+file_gt = f'data/{DS}/test_question_answer_gt.jsonl'
 df_gt = pd.read_json(file_gt)
 
+# PREDICTIONS 
+if DS == 'VQA-RAD':
+    DS = DS.replace('-', '_').lower()
+
+if M_TYPE == 'IN':
+    file_pred = f'OUTPUTS_jsonl/{MODEL}_test_{DS.lower()}_answer_pred.jsonl'
+elif M_TYPE == 'FT':
+    file_pred = f'OUTPUTS_jsonl/{MODEL}_test_{DS.lower()}_finetune_pred.jsonl'
+df_pred = pd.read_json(file_pred)
+
+print(f'*** Evaluating {MODEL} on {DS} as {M_TYPE} ***')
 
 def extract_content_words(text):
     """Extracts content words (Nouns, Verbs, Adjectives, Adverbs) from a text."""
@@ -24,13 +45,12 @@ def extract_content_words(text):
     return ' '.join(content_words)
 
 
-
-def bert_score_eval():
+def bert_score_eval(df_gt=df_gt, df_pred=df_pred):
     f1_all = []
     results = []
 
     for (idx, gt), (_, pred) in zip(df_gt.iterrows(), df_pred.iterrows()):
-        print(f'\n*** {idx}: ***')
+        #print(f'\n*** {idx}: ***')
         gt_value = gt['answer'].lower()
         pred_value = pred['answer_pred'].lower()
         
@@ -46,6 +66,10 @@ def bert_score_eval():
             # yes - no
             elif pred_value.startswith("no"):
                 F1 = [0.0]
+            # yes - text => take original strings
+            else:
+                P, R, F1 = score([pred_value], [gt_value], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
+                F1 = F1.tolist()
         elif gt_value.startswith("no"):
             # no - no
             if pred_value.startswith("no"):
@@ -53,7 +77,10 @@ def bert_score_eval():
             # no - yes
             elif pred_value.startswith("yes"):
                 F1 = [0.0]
-                
+            # no - text => take original strings
+            else:
+                P, R, F1 = score([pred_value], [gt_value], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
+                F1 = F1.tolist()
         # WORDS, SENTENCES answers
         else:
             gt_value_content = extract_content_words(gt_value)
@@ -76,7 +103,7 @@ def bert_score_eval():
             P, R, F1 = score([pred_words], [gt_words], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
             F1 = F1.tolist()
         
-        # if F1 is negative
+        # if F1 is negative, count as 0.0
         if F1[0] < 0:
             F1 = [0.0]
             
@@ -96,12 +123,13 @@ def bert_score_eval():
     print(f"Macro F1 Score: {macro_f1:.4f}")
 
     
-    with open('TRY_OUT/3eval_tinyllava_vqarad.json', "w", encoding="utf-8") as f:
+    with open(f'OUTPUTS_jsonl/eval_{MODEL}_{DS.lower()}_{M_TYPE}.json', "w", encoding="utf-8") as f:
         json.dump(results, f, indent=4)
 
         
     
 bert_score_eval()
-  
+
+print('*** Done. ***')
 #Macro F1 Score: 0.3390 -- yes/no as 1.0 or 0.0
 #Macro F1 Score: 0.3737 -- negative to 0.0

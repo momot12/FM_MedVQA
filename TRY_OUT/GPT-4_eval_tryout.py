@@ -163,10 +163,73 @@ def bert_score_eval():
 
 
 # TRIALS:
-gt1 = "not seen here"
-pred1 = "the kidney is located in the upper right portion of the image, near" #"Yes, there is a vertebral fracture in the image."
+def categ(gt_value, pred_value):
+    gt_words = ""
+    pred_words = ""
+ # YES-NO answers   
+    if gt_value.startswith("yes"):
+        # yes-yes
+        if pred_value.startswith("yes"):
+            F1 = [1.0]
+        # yes - no
+        elif pred_value.startswith("no"):
+            F1 = [0.0]
+        else:
+            print('Yes-text')
+            P, R, F1 = score([pred_value], [gt_value], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
+            F1 = F1.tolist()
+    elif gt_value.startswith("no"):
+        # no - no
+        if pred_value.startswith("no"):
+            F1 = [1.0]
+        # no - yes
+        elif pred_value.startswith("yes"):
+            F1 = [0.0]
+        else:
+            print('No-text')
+            P, R, F1 = score([pred_value], [gt_value], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
+            F1 = F1.tolist()
+    # WORDS, SENTENCES answers
+    else:
+        gt_value_content = extract_content_words(gt_value)
+        #pred_value_content = extract_content_words(pred_value)
+        
+        for word in gt_value_content.lower().split(' '):
+            if word.strip() in pred_value.lower():
+                print('words-yes')
+                gt_words += f' {word.strip()}'
+                pred_words += f' {word.strip()}'
+            else:
+                print('words-no')
+                gt_words = gt_value #_content
+                pred_words = pred_value #_content
+        
+        # if gt content words were misfiltered before, e.g. gt = one --> gt = " "
+        # take original string to compare then     
+        if gt_words == " ":
+            print('Empty string problem')
+            gt_words = gt_value
+            pred_words = pred_value
+            
+        P, R, F1 = score([pred_words], [gt_words], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
+        F1 = F1.tolist()
+
+    print(F1)
+
+
+# No-text [-0.0921444445848465]
+gt11 = "not seen here"
+pred11 = "the kidney is located in the upper right portion of the image, near" #"Yes, there is a vertebral fracture in the image."
 #pred1 = extract_content_words(predd)
 
+
+# No-text [0.020876215770840645]
+
+
+gt1 = 'no'
+pred1 = 'the lung in the image appears to be healthy, as it is described'
+
+categ(gt_value=gt1, pred_value=pred1)
 # gt = "one"
 # pred = "there are two instances of intussusception in the image."
 
@@ -182,11 +245,11 @@ pred3 = "In the CT scan, two ventricles can be seen with calcifications"
 gt4 = "regression of left frontal mass"
 pred4 = "On the left side of the frontal lobe, there is an ab"
 
-print(extract_content_words('one'))
+#print(extract_content_words('one'))
 
 
-P, R, F1_1 = score([pred], [gt], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
-print(f'F1_1: {F1_1.tolist()}')
+#P, R, F1_1 = score([pred1], [gt1], lang="en", model_type="distilbert-base-uncased", rescale_with_baseline=True)
+#print(f'F1_1: {F1_1.tolist()}')
 
 #P, R, F1_2 = score([pred2], [gt2], lang="en", rescale_with_baseline=True)
 #print(f'F1_2: {F1_2.tolist()}')
