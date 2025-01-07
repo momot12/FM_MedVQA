@@ -10,7 +10,7 @@ DATASETS = ['VQA-RAD', 'SLAKE', 'PathVQA']
 MODELS = ['tinyllava', 'vilt', 'llavamed']
 MODEL_TYPE = ['IN', 'FT']
 # change to 0-VQA-RAD, 1-SLAKE, 2-PathVQA
-DS = DATASETS[0]
+DS = DATASETS[1]
 # change to 0-tinyllava, 1-vilt, 2-llavamed
 MODEL = MODELS[2]
 # change to 0-inference, 1-finetune
