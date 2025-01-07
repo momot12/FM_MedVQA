@@ -27,10 +27,10 @@
 #python3 evaluation/eval.py --gt=data/VQA-RAD/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/llavamed_test_vqa_rad_answer_pred.jsonl
 
 # TEST: SLAKE__LlavaMed ##TODO
-#python3 evaluation/eval.py --gt=data/SLAKE/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/tinyllava_test_slake_answer_pred.jsonl 
+#python3 evaluation/eval.py --gt=data/SLAKE/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/llavamed_test_slake_answer_pred.jsonl 
 
 # TEST: PathVQA__LlavaMed ##TODO
-#python3 evaluation/eval.py --gt=data/PathVQA/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/tinyllava_test_pathvqa_answer_pred.jsonl
+#python3 evaluation/eval.py --gt=data/PathVQA/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/llavamed_test_pathvqa_answer_pred.jsonl
 
 
 ### Vilt ###
@@ -55,4 +55,7 @@
 #python3 evaluation/eval.py --gt=data/VQA-RAD/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/1024_tinyllava_test_vqa-rad_answer_pred.jsonl
 
 # TEST: SLAKE__TINY-LLAVA
-python3 evaluation/eval.py --gt=data/SLAKE/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/1024_tinyllava_test_slake_answer_pred.jsonl
+#python3 evaluation/eval.py --gt=data/SLAKE/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/1024_tinyllava_test_slake_answer_pred.jsonl
+
+# TEST: PathVQA__TINY-LLAVA
+python3 evaluation/eval.py --gt=data/PathVQA/test_question_answer_gt.jsonl --pred=OUTPUTS_jsonl/1024_tinyllava_test_pathvqa_answer_pred.jsonl

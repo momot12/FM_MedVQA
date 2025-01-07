@@ -18,7 +18,7 @@ OUTPUT = 'OUTPUTS_jsonl/'
 DATASETS = ['VQA-RAD', 'SLAKE', 'PathVQA']
 MAX_LENGTH_GEN = 1024
 # change to 0-VQA-RAD, 1-SLAKE, 2-PathVQA
-DS = DATASETS[0]
+DS = DATASETS[2]
 
 model = AutoModelForImageTextToText.from_pretrained("bczhou/tiny-llava-v1-hf", cache_dir=MODEL_CACHE).to(device)
 processor = AutoProcessor.from_pretrained("bczhou/tiny-llava-v1-hf", cache_dir=MODEL_CACHE)
@@ -27,7 +27,7 @@ print('*** Loaded model and processor. ***\n\n*** Starting inference ***')
 
 from tqdm import tqdm
 import json
-output_file = open(OUTPUT+f'1024_tinyllava_test_{DS.lower()}_answer_pred.jsonl', 'w')
+output_file = open(OUTPUT+f'{MAX_LENGTH_GEN}_tinyllava_test_{DS.lower()}_answer_pred.jsonl', 'w')
 output_file.write('[\n')
 
 lines = json.load(open(f'data/{DS}/test_question_answer_gt.jsonl', 'r'))
