@@ -37,7 +37,10 @@ if not os.path.exists(output_dir):
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load the VQA-RAD dataset
-ds_vqa_rad = load_dataset("flaviagiammarino/vqa-rad", cache_dir=data_cache_dir)
+# dataset_id = "flaviagiammarino/vqa-rad"
+# dataset_id = "flaviagiammarino/path-vqa"
+dataset_id = "mdwiratathya/SLAKE-vqa-english"
+ds_vqa_rad = load_dataset(f"{dataset_id}", cache_dir=data_cache_dir)
 
 # Paths for processor, pre-trained model, and LoRA checkpoint
 vilt_mlm = "dandelin/vilt-b32-mlm"
@@ -63,7 +66,7 @@ image_transform = transforms.Compose([
 def init_wandb(args):
     # Initialize WandB run
     wandb.init(
-        project="PEFT-ViLT-finetune-vqa-rad",
+        project="PEFT-ViLT-finetune-slake",
         entity="2024FM-MedVQA",
         config={
             "epochs": args.num_epochs,
