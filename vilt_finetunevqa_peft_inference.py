@@ -5,12 +5,19 @@ from torchvision import transforms
 from PIL import Image
 from medvqa.datasets.vilt.custom_vilt import ViltForVQA  # Replace 'your_script' with the name of the Python file containing the ViltForVQA class definition
 from tqdm import tqdm
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--dataset_name", type=str, default="VQA-RAD")
+parser.add_argument("--model_dir", type=str, default='output/vilt-peft-finetune/ckpt/2025-01-08-02:38 epoch=1000')
+parser.add_argument("--epoch", type=str, default=1000)
+args = parser.parse_args()
 
 # Paths
-DATASET_NAME = "VQA-RAD"
+DATASET_NAME = args.dataset_name
 TRAIN_JSON = f"data/{DATASET_NAME}/train_question_answer_gt.jsonl"
 TEST_JSON = f"data/{DATASET_NAME}/test_question_answer_gt.jsonl"
-MODEL_DIR = 'output/vilt-peft-finetune/ckpt/2025-01-08-02:38 epoch=10'
+MODEL_DIR = args.model_dir
 MODEL_PATH = f'{MODEL_DIR}/vilt_vqa_full_model.pth'
 TOKENIZER_PATH = "dandelin/vilt-b32-finetuned-vqa"  # Pretrained tokenizer path
 
@@ -32,13 +39,17 @@ image_transform = transforms.Compose([
 ])
 
 # Load Data
-def load_json(file_path, split='train'):
-    if split == 'train':
-        with open(file_path, "r") as f:
-            return [json.loads(line) for line in f] if file_path.endswith(".jsonl") else json.load(f)
-    else:
-        with open(file_path, "r") as f:
-            return json.load(f)
+# def load_json(file_path, split='train'):
+#     if split == 'train':
+#         with open(file_path, "r") as f:
+#             return [json.loads(line) for line in f] if file_path.endswith(".jsonl") else json.load(f)
+#     else:
+#         with open(file_path, "r") as f:
+#             return json.load(f)
+        
+def load_json(file_path, split=None):
+    with open(file_path, "r") as f:
+        return json.load(f)
 
 train_data_raw = load_json(TRAIN_JSON, split='train')
 test_data_raw = load_json(TEST_JSON, split='test')
@@ -55,7 +66,7 @@ def classify_question_answer(question, answer):
         answer_type = "OPEN"
     return question_type, answer_type
 
-output_file = open(f'output/vilt_finetunevqa_test_{DATASET_NAME}_answer-file.jsonl', 'w')
+output_file = open(f'output/vilt_finetunevqa_test_{DATASET_NAME}_answer-file_epoch={args.epoch}.jsonl', 'w')
 output_file.write('[\n')
 for idx, data in tqdm(enumerate(test_data_raw)):
     # Example Input
@@ -63,8 +74,8 @@ for idx, data in tqdm(enumerate(test_data_raw)):
     image_path = f"data/{DATASET_NAME}/{split}/{data['id']}.png"
     question = data['question']
 
-    print(f"Image Path: {image_path}")
-    print(f"Question: {question}")
+    # print(f"Image Path: {image_path}")
+    # print(f"Question: {question}")
     
     # Preprocess the image
     image = image_transform(Image.open(image_path).convert("RGB")).unsqueeze(0)  # Add batch dimension
@@ -95,7 +106,7 @@ for idx, data in tqdm(enumerate(test_data_raw)):
     predicted_label = torch.argmax(probs, dim=-1).item()
     answer = {v: k for k, v in answer_map.items()}[predicted_label]
 
-    print(f"Predicted answer: {answer} \n Ground Truth answer: {data['answer']}", )
+    # print(f"Predicted answer: {answer} \n Ground Truth answer: {data['answer']}", )
     question_type, answer_type = classify_question_answer(question, answer)
 
     if idx != len(test_data_raw) - 1:
