@@ -12,9 +12,15 @@ MODEL_TYPE = ['IN', 'FT']
 # change to 0-VQA-RAD, 1-SLAKE, 2-PathVQA
 DS = DATASETS[2]
 # change to 0-tinyllava, 1-vilt, 2-llavamed
-MODEL = MODELS[0]
+MODEL = MODELS[1]
 # change to 0-inference, 1-finetune
 M_TYPE = MODEL_TYPE[1]
+# for vilt FT
+# vqarad --> epoch 1
+# slake --> epoch 1
+# pathvqa --> epoch 100
+EPOCHS = ['1', '100']
+EPOCH = EPOCHS[0]
 
 
 # GROUND TRUTH FILES
@@ -28,9 +34,13 @@ if DS == 'VQA-RAD':
 
 if M_TYPE == 'IN':
     file_pred = f'OUTPUTS_jsonl/{MODEL}_test_{DS.lower()}_answer_pred.jsonl'
+elif (M_TYPE == 'FT' and MODEL == 'vilt'):
+    file_pred = f'OUTPUTS_jsonl/vilt_finetunevqa/{DS.lower()}/{MODEL}_finetunevqa_test_{DS}_answer-file_epoch={EPOCH}.jsonl' #VQA-RAD_answer-file_epoch=1.jsonl'
 elif M_TYPE == 'FT':
     file_pred = f'OUTPUTS_jsonl/{MODEL}_test_{DS.lower()}_finetune_pred.jsonl'
+
 df_pred = pd.read_json(file_pred)
+
 
 print(f'*** Evaluating {MODEL} on {DS} as {M_TYPE} ***')
 
