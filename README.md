@@ -51,7 +51,7 @@ How to run (choose corresponding gt/pred files): ```python3 eval.py --gt=gt_file
 
 ### Qualitative Metric:
 This is a customize evaluation meant to focus on the semantic aspects of the generated sentences.  
-The implementation can be found here: [qualitative_custom_eval.py](FM_MedVQA/EVALUATION/qualitative_custom_eval.py).
+The implementation can be found here: [qualitative_custom_eval.py](EVALUATION/qualitative_custom_eval.py).
 
 Mainly three cases are distinguished:  
 #### Case 1: Closed Questions
