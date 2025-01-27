@@ -2,6 +2,7 @@ from eval import *
 from sklearn.metrics import precision_score, recall_score, f1_score
 import pandas as pd
 from nltk.translate.bleu_score import sentence_bleu
+from eval_metrics.glossary import * 
 
 
 # NOTE: test on vqa-rad, tinyllava
@@ -17,6 +18,10 @@ file_pred = f'/mount/studenten-temp1/users/linchi/2024WS-FM/output/llava-med/ans
 df_pred = pd.read_json(file_pred)
 
 file_gt = '/mount/studenten-temp1/users/linchi/2024WS-FM/output/llava-med/test_question_answer_gt.jsonl'
+file_pred = 'OUTPUTS_jsonl/tinyllava_test_vqa_rad_answer_pred.jsonl'
+df_pred = pd.read_json(file_pred)
+
+file_gt = 'data/VQA-RAD/test_question_answer_gt.jsonl'
 df_gt = pd.read_json(file_gt)
 
 # GT: {"id": 0, "question": "is there evidence of an aortic aneurysm?", "answer": "yes", "question_type": "IS", "answer_type": "CLOSED"}
@@ -28,11 +33,12 @@ open_ans_dict = {}
 
 
 for (idx, gt), (_, pred) in zip(df_gt.iterrows(), df_pred.iterrows()):
-    #gt_value = normalize_word(gt['answer'].lower())
-    #pred_value = normalize_word(pred['answer_pred'].lower())
+
+    gt_value = normalize_word(gt['answer'].lower())
+    pred_value = normalize_word(pred['answer_pred'].lower())
     
-    gt_value = gt['answer'].lower()
-    pred_value = pred['answer_pred'].lower()
+    #gt_value = gt['answer'].lower()
+    #pred_value = pred['answer_pred'].lower()
     
     gt_id = gt['id']
     pred_id = pred['question_id']
@@ -54,12 +60,8 @@ for (idx, gt), (_, pred) in zip(df_gt.iterrows(), df_pred.iterrows()):
         else:
             yes_no_dict[gt_id].append(-200)
         
-        # add strings indlucing yes/no strings for BLEU
-        if args.use_space:
-            open_ans_dict[gt_id] = [gt_value.split(' '), pred_value.split(' ')]
-        else:
-            open_ans_dict[gt_id] = [gt_value.split(), pred_value.split()]
 
+        open_ans_dict[gt_id] = [gt_value.split(), pred_value.split()]
 
 precision_all = []
 recall_all = []
@@ -67,6 +69,7 @@ f1_all = []
 
 y_true = []
 y_pred = []
+
 for id, ans in yes_no_dict.items():
     # check that gt and pred BOTH 0 or 1
     # ans[0] = gt, [1] = pred
@@ -110,7 +113,9 @@ recall = recall_score(y_true=y_true, y_pred=y_pred)
 f1 = f1_score(y_true=y_true, y_pred=y_pred)
 
 
+
 print(f'Number of yes/no answers: {len(y_pred)}')
+print(f'\nNumber of yes/no answers: {len(y_pred)}')
 print(f'Precision: {precision*100:.2f}%')
 print(f'Recall   : {recall*100:.2f}%')
 print(f'F1 score : {f1*100:.2f}%')
