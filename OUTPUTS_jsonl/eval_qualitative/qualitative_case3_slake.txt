@@ -1,0 +1,312 @@
+index:  8
+Q: Is the lung healthy?
+GT: no
+PRED: the lung in the image appears to be healthy, as it is described
+
+index:  18
+Q: Is the lung healthy?
+GT: no
+PRED: the lung in the image appears to be healthy, as it is described
+
+index:  29
+Q: Is the lung healthy?
+GT: no
+PRED: the lung in the image appears to be healthy, as it is described
+
+index:  73
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy, as it is described as a "
+
+index:  95
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy in the image, as it is described
+
+index:  103
+Q: Is the lung healthy?
+GT: no
+PRED: the lung in the image appears to be healthy, as it is described
+
+index:  111
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy, as it is described as a "
+
+index:  118
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy, as it is described as a "
+
+index:  138
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy in the image, as it is described
+
+index:  151
+Q: Is the liver healthy?
+GT: yes
+PRED: the liver appears to be healthy in the image, as it is
+
+index:  167
+Q: Is the liver healthy?
+GT: yes
+PRED: the liver appears to be healthy in the image, as it is
+
+index:  458
+Q: Is the lung healthy?
+GT: no
+PRED: the lung in the image appears to be healthy, as it is described
+
+index:  488
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy in the image, as it is described
+
+index:  502
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy, as it is described as a "
+
+index:  518
+Q: Is the lung healthy?
+GT: no
+PRED: the lung appears to be healthy in the image, as it is described
+
+index:  694
+Q: Is the brain healthy?
+GT: no
+PRED: the brain in the image appears to be healthy, as it is described
+
+index:  941
+Q: Is the brain healthy?
+GT: no
+PRED: the brain in the image appears to be healthy, as it is described
+
+index:  1018
+Q: Is the brain healthy?
+GT: yes
+PRED: the brain in the image appears to be healthy, as it is described
+
+index:  1026
+Q: Is the brain healthy?
+GT: yes
+PRED: the brain in the image appears to be healthy, as it is described
+
+index:  1035
+Q: Is the lung healthy?
+GT: yes
+PRED: the lung in the image appears to be healthy, as it is described
+
+index:  1053
+Q: Is the lung healthy?
+GT: yes
+PRED: the lung appears to be healthy, as it is described as a "
+
+--------------------------------------------------
+tinyllava-inference
+cnt:  21
+--------------------------------------------------
+--------------------------------------------------
+tinyllava-finetune
+cnt:  0
+--------------------------------------------------
+index:  36
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  48
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no abnormalities detected.
+
+index:  55
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  62
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  69
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  77
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  84
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no abnormalities detected.
+
+index:  91
+Q: Does this image look normal?
+GT: no
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  102
+Q: Does this image look normal?
+GT: no
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  107
+Q: Does this image look normal?
+GT: no
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  119
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  134
+Q: Does this image look abnormal?
+GT: yes
+PRED: the chest x-ray appears to be normal.
+
+index:  139
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  158
+Q: Does this image look normal?
+GT: yes
+PRED: the image appears to be normal, as it shows no abnormalities.
+
+index:  198
+Q: Does this image look normal?
+GT: no
+PRED: the image appears to be normal, as it shows no abnormalities.
+
+index:  213
+Q: Does this image look normal?
+GT: no
+PRED: the image appears to be normal, as it shows no abnormalities.
+
+index:  238
+Q: Does this image look normal?
+GT: no
+PRED: the image appears to be normal, as it shows no abnormalities.
+
+index:  258
+Q: Does this image look normal?
+GT: no
+PRED: the image appears to be normal, as it shows no abnormalities.
+
+index:  275
+Q: Does this image look normal?
+GT: yes
+PRED: the image appears to be normal, as it shows no abnormalities.
+
+index:  368
+Q: Is the lung abnormal?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no visible abnormalities.
+
+index:  382
+Q: Does the patient have any abnormalities?
+GT: yes
+PRED: according to the chest x-ray, the patient appears to have no abnormalities.
+
+index:  383
+Q: Is this image normal?
+GT: no
+PRED: the chest x-ray appears to be normal, which means that there are no visible signs of abnormalities or issues in the lungs, heart, or surrounding structures.
+
+index:  398
+Q: Does the lung look abnormal?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no visible abnormalities.
+
+index:  427
+Q: Does the lung look abnormal?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no visible abnormalities.
+
+index:  443
+Q: Is this image normal?
+GT: no
+PRED: the chest x-ray appears to be normal, which means that there are no visible signs of abnormalities or issues in the lungs, heart, or surrounding structures.
+
+index:  457
+Q: Does the patient have any abnormalities?
+GT: yes
+PRED: according to the chest x-ray, the patient appears to have no abnormalities.
+
+index:  487
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  503
+Q: Is the lung abnormal?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no visible abnormalities.
+
+index:  517
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  532
+Q: Does the lung look abnormal?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no visible abnormalities.
+
+index:  533
+Q: Are there abnormalities in this image?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no significant abnormalities detected.
+
+index:  577
+Q: Does the patient have any abnormalities?
+GT: yes
+PRED: according to the chest x-ray, the patient appears to have no abnormalities.
+
+index:  578
+Q: Does the lung look abnormal?
+GT: yes
+PRED: the chest x-ray appears to be normal, with no visible abnormalities.
+
+index:  713
+Q: Is the brain abnormal?
+GT: yes
+PRED: the brain appears to be normal in the image.
+
+index:  722
+Q: Is there evidence of a brain edema?
+GT: yes
+PRED: according to the image, there is no evidence of a brain edema.
+
+index:  749
+Q: Is the brain abnormal?
+GT: yes
+PRED: the brain appears to be normal in the mri image.
+
+index:  766
+Q: Does the brain look abnormal?
+GT: yes
+PRED: the brain appears to be normal in the mri image.
+
+index:  792
+Q: Does the patient have brain tumor?
+GT: yes
+PRED: the patient does not have a brain tumor. the mri image shows a normal brain, with no evidence of a tumor.
+
+index:  837
+Q: Does the brain look abnormal?
+GT: no
+PRED: the brain appears to be normal in the mri image.
+
+--------------------------------------------------
+llavamed-inference
+cnt:  39
+--------------------------------------------------

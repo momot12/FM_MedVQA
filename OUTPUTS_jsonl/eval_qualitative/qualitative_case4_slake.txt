@@ -1,0 +1,54 @@
+
+index:  151
+Q: Is the liver healthy?
+GT: yes
+PRED: the liver appears to be healthy in the image, as it is
+
+index:  167
+Q: Is the liver healthy?
+GT: yes
+PRED: the liver appears to be healthy in the image, as it is
+
+index:  1018
+Q: Is the brain healthy?
+GT: yes
+PRED: the brain in the image appears to be healthy, as it is described
+
+index:  1026
+Q: Is the brain healthy?
+GT: yes
+PRED: the brain in the image appears to be healthy, as it is described
+
+index:  1035
+Q: Is the lung healthy?
+GT: yes
+PRED: the lung in the image appears to be healthy, as it is described
+
+index:  1053
+Q: Is the lung healthy?
+GT: yes
+PRED: the lung appears to be healthy, as it is described as a "
+
+--------------------------------------------------
+tinyllava-inference
+cnt:  6 / 21
+--------------------------------------------------
+--------------------------------------------------
+tinyllava-finetune
+cnt:  0
+--------------------------------------------------
+
+index:  158
+Q: Does this image look normal?
+GT: yes
+PRED: the image appears to be normal, as it shows no abnormalities.
+
+index:  837
+Q: Does the brain look abnormal?
+GT: no
+PRED: the brain appears to be normal in the mri image.
+
+--------------------------------------------------
+llavamed-inference
+cnt:  2 / 39
+--------------------------------------------------
