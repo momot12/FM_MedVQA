@@ -7,6 +7,17 @@ from eval_metrics.glossary import *
 
 # NOTE: test on vqa-rad, tinyllava
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--dataset', type=str, default='vqa-rad', help='Dataset to evaluate on')
+parser.add_argument('--use_space', action='store_true', help='Use space to split words')
+args = parser.parse_args()
+# dataset = "_PathVQA"
+dataset = args.dataset
+file_pred = f'/mount/studenten-temp1/users/linchi/2024WS-FM/output/llava-med/answer/test-{dataset}_answer-file.jsonl'
+df_pred = pd.read_json(file_pred)
+
+file_gt = '/mount/studenten-temp1/users/linchi/2024WS-FM/output/llava-med/test_question_answer_gt.jsonl'
 file_pred = 'OUTPUTS_jsonl/tinyllava_test_vqa_rad_answer_pred.jsonl'
 df_pred = pd.read_json(file_pred)
 
@@ -22,6 +33,7 @@ open_ans_dict = {}
 
 
 for (idx, gt), (_, pred) in zip(df_gt.iterrows(), df_pred.iterrows()):
+
     gt_value = normalize_word(gt['answer'].lower())
     pred_value = normalize_word(pred['answer_pred'].lower())
     
@@ -48,9 +60,8 @@ for (idx, gt), (_, pred) in zip(df_gt.iterrows(), df_pred.iterrows()):
         else:
             yes_no_dict[gt_id].append(-200)
         
-        # add strings indlucing yes/no strings for BLEU
-        open_ans_dict[gt_id] = [gt_value.split(' '), pred_value.split(' ')]
 
+        open_ans_dict[gt_id] = [gt_value.split(), pred_value.split()]
 
 precision_all = []
 recall_all = []
@@ -58,7 +69,6 @@ f1_all = []
 
 y_true = []
 y_pred = []
-
 
 for id, ans in yes_no_dict.items():
     # check that gt and pred BOTH 0 or 1
@@ -103,15 +113,17 @@ recall = recall_score(y_true=y_true, y_pred=y_pred)
 f1 = f1_score(y_true=y_true, y_pred=y_pred)
 
 
+
+print(f'Number of yes/no answers: {len(y_pred)}')
 print(f'\nNumber of yes/no answers: {len(y_pred)}')
 print(f'Precision: {precision*100:.2f}%')
 print(f'Recall   : {recall*100:.2f}%')
 print(f'F1 score : {f1*100:.2f}%')
 
-#print(f'\nMean of all answers:')
-#print(f'Precision: {np.mean(precision_all)*100:.2f}%')
-#print(f'Recall   : {np.mean(recall_all)*100:.2f}%')
-#print(f'F1 score : {np.mean(f1_all)*100:.2f}%')
+print(f'\nMean of all answers:')
+print(f'Precision: {np.mean(precision_all)*100:.2f}%')
+print(f'Recall   : {np.mean(recall_all)*100:.2f}%')
+print(f'F1 score : {np.mean(f1_all)*100:.2f}%')
 
 print(f'\nNumber of open answers: {len(open_ans_dict.values())}')
 print(f'Mean BLEU-1 Score: {np.mean(bleu_score_1)*100}')

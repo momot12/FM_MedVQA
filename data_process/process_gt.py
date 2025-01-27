@@ -26,6 +26,8 @@ def process_data(input_file, output_file):
     
     with open(input_file, 'r', encoding='utf-8') as infile:
         lines = json.load(infile)
+
+        # lines = infile.readlines()
         for data in tqdm(lines, desc="Processing"):
             # Load JSON object from line
             # data = json.loads(line.strip())

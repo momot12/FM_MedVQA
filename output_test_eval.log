@@ -1,0 +1,45 @@
+Number of yes/no answers: 221
+Precision: 53.70%
+Recall   : 82.86%
+F1 score : 65.17%
+
+Mean of all answers:
+Precision: nan%
+Recall   : nan%
+F1 score : nan%
+
+Number of open answers: 451
+Mean BLEU-1 Score: 2.461783270785431
+Mean BLEU-2 Score: 0.37772929362478497
+Mean BLEU-3 Score: 0.10481757710139085
+Mean BLEU-4 Score: 5.46355875149764e-307
+Number of yes/no answers: 67
+Precision: 43.14%
+Recall   : 75.86%
+F1 score : 55.00%
+
+Mean of all answers:
+Precision: nan%
+Recall   : nan%
+F1 score : nan%
+
+Number of open answers: 451
+Mean BLEU-1 Score: 0.7372654018082894
+Mean BLEU-2 Score: 0.051030498570675036
+Mean BLEU-3 Score: 1.7848171836075845e-307
+Mean BLEU-4 Score: 1.7848171836075845e-307
+Number of yes/no answers: 122
+Precision: 46.09%
+Recall   : 96.36%
+F1 score : 62.35%
+
+Mean of all answers:
+Precision: nan%
+Recall   : nan%
+F1 score : nan%
+
+Number of open answers: 451
+Mean BLEU-1 Score: 0.5783459065604692
+Mean BLEU-2 Score: 0.04591418370086007
+Mean BLEU-3 Score: 1.5294299249163e-307
+Mean BLEU-4 Score: 1.5294299249163e-307
